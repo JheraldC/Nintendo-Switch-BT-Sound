@@ -2,6 +2,8 @@
 
 ## Instalación sencilla
 
+Para usar el asistente en Windows necesitas [Python 3.11 o posterior](https://www.python.org/downloads/windows/). Extrae por completo el ZIP antes de abrirlo.
+
 Ejecuta `instalar.cmd`, elige **1**, indica la letra de tu SD y selecciona Yoshi o el ejemplo generado. Revisa los archivos y escribe `INSTALAR`. El asistente agrega el módulo y guarda una copia de cualquier archivo reemplazado fuera de la SD. Una selección de sonido que ya exista se conserva.
 
 En una instalación nueva se copian:

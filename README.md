@@ -6,20 +6,19 @@ Sonido, imágenes de arranque y sincronización manual de Pro Controller/Joy-Con
 
 | Componente | Para qué sirve | Instalación |
 |---|---|---|
-| **BootSound** | Reproduce un WAV al entrar a Hack y después termina. Incluye el sonido Yoshi usado en la SD del autor y un ejemplo generado. | [Guía de sonido](docs/SONIDO.md) |
+| **Sonido de arranque** | Reproduce un WAV al entrar a Hack y después termina. Incluye el sonido Yoshi usado en la SD del autor y un ejemplo generado. | [Guía de sonido](docs/SONIDO.md) |
 | **Arranque e imágenes** | Incluye los diseños, un logo listo para Hekate y herramientas para preparar splashes de Atmosphère. | [Guía de imágenes](docs/ARRANQUE.md) |
-| **BT Sync Una Vez** | Importa los Pro Controller/Joy-Con compatibles de Original a la base externa de Hack de **la misma consola**, cuando abres el payload. | [Guía Bluetooth](docs/BLUETOOTH.md) |
+| **Sincronización de controles** | Importa los Pro Controller/Joy-Con compatibles de Original a la base externa de Hack de **la misma consola**, cuando abres el payload. | [Guía Bluetooth](docs/BLUETOOTH.md) |
 
-## Empezar en Windows
+## Empezar
 
-1. Descarga **Nintendo-Switch-BT-Sound-v1.0.4.zip** desde [Releases](https://github.com/JheraldC/Nintendo-Switch-BT-Sound/releases/latest) y extráelo completamente en el PC.
-2. Instala [Python 3.11 o posterior](https://www.python.org/downloads/windows/) si no lo tienes.
-3. Conecta una SD que ya arranque correctamente con Hekate, Atmosphère y emuMMC.
-4. Abre **instalar.cmd**, elige el componente y la letra de la SD. Primero se muestra el plan; solo se instala si escribes `INSTALAR`.
+1. Descarga el ZIP de la última versión desde [Releases](https://github.com/JheraldC/Nintendo-Switch-BT-Sound/releases/latest) y extrae su contenido en tu ordenador.
+2. Conecta la microSD de una Switch que ya arranque correctamente con Hekate, Atmosphère y emuMMC. Guarda un respaldo de los archivos que vayas a cambiar.
+3. Elige qué quieres instalar: sonido de arranque, imágenes o sincronización de controles. Abre su guía en la tabla de arriba para revisar los requisitos y preparar los archivos.
+4. Sigue los pasos de esa guía para instalar el componente en la microSD y comprobarlo en la consola. Puedes instalar cada componente por separado.
 
-El sonido y el logo ya incluyen sus archivos preparados. **Bluetooth necesita compilarse localmente para la SD de destino**, con devkitARM y WSL; el asistente reúne la preparación, compilación, pruebas y respaldo. Sus requisitos son más estrictos: consulta la guía antes de elegir esa opción.
+El sonido y el logo de Hekate incluyen archivos preparados para instalar. **La sincronización Bluetooth necesita prepararse y compilarse para la SD de cada consola**; su guía explica el proceso. Las guías también indican las herramientas necesarias y cómo volver a la configuración anterior.
 
-El asistente conserva una copia verificada de los archivos que reemplaza en `Documentos/SwitchBackups`. No instala Atmosphère, firmware ni un método de modificación de la consola. Durante la preparación de esta publicación no se modificó la SD del autor.
 
 ## Cómo funciona el payload Bluetooth
 
