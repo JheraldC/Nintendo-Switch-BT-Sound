@@ -28,3 +28,5 @@ components/bootsound/BootSound.nso
 components/bootsound/BootSound.pfs0
 components/bootsound/tests/fixtures/
 components/bootsound/tests/host/
+/AGENTS.md
+/CHANGELOG.md
