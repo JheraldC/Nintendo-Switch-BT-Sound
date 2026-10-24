@@ -1,6 +1,6 @@
 # Phase 5.6 — the second splash (Atmosphère's `boot` sysmodule)
 
-**Status: Analysis and local build only. Nothing written to any SD card, nothing installed.**
+Status: Analysis and local build only. Nothing written to any SD card, nothing installed.
 This is a third, independent splash mechanism — distinct from both the `package3` early splash
 (phase 5.0/5.1) and Hekate's own `logopath=` bootlogo (phase 5.3). No changes to
 `JheraldBootSound` itself come from this phase.
@@ -35,12 +35,12 @@ itself, not something a config file or an external asset swap can do.
 ## Deriving the image format from source, not assuming it
 
 Two completely different pieces of code render this splash versus the `package3` early splash,
-and they use **different pixel formats and different orientation conventions** — confirmed by
+and they use different pixel formats and different orientation conventions — confirmed by
 reading `stratosphere/boot/source/boot_display.cpp` directly rather than reusing the earlier
 splash's format:
 
 - `ShowDisplay(x, y, width, height, img)` treats `img` as a perfectly normal row-major array —
-  `width` columns per row, `height` rows, top-left origin, **no rotation needed**. The function
+  `width` columns per row, `height` rows, top-left origin, no rotation needed. The function
   itself handles mapping that onto the console's physical portrait framebuffer internally.
   This is different from both the `package3` splash and the Hekate bootlogo, which both require
   rotating the source image 90° before packing it.
@@ -70,7 +70,7 @@ declarations and the pixel array the real source file expects, centered on the 1
 back into a PNG, with no need to compile anything, so you can check what's actually in a `.inc`
 before it goes anywhere near a build.
 
-This project's own testing ran the inverse tool against the **unmodified upstream** `.inc`
+This project's own testing ran the inverse tool against the unmodified upstream `.inc`
 first — reconstructing Atmosphère's own splash image from its shipped source data — as the
 first sanity check that the format was understood correctly, before trusting the tool on any
 new image. Every generated `.inc` was then round-tripped back through the inverse tool and
@@ -80,7 +80,7 @@ compared pixel-by-pixel against its source PNG.
 
 `boot.kip` doesn't get its own arbitrary amount of space. Reading Atmosphère's own
 `fusee/build_package3.py` directly: seven system KIPs plus the emuMMC KIP all share one
-**fixed 3 MiB (0x300000-byte) region** inside `package3` — however much any one of them uses is
+fixed 3 MiB (0x300000-byte) region inside `package3` — however much any one of them uses is
 space taken away from the shared budget, not from some separate per-file allowance. Growing the
 splash embedded in `boot.kip` grows `boot.kip` itself, which eats into that same shared 3 MiB
 alongside `Loader`, `NCM`, `ProcessManager`, `sm`, `spl`, `ams_mitm`, and `emummc` — a

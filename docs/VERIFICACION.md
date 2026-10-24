@@ -1,7 +1,5 @@
 # Verificación de la versión 1.0.0
 
-Reuní el sonido de arranque, las imágenes y la sincronización de controles en una sola versión del proyecto: **1.0.0**.
-
 ## Sonido de arranque
 
 Compilé BootSound con devkitA64/libnx. Verifiqué el contenedor PFS0, el ejecutable NSO, el nombre BootSound en el NPDM y el identificador `42000000004A4253`. Conservé la carpeta de configuración y los permisos del módulo.
