@@ -1,16 +1,32 @@
 """Instalación limitada a sonido o logo. Sin --apply solo muestra el plan."""
 from pathlib import Path
-import argparse, hashlib, json, os, re, wave
+import argparse, configparser, hashlib, json, os, re, wave
 
 ROOT=Path(__file__).resolve().parents[1]
 MODULE='atmosphere/contents/42000000004A4253'
 CONFIG='config/JheraldBootSound'
-NSP_SHA='8b995212658bd8dae1526525b0b8022a728b423c233c7809a88482fc50f5f019'
+NSP_SHA='7fdc7c9f0d2b3ff053ce813fd541cfdf024065d290d6c051743ec51c650b955b'
 
 def sha(data):return hashlib.sha256(data).hexdigest()
 
 def require(ok,message):
     if not ok:raise ValueError(message)
+
+def boot_entry(sd,system):
+    """Detecta el nombre existente por sus opciones; nunca edita el menú."""
+    config=configparser.ConfigParser(interpolation=None,strict=True)
+    config.read_string((Path(sd)/'bootloader/hekate_ipl.ini').read_text(encoding='utf-8-sig'))
+    found=[]
+    for name in config.sections():
+        section=config[name]
+        if system=='sysMMC':
+            matches=section.get('stock')=='1' and section.get('emummc_force_disable')=='1' and 'payload' not in section
+        elif system=='emuMMC':
+            matches=(section.get('emummcforce')=='1' and section.get('stock','0')=='0' and section.get('emummc_force_disable','0')=='0') or (section.get('payload')=='bootloader/payloads/fusee.bin' and set(section)<= {'payload','icon'})
+        else:raise ValueError('Sistema no válido')
+        if matches:found.append(name)
+    require(len(found)==1,'Indica el nombre exacto de la entrada '+system+' en Hekate; no pude identificar una sola entrada')
+    return found[0]
 
 def safe(sd,name):
     p=sd/name
@@ -40,7 +56,7 @@ def logo_config(data,entry):
     else:block=line+block
     return data[:m.end()]+block+data[end:]
 
-def plan(sd,component,clip='yoshi',entry='Sistema Hack',replace_config=False):
+def plan(sd,component,clip='yoshi',entry=None,replace_config=False):
     sd=Path(sd).resolve()
     require(sd.is_dir() and (sd/'bootloader/hekate_ipl.ini').is_file() and (sd/'atmosphere/package3').is_file(),'Selecciona la raíz de una SD ya configurada con Hekate y Atmosphère')
     files={}
@@ -57,6 +73,7 @@ def plan(sd,component,clip='yoshi',entry='Sistema Hack',replace_config=False):
         if replace_config or not safe(sd,CONFIG+'/config.ini').exists():
             files[CONFIG+'/config.ini']=('# BootSound\naudio_file='+name+'\n').encode()
     elif component=='logo':
+        if entry is None:entry=boot_entry(sd,'emuMMC')
         files['bootloader/res/jherald_bootlogo.bmp']=(ROOT/'components/bootsplash/logos/jherald_bootlogo.bmp').read_bytes()
         ini='bootloader/hekate_ipl.ini';files[ini]=logo_config(safe(sd,ini).read_bytes(),entry)
     else:raise ValueError('Componente no válido')
@@ -90,7 +107,7 @@ def apply(sd,files,before,backup):
     print('Instalación verificada. Respaldo:',backup)
 
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('component',choices=['audio','logo']);p.add_argument('--sd',required=True);p.add_argument('--clip',choices=['yoshi','ejemplo'],default='yoshi');p.add_argument('--entry',default='Sistema Hack');p.add_argument('--replace-config',action='store_true');p.add_argument('--apply',action='store_true');p.add_argument('--backup-dir');a=p.parse_args()
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('component',choices=['audio','logo']);p.add_argument('--sd',required=True);p.add_argument('--clip',choices=['yoshi','ejemplo'],default='yoshi');p.add_argument('--entry',help='Nombre exacto de la entrada emuMMC; por defecto se detecta');p.add_argument('--replace-config',action='store_true');p.add_argument('--apply',action='store_true');p.add_argument('--backup-dir');a=p.parse_args()
     sd,files,before=plan(a.sd,a.component,a.clip,a.entry,a.replace_config)
     for name,data in files.items():print(('Sin cambio' if before[name]==data else 'Reemplazar' if before[name] is not None else 'Añadir')+': '+name)
     if not a.apply:print('Solo revisión. No se escribió en la SD.');return

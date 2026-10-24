@@ -1,6 +1,6 @@
 # Licencias y créditos
 
-- **BootSound**: MIT, texto en `components/bootsound/LICENSE`. Versión 0.4.1, programa `42000000004A4253`. Incluye fuentes C, descriptor y herramientas de construcción. Conserva los avisos de autoría del proyecto original y la carpeta de configuración histórica.
+- **BootSound**: MIT, texto en `components/bootsound/LICENSE`. Versión 1.0.0, programa `42000000004A4253`. Incluye fuentes C, descriptor y herramientas de construcción. Conserva los avisos de autoría del proyecto original y la carpeta de configuración histórica.
 - **BT Sync Una Vez**: GPL-2.0, en `components/bluetooth-sync/LICENSE` y `module/LICENSE`. Conserva los avisos de sus dependencias y el núcleo congelado identificado por `core-freeze.json`.
 - **TegraExplorer/BDK**: código y avisos originales en `components/bluetooth-sync/vendor/tegraexplorer/`, bajo su GPL-2.0. No se afirma autoría sobre este código. El lector incluido conserva sus avisos internos.
 - **Hekate 6.5.4**: el binario oficial sin modificar de `test-assets` se usa como fixture de pruebas; no es un payload Bluetooth universal. GPL-2.0. [Fuentes correspondientes y licencia](https://github.com/CTCaer/hekate/tree/v6.5.4), [release original](https://github.com/CTCaer/hekate/releases/tag/v6.5.4). La licencia GPL-2.0 también se conserva en el componente.

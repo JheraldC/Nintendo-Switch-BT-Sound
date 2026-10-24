@@ -18,6 +18,6 @@
 #define JBS_PATH_RESULT3   JBS_DIR "/phase3_result.txt"   /* FASE 3/3.1/3.3 (audout) */
 #define JBS_PATH_RESULT4   JBS_DIR "/phase4_result.txt"   /* FASE 4.0 (config.ini + audio custom) */
 
-#define JBS_VERSION_STR    "0.4.1"
+#define JBS_VERSION_STR    "1.0.0"
 
 #endif /* JBS_PATHS_H */

@@ -66,7 +66,7 @@ en la SD de una instalacion previa no se borran ni se tocan.
 
 Contenido tipico de phase4_result.txt (ejemplo con audio_file por defecto):
     BootSound FASE 4
-    version=0.4.0-fase4.0
+    version=1.0.0
     status=OK
     configured_audio_file=(none)
     selected_audio_file=startup.wav

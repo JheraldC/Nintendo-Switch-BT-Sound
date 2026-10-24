@@ -106,7 +106,7 @@ def prepare(sd,original,hack,first,end,declared_profile):
     return info
 
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--sd',required=True);p.add_argument('--original',required=True);p.add_argument('--hack',required=True);p.add_argument('--firmware-profile',required=True,choices=['23.0.1']);a=p.parse_args()
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--sd',required=True);p.add_argument('--sysmmc','--original',dest='original',required=True,help='Nombre exacto de la entrada sysMMC');p.add_argument('--emummc','--hack',dest='hack',required=True,help='Nombre exacto de la entrada emuMMC');p.add_argument('--firmware-profile',required=True,choices=['23.0.1']);a=p.parse_args()
     sd=Path(a.sd).resolve();first,end=partition(sd)
     prepare(sd,a.original,a.hack,first,end,a.firmware_profile)
     print('Prepared standalone payload for this SD. Boot menus stay byte-identical; completion returns to Hekate. No SD files changed.')

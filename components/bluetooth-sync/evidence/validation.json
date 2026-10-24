@@ -1,10 +1,10 @@
 {
-  "publication_date": "2026-10-23",
+  "version": "1.0.0",
   "mode": "manual-payload",
   "source_only_bluetooth": true,
   "no_console_bindings": true,
   "boot_menu_modified_by_bluetooth_installer": false,
-  "root_installer_and_splash_tests": 8,
+  "root_installer_and_splash_tests": 11,
   "bluetooth_portable_installer_tests": 8,
   "bluetooth_ui_checks": 46,
   "full_core_counts": {
@@ -27,8 +27,21 @@
   "arm_audit_passed": true,
   "core_crypto_tests": "synthetic AES/CMAC mocks; frozen real SHA",
   "build_target": "synthetic bindings only, never installed",
-  "hardware_evidence": "Author reported OK and progress display; no new physical certification for this public installer or the 500ms hold",
-  "bootsound_existing_binary_sha256": "212cbf0cfb97f5beafd84125aff3c444b8332868db1503859d03f4f225d2b82a",
-  "bootsound_rebuilt_binary_sha256": "7f3c58c60788254a6f5844955d9338a0834fd896e4120f1405244ac8049d2198",
-  "bootsound_rebuilt_bytes": 90458
+  "source_system": "sysMMC",
+  "destination_system": "emuMMC",
+  "hardware_execution": false,
+  "bootsound": {
+    "component": "BootSound",
+    "version": "1.0.0",
+    "collection_version": "1.0.0",
+    "bytes": 90178,
+    "sha256": "7fdc7c9f0d2b3ff053ce813fd541cfdf024065d290d6c051743ec51c650b955b",
+    "npdm_name": "BootSound",
+    "program_id": "42000000004A4253",
+    "legacy_config_directory": "config/JheraldBootSound",
+    "audio_playback_logic_unchanged": true,
+    "hardware_tested_this_build": false,
+    "source_descriptor": "BootSound.json",
+    "compiler": "aarch64-none-elf-gcc.exe (devkitA64) 16.1.0"
+  }
 }

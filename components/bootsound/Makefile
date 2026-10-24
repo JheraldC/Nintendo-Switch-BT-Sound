@@ -37,7 +37,7 @@ INCLUDES := include
 # Program ID (debe coincidir con BootSound.json). Usado por 'make dist'.
 PROGRAM_ID := 42000000004A4253
 
-VERSION  := 0.4.1
+VERSION  := 1.0.0
 
 #---------------------------------------------------------------------------------
 # Flags de compilacion
