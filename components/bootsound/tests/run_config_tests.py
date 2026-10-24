@@ -30,7 +30,7 @@ def main():
           r["status"] == c.STATUS_NOT_FOUND and r["resolved"] == "startup.wav", str(r))
 
     print("\n== 2) config valido ==")
-    r = c.load_config_text("[JheraldBootSound]\naudio_file=my_boot_sound.wav\n")
+    r = c.load_config_text("[BootSound]\naudio_file=my_boot_sound.wav\n")
     check("status=OK, resolved=my_boot_sound.wav",
           r["status"] == c.STATUS_OK and r["resolved"] == "my_boot_sound.wav", str(r))
 

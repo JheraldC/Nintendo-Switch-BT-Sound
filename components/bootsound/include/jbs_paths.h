@@ -9,6 +9,7 @@
 #define JBS_PATHS_H
 
 #define JBS_DIR            "sdmc:/config/JheraldBootSound"
+/* Ruta histórica conservada por compatibilidad. El nombre público es BootSound. */
 
 #define JBS_PATH_WAV       JBS_DIR "/startup.wav"         /* default/fallback fijo, siempre este nombre */
 #define JBS_PATH_CONFIG    JBS_DIR "/config.ini"           /* FASE 4.0: seleccion de audio_file opcional */
@@ -17,6 +18,6 @@
 #define JBS_PATH_RESULT3   JBS_DIR "/phase3_result.txt"   /* FASE 3/3.1/3.3 (audout) */
 #define JBS_PATH_RESULT4   JBS_DIR "/phase4_result.txt"   /* FASE 4.0 (config.ini + audio custom) */
 
-#define JBS_VERSION_STR    "0.4.0-fase4.0"
+#define JBS_VERSION_STR    "0.4.1"
 
 #endif /* JBS_PATHS_H */

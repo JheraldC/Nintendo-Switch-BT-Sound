@@ -19,6 +19,7 @@ jobs:
       - name: Pruebas de sonido
         working-directory: components/bootsound
         run: |
+          python scripts/verify_json.py
           python tests/gen_fixtures.py
           python tests/run_tests.py
           python tests/run_config_tests.py

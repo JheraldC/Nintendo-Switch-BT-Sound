@@ -1,11 +1,13 @@
-# Módulo precompilado
+# BootSound 0.4.1 precompilado
 
-`atmosphere/contents/42000000004A4253/exefs.nsp` es el binario histórico 0.4.0-fase4.0, de 90466 bytes y SHA-256:
+El módulo `atmosphere/contents/42000000004A4253/exefs.nsp` se recompiló con el nombre BootSound para la colección 1.0.3.
 
-```text
-212cbf0cfb97f5beafd84125aff3c444b8332868db1503859d03f4f225d2b82a
-```
+- Tamaño: 90177 bytes.
+- SHA-256: `8b995212658bd8dae1526525b0b8022a728b423c233c7809a88482fc50f5f019`.
+- Nombre del programa verificado dentro del NPDM: `BootSound`.
+- Identificador y permisos conservados: `42000000004A4253`.
+- Configuración compatible: `config/JheraldBootSound/`.
 
-Coincide con el instalado en la SD del autor. Se incluyen las fuentes y el Makefile. La recompilación comprobada para esta publicación produjo otro hash/tamaño, por lo que no se afirma reproducción binaria exacta. Se conserva el binario histórico para la instalación; no se reemplazó por el recién compilado.
+Las comprobaciones de compilación, descriptor, empaquetado e instalador se ejecutan en PC. La prueba física específica de este binario está pendiente. La publicación no lo instala en la SD del autor.
 
-Usa el [asistente y la guía](../../../docs/SONIDO.md) para instalar con respaldo. `boot2.flag` está vacío deliberadamente.
+[Guía de instalación con respaldo](../../../docs/SONIDO.md) · [Datos de compilación](BUILD.json)

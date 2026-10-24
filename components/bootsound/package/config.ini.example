@@ -9,7 +9,7 @@
 ; cabeceras de seccion '[...]' (se aceptan mas abajo solo por comodidad
 ; visual, no cambian nada), y cualquier clave no reconocida.
 
-[JheraldBootSound]
+[BootSound]
 
 ; --------------------------------------------------------------------------
 ; audio_file  (FASE 4.0 en adelante -- UNICA clave que el sysmodule lee hoy)

@@ -1,5 +1,5 @@
 /*
- * JheraldBootSound  -  sysmodule boot2, NO residente.
+ * BootSound  -  sysmodule boot2, NO residente.
  *
  * ================  FASE 4.0  -  AUDIO PERSONALIZABLE + config.ini + 2 MiB  ================
  *

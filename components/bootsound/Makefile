@@ -1,7 +1,7 @@
 #---------------------------------------------------------------------------------
-# JheraldBootSound - Makefile de sysmodule (devkitA64 + libnx)
+# BootSound - Makefile de sysmodule (devkitA64 + libnx)
 #
-# Produce:  JheraldBootSound.nsp   (= exefs.nsp: PFS0 con { main, main.npdm })
+# Produce:  BootSound.nsp   (= exefs.nsp: PFS0 con { main, main.npdm })
 #
 # Uso:
 #   export DEVKITPRO=/opt/devkitpro         (Linux/macOS)
@@ -29,15 +29,15 @@ include $(DEVKITPRO)/libnx/switch_rules
 #---------------------------------------------------------------------------------
 # Config del proyecto
 #---------------------------------------------------------------------------------
-TARGET   := JheraldBootSound
+TARGET   := BootSound
 BUILD    := build
 SOURCES  := source
 INCLUDES := include
 
-# Program ID (debe coincidir con JheraldBootSound.json). Usado por 'make dist'.
+# Program ID (debe coincidir con BootSound.json). Usado por 'make dist'.
 PROGRAM_ID := 42000000004A4253
 
-VERSION  := 0.4.0-fase4.0
+VERSION  := 0.4.1
 
 #---------------------------------------------------------------------------------
 # Flags de compilacion

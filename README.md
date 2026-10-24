@@ -6,13 +6,13 @@ Sonido, imágenes de arranque y sincronización manual de Pro Controller/Joy-Con
 
 | Componente | Para qué sirve | Instalación |
 |---|---|---|
-| **JheraldBootSound** | Reproduce un WAV al entrar a Hack y después termina. Incluye el sonido Yoshi usado en la SD del autor y un ejemplo generado. | [Guía de sonido](docs/SONIDO.md) |
+| **BootSound** | Reproduce un WAV al entrar a Hack y después termina. Incluye el sonido Yoshi usado en la SD del autor y un ejemplo generado. | [Guía de sonido](docs/SONIDO.md) |
 | **Arranque e imágenes** | Incluye los diseños, un logo listo para Hekate y herramientas para preparar splashes de Atmosphère. | [Guía de imágenes](docs/ARRANQUE.md) |
 | **BT Sync Una Vez** | Importa los Pro Controller/Joy-Con compatibles de Original a la base externa de Hack de **la misma consola**, cuando abres el payload. | [Guía Bluetooth](docs/BLUETOOTH.md) |
 
 ## Empezar en Windows
 
-1. Descarga **Nintendo-Switch-BT-Sound-v1.0.2.zip** desde [Releases](https://github.com/JheraldC/Nintendo-Switch-BT-Sound/releases/latest) y extráelo completamente en el PC.
+1. Descarga **Nintendo-Switch-BT-Sound-v1.0.3.zip** desde [Releases](https://github.com/JheraldC/Nintendo-Switch-BT-Sound/releases/latest) y extráelo completamente en el PC.
 2. Instala [Python 3.11 o posterior](https://www.python.org/downloads/windows/) si no lo tienes.
 3. Conecta una SD que ya arranque correctamente con Hekate, Atmosphère y emuMMC.
 4. Abre **instalar.cmd**, elige el componente y la letra de la SD. Primero se muestra el plan; solo se instala si escribes `INSTALAR`.
@@ -32,9 +32,9 @@ Luego entra normalmente a **Sistema Hack**. El sincronizador no se ejecuta en ca
 - Bluetooth se limita al perfil analizado de **Original 23.0.1**, SD **FAT32**, emuMMC habilitada, base Bluetooth externa existente y **Hekate 6.5.4 exacto**. No asumas compatibilidad con otras versiones o modelos sin verificarla.
 - Cada consola utiliza sus propias claves locales. **Nunca compartas `prod.keys`, la base Bluetooth, el historial ni un payload generado para otra SD.**
 - El autor comprobó físicamente el resultado OK y la pantalla de progreso del payload. La pausa final de 0,5 segundos tiene comprobación automática de código; no se documenta una nueva prueba física específica de esa pausa.
-- El módulo de sonido distribuido coincide byte por byte con el instalado en la SD del autor. Las pruebas de PC y esa coincidencia no certifican todos los equipos ni otras versiones de Atmosphère.
+- BootSound 0.4.1 se recompiló con el nuevo nombre y pasó sus comprobaciones de PC. Se conserva la configuración de las instalaciones anteriores; la prueba física específica de esta edición está pendiente.
 - [Verificación de esta publicación](docs/VERIFICACION.md), [reversión](docs/REVERSION.md) y [licencias y créditos](LICENSES.md).
 
 No se incluyen claves, datos de emparejamiento reales, copias NAND, juegos ni un `package3` completo. Las imágenes y clips conservan los derechos de sus respectivos titulares; su inclusión no los convierte en contenido MIT/GPL.
 
-![Diseño original de JheraldBootSound](components/bootsplash/images/JheraldBootSound_splash.png)
+![Diseño original de BootSound](components/bootsplash/images/BootSound_splash.png)

@@ -12,6 +12,7 @@ Uso:
 """
 import os
 import sys
+from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 WIDTH, HEIGHT = 1280, 720
@@ -82,7 +83,7 @@ def build_splash():
     title_font = _load_font(FONT_CANDIDATES_TITLE, 92)
     sub_font = _load_font(FONT_CANDIDATES_SUB, 30)
 
-    title = "JheraldBootSound"
+    title = "BootSound"
     subtitle = _letter_spaced("CUSTOM BOOT AUDIO", spaces=1)
 
     tb = draw.textbbox((0, 0), title, font=title_font)
@@ -112,9 +113,8 @@ def build_splash():
 
 
 def main():
-    out_path = sys.argv[1] if len(sys.argv) > 1 else os.path.join(
-        os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-        "assets", "splash", "JheraldBootSound_splash.png",
+    out_path = sys.argv[1] if len(sys.argv) > 1 else str(
+        Path(__file__).resolve().parents[2] / 'bootsplash/images/BootSound_splash.png'
     )
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
     img = build_splash()

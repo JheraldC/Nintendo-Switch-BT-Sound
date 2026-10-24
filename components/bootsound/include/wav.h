@@ -1,5 +1,5 @@
 /*
- * wav.h  -  parser RIFF/WAVE minimo y defensivo para JheraldBootSound (FASE 2)
+ * wav.h  -  parser RIFF/WAVE minimo y defensivo para BootSound (FASE 2)
  *
  * NO depende de <switch.h>: opera sobre un FILE* + tamano declarado, de modo que
  * el MISMO codigo se compila y se prueba en PC (ver tests/).

@@ -1,4 +1,4 @@
-JheraldBootSound  -  archivo de sonido de arranque
+BootSound  -  archivo de sonido de arranque
 ==================================================
 
 RUTA EN LA SD
@@ -9,7 +9,7 @@ RUTA EN LA SD
    no tiene ninguna relevancia especial)
 
 El sonido es EXTERNO al binario: para cambiarlo basta sustituir startup.wav,
-no hace falta recompilar JheraldBootSound.
+no hace falta recompilar BootSound.
 
 DESDE FASE 4.0: puedes guardar VARIOS WAV a la vez dentro de
 config/JheraldBootSound/ (p.ej. startup.wav + otro_sonido.wav) y elegir cual
@@ -65,7 +65,7 @@ antiguos de fases anteriores; ya no se generan desde FASE 4.0, pero si existen
 en la SD de una instalacion previa no se borran ni se tocan.
 
 Contenido tipico de phase4_result.txt (ejemplo con audio_file por defecto):
-    JheraldBootSound FASE 4
+    BootSound FASE 4
     version=0.4.0-fase4.0
     status=OK
     configured_audio_file=(none)

@@ -14,7 +14,7 @@ Abre `instalar.cmd`, elige **2** e indica el nombre de la entrada Hack. El plan 
 
 **Este logo se usa en la ruta de autoboot de Hekate con tiempo de espera. Entrar manualmente desde Nyx/Launch puede omitirlo.** Por eso no promete replicar la pantalla interna de Atmosphère en todos los arranques. Si tu consola ya muestra el splash que quieres, conserva tu `package3`.
 
-Las imágenes editables están en `components/bootsplash/images/`. El BMP preparado usa `splash_opcion_1_oscura.png`. También hay un diseño original `JheraldBootSound_splash.png`. Para convertir tu propia imagen:
+Las imágenes editables están en `components/bootsplash/images/`. El BMP preparado usa `splash_opcion_1_oscura.png`. También hay un diseño original `BootSound_splash.png`. Para convertir tu propia imagen:
 
 ```powershell
 python -m pip install -r requirements.txt
@@ -28,7 +28,7 @@ Entrada 1280×720 PNG. `--resize` permite otras resoluciones **16:9**; no deform
 El asistente no reemplaza `package3`. La herramienta siguiente solo genera una **salida nueva en el PC**, valida tamaño/firma, limita las diferencias al área de imagen y verifica todos los píxeles:
 
 ```powershell
-python tools/patch_early_splash.py --base C:/Copias/package3 --image components/bootsplash/images/JheraldBootSound_splash.png --out C:/Copias/package3.personalizado
+python tools/patch_early_splash.py --base C:/Copias/package3 --image components/bootsplash/images/BootSound_splash.png --out C:/Copias/package3.personalizado
 ```
 
 Trabaja siempre con la versión de `package3` correspondiente a tu Atmosphère y conserva el original fuera de la SD. Este splash pertenece al flujo de Fusee: una entrada directa `pkg3=atmosphere/package3` de Hekate puede omitirlo. No cambies la ruta de arranque solo para forzarlo sin revisar la configuración.

@@ -26,7 +26,7 @@ void jbs_debug_write_result(const char *out_path,
     if (!f)
         return;   /* best-effort: si no se puede escribir, no pasa nada */
 
-    fprintf(f, "JheraldBootSound FASE 2\n");
+    fprintf(f, "BootSound FASE 2\n");
     fprintf(f, "version=%s\n", JBS_VERSION_STR);
     fprintf(f, "status=%s\n", jbs_status_str(st));
 
@@ -66,7 +66,7 @@ void jbs_debug_write_phase3_result(const char *out_path,
     if (!f)
         return;   /* best-effort: si no se puede escribir, no pasa nada */
 
-    fprintf(f, "JheraldBootSound FASE 3\n");
+    fprintf(f, "BootSound FASE 3\n");
     fprintf(f, "version=%s\n", JBS_VERSION_STR);
     fprintf(f, "status=%s\n", jbs_status_str(st));
 
@@ -133,7 +133,7 @@ void jbs_debug_write_phase4_result(const char *out_path,
     if (!f)
         return;   /* best-effort: si no se puede escribir, no pasa nada */
 
-    fprintf(f, "JheraldBootSound FASE 4\n");
+    fprintf(f, "BootSound FASE 4\n");
     fprintf(f, "version=%s\n", JBS_VERSION_STR);
     fprintf(f, "status=%s\n", jbs_status_str(st));
     fprintf(f, "\n");

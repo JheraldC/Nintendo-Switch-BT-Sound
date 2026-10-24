@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-verify_json.py - comprobaciones estaticas del NPDM de JheraldBootSound.
+verify_json.py - comprobaciones estaticas del NPDM de BootSound.
 
 NO compila nada. Solo valida, sin tener la toolchain instalada:
-  - que JheraldBootSound.json es JSON valido
+  - que BootSound.json es JSON valido
   - que el Program ID es coherente (title_id == range_min == range_max)
   - que el Program ID no colisiona con una lista conocida de sysmodules homebrew
   - que el Program ID no aparece en un arbol de SD que se le pase (--sd RUTA)
@@ -22,7 +22,7 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-JSON_PATH = os.path.join(ROOT, "JheraldBootSound.json")
+JSON_PATH = os.path.join(ROOT, "BootSound.json")
 
 # Sysmodules homebrew conocidos (para deteccion de colision "best effort").
 # NO es un registro mundial; solo lo mas habitual. Ver docs/DESIGN.md correccion 7.
@@ -66,7 +66,7 @@ def main():
             raw = f.read()
         meta = json.loads(raw)
     except FileNotFoundError:
-        return fail("no existe JheraldBootSound.json")
+        return fail("no existe BootSound.json")
     except json.JSONDecodeError as e:
         return fail(f"JSON invalido: {e}")
     rc |= ok("JSON valido")

@@ -1,4 +1,4 @@
-# Sonido al entrar a Hack
+# BootSound: sonido al entrar a Hack
 
 ## Instalación sencilla
 
@@ -15,6 +15,8 @@ config/JheraldBootSound/config.ini
 ```
 
 El menú Original/Hack y `package3` se conservan. El sonido se reproduce al iniciar Atmosphère, cuando el servicio de audio esté disponible, y el módulo termina. No funciona en el Sistema Original sin CFW.
+
+BootSound es el nuevo nombre del módulo. Se conserva la carpeta histórica `config/JheraldBootSound/` y el identificador `42000000004A4253` para reutilizar las configuraciones y sonidos existentes. No hace falta mover ni renombrar tus archivos de audio.
 
 ## Elegir otro sonido
 
@@ -44,6 +46,6 @@ export DEVKITPRO=/c/devkitPro
 make
 ```
 
-En Linux el valor habitual es `/opt/devkitpro`. El resultado `JheraldBootSound.nsp` se instala como `exefs.nsp`. El compilador o libnx pueden producir bytes diferentes del binario histórico distribuido; una recompilación debe probarse por separado.
+En Linux el valor habitual es `/opt/devkitpro`. El resultado `BootSound.nsp` se instala como `exefs.nsp`. El descriptor es `BootSound.json`. La versión 0.4.1 fue recompilada para este cambio de nombre y comprobada en PC; su prueba física específica está pendiente.
 
 El código conserva MIT. El clip Yoshi tiene [condiciones separadas](../LICENSES.md); el ejemplo es generado por `scripts/generate_example_startup.py`.

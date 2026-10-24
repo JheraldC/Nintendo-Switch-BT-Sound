@@ -23,5 +23,8 @@ components/bluetooth-sync/include/auto_binding.h
 components/bootsound/JheraldBootSound.nsp
 components/bootsound/JheraldBootSound.nso
 components/bootsound/JheraldBootSound.pfs0
+components/bootsound/BootSound.nsp
+components/bootsound/BootSound.nso
+components/bootsound/BootSound.pfs0
 components/bootsound/tests/fixtures/
 components/bootsound/tests/host/

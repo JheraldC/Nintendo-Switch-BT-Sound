@@ -64,7 +64,7 @@ int jbs_config_build_path(char *out, size_t out_size, const char *filename);
 /*
  * jbs_config_filename_is_safe: true si 'filename' es un nombre de archivo
  * simple y seguro para vivir directamente dentro de la carpeta de
- * JheraldBootSound: sin '/', sin '\', sin ':', sin la secuencia "..", no
+ * BootSound: sin '/', sin '\', sin ':', sin la secuencia "..", no
  * vacio, y por debajo de JBS_AUDIO_FILENAME_MAX bytes (sin contar el
  * terminador). NO comprueba que el archivo exista.
  */
