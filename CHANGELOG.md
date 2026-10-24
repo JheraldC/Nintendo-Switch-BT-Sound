@@ -1,5 +1,10 @@
 # Cambios
 
+## 1.0.1 — 2026-10-23
+
+- Nuevo nombre: Nintendo Switch Tools · Boot & Sync.
+- Presentación breve, enlaces y descarga actualizados.
+
 ## 1.0.0 — 2026-10-23
 
 - Primera colección pública: JheraldBootSound, diseños/herramientas de splash y BT Sync manual.

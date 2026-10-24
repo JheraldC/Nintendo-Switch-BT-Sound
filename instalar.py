@@ -8,7 +8,7 @@ def run(args,cwd=ROOT):
     subprocess.run([sys.executable,*map(str,args)],cwd=cwd,check=True)
 
 def main():
-    print('Jherald Switch Tools\n1. Sonido al arrancar Hack\n2. Imagen de Hekate\n3. Preparar payload Bluetooth para esta SD')
+    print('Nintendo Switch Tools · Boot & Sync\n1. Sonido al arrancar Hack\n2. Imagen de Hekate\n3. Preparar payload Bluetooth para esta SD')
     choice=input('Elige 1, 2 o 3: ').strip()
     if choice not in ('1','2','3'):raise ValueError('Opción no válida')
     sd=Path(input('Letra de la microSD (por ejemplo E:): ').strip().rstrip('/\\')+'/').resolve()

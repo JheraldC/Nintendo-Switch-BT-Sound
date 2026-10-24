@@ -1,6 +1,8 @@
-# Jherald Switch Tools
+# Nintendo Switch Tools · Boot & Sync
 
-Sonido de arranque, imágenes personalizadas y sincronización manual de controles para Nintendo Switch con Atmosphère y emuMMC.
+**Personaliza el arranque y sincroniza tus controles.**
+
+Sonido, imágenes de arranque y sincronización manual de Pro Controller/Joy-Con para Nintendo Switch con Atmosphère y emuMMC.
 
 | Componente | Para qué sirve | Instalación |
 |---|---|---|
@@ -10,7 +12,7 @@ Sonido de arranque, imágenes personalizadas y sincronización manual de control
 
 ## Empezar en Windows
 
-1. Descarga **Jherald-Switch-Tools-v1.0.0.zip** desde [Releases](https://github.com/JheraldC/Jherald-Switch-Tools/releases/latest) y extráelo completamente en el PC.
+1. Descarga **Nintendo-Switch-Tools-v1.0.1.zip** desde [Releases](https://github.com/JheraldC/Nintendo-Switch-Tools/releases/latest) y extráelo completamente en el PC.
 2. Instala [Python 3.11 o posterior](https://www.python.org/downloads/windows/) si no lo tienes.
 3. Conecta una SD que ya arranque correctamente con Hekate, Atmosphère y emuMMC.
 4. Abre **instalar.cmd**, elige el componente y la letra de la SD. Primero se muestra el plan; solo se instala si escribes `INSTALAR`.
