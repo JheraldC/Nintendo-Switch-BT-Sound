@@ -9,7 +9,7 @@ class Installer(unittest.TestCase):
     def target(self,root):
         sd=root/'sd';(sd/'bootloader').mkdir(parents=True);(sd/'atmosphere').mkdir()
         (sd/'atmosphere/package3').write_bytes(b'untouched-fixture')
-        (sd/'bootloader/hekate_ipl.ini').write_bytes(b'[config]\r\nautoboot=0\r\n[Sistema Original]\r\nstock=1\r\n[Sistema Hack]\r\npkg3=atmosphere/package3\r\nemummcforce=1\r\n')
+        (sd/'bootloader/hekate_ipl.ini').write_bytes(b'[config]\r\nautoboot=0\r\n[Sistema Original]\r\nstock=1\r\nemummc_force_disable=1\r\n[Sistema Hack]\r\npkg3=atmosphere/package3\r\nemummcforce=1\r\n')
         return sd
 
     def snapshot(self,sd):return {p.relative_to(sd).as_posix():p.read_bytes() for p in sd.rglob('*') if p.is_file()}
@@ -56,6 +56,32 @@ class Installer(unittest.TestCase):
             self.assertEqual(after.replace(b'logopath=bootloader/res/jherald_bootlogo.bmp\r\n',b''),before)
             m.apply(actual,files,old,root/'backup')
             self.assertEqual((root/'backup/bootloader/hekate_ipl.ini').read_bytes(),before)
+
+    def test_boot_entry_detection_preserves_custom_names(self):
+        with tempfile.TemporaryDirectory() as t:
+            sd=self.target(Path(t));p=sd/'bootloader/hekate_ipl.ini'
+            p.write_bytes(p.read_bytes().replace(b'Sistema Original',b'Mi OFW').replace(b'Sistema Hack',b'Mi CFW'))
+            before=p.read_bytes()
+            self.assertEqual(m.boot_entry(sd,'sysMMC'),'Mi OFW')
+            self.assertEqual(m.boot_entry(sd,'emuMMC'),'Mi CFW')
+            _,files,_=m.plan(sd,'logo')
+            self.assertEqual(files['bootloader/hekate_ipl.ini'].replace(b'logopath=bootloader/res/jherald_bootlogo.bmp\r\n',b''),before)
+            self.assertEqual(p.read_bytes(),before)
+
+    def test_ambiguous_or_missing_boot_entry_requires_explicit_name(self):
+        with tempfile.TemporaryDirectory() as t:
+            sd=self.target(Path(t));p=sd/'bootloader/hekate_ipl.ini'
+            p.write_bytes(p.read_bytes()+b'[Otra emuMMC]\r\nemummcforce=1\r\n')
+            with self.assertRaises(ValueError):m.boot_entry(sd,'emuMMC')
+            with self.assertRaises(ValueError):m.plan(sd,'logo')
+            _,files,_=m.plan(sd,'logo',entry='Sistema Hack')
+            self.assertIn(b'[Otra emuMMC]',files['bootloader/hekate_ipl.ini'])
+
+    def test_plain_fusee_entry_is_detected(self):
+        with tempfile.TemporaryDirectory() as t:
+            sd=self.target(Path(t));p=sd/'bootloader/hekate_ipl.ini'
+            p.write_bytes(p.read_bytes().replace(b'pkg3=atmosphere/package3\r\nemummcforce=1',b'payload=bootloader/payloads/fusee.bin'))
+            self.assertEqual(m.boot_entry(sd,'emuMMC'),'Sistema Hack')
 
     def test_logo_replaces_one_option_and_rejects_unknown_entry(self):
         before=b'[Hack]\nlogopath=old.bmp\npkg3=atmosphere/package3\n[Original]\nstock=1\n'

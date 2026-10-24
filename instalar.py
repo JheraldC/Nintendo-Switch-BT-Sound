@@ -4,11 +4,20 @@ import subprocess, sys
 
 ROOT=Path(__file__).resolve().parent
 
+def choose_entry(sd,system):
+    from tools.install_sd import boot_entry
+    try:default=boot_entry(sd,system)
+    except ValueError:default=''
+    hint=(' ['+default+']') if default else ''
+    selected=input('Nombre exacto de la entrada '+system+' en Hekate'+hint+': ').strip() or default
+    if not selected:raise ValueError('Debes indicar el nombre de la entrada '+system)
+    return selected
+
 def run(args,cwd=ROOT):
     subprocess.run([sys.executable,*map(str,args)],cwd=cwd,check=True)
 
 def main():
-    print('Nintendo Switch · BT & Beats — Sonido y controles\n1. Sonido al arrancar Hack\n2. Imagen de Hekate\n3. Preparar payload Bluetooth para esta SD')
+    print('Nintendo Switch · BT & Beats — Sonido y controles\n1. Sonido al arrancar emuMMC\n2. Imagen de Hekate\n3. Preparar payload Bluetooth para esta SD')
     choice=input('Elige 1, 2 o 3: ').strip()
     if choice not in ('1','2','3'):raise ValueError('Opción no válida')
     sd=Path(input('Letra de la microSD (por ejemplo E:): ').strip().rstrip('/\\')+'/').resolve()
@@ -20,24 +29,24 @@ def main():
         if choice=='1':
             args+=['--clip','yoshi' if input('Sonido: 1 Yoshi / 2 ejemplo generado [1]: ').strip()!='2' else 'ejemplo']
             print('Si ya tienes una selección de sonido, se conserva.')
-        else:args+=['--entry',input('Nombre exacto de la entrada Hack [Sistema Hack]: ').strip() or 'Sistema Hack']
+        else:args+=['--entry',choose_entry(sd,'emuMMC')]
         run(args)
         if input('Escribe INSTALAR para aplicar este plan con copia de seguridad: ').strip()=='INSTALAR':
             run([*args,'--apply','--backup-dir',backup])
         return
     bt=ROOT/'components/bluetooth-sync'
-    original=input('Nombre de la entrada Original [Sistema Original]: ').strip() or 'Sistema Original'
-    hack=input('Nombre de la entrada Hack [Sistema Hack]: ').strip() or 'Sistema Hack'
-    profile=input('Firmware del Sistema Original (solo 23.0.1): ').strip()
+    original=choose_entry(sd,'sysMMC')
+    hack=choose_entry(sd,'emuMMC')
+    profile=input('Firmware de sysMMC (solo 23.0.1): ').strip()
     print('Necesitas Python, devkitARM y WSL con gcc/make/python3. Puede tardar varios minutos.')
-    print('La base externa debe estar activada y creada al arrancar Hack una vez; consulta docs/BLUETOOTH.md.')
-    run(['prepare.py','--sd',sd,'--original',original,'--hack',hack,'--firmware-profile',profile],bt)
+    print('La base externa debe estar activada y creada al arrancar emuMMC una vez; consulta docs/BLUETOOTH.md.')
+    run(['prepare.py','--sd',sd,'--sysmmc',original,'--emummc',hack,'--firmware-profile',profile],bt)
     for command in (['build_payload.py'],['tests/test_portable.py'],['tests/test_result_paths.py'],['run_host_tests.py'],['audit_auto.py'],['deploy_portable.py','--sd',sd]):
         run(command,bt)
     print('Se añadirán cuatro archivos. El menú y la base actual se conservan. No se ejecuta la sincronización ahora.')
     if input('Escribe INSTALAR para guardar el respaldo privado e instalar el payload: ').strip()=='INSTALAR':
         run(['deploy_portable.py','--sd',sd,'--apply','--backup-dir',backup],bt)
-        print('Después: Hekate > Payloads > BT-Sync-Una-Vez.bin. Comprueba OK y la reconexión en Hack.')
+        print('Después: Hekate > Payloads > BT-Sync-Una-Vez.bin. Comprueba OK y la reconexión en emuMMC.')
 
 if __name__=='__main__':
     try:main()

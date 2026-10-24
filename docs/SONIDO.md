@@ -1,4 +1,4 @@
-# BootSound: sonido al entrar a Hack
+# BootSound: sonido al entrar a emuMMC
 
 ## Instalación sencilla
 
@@ -16,7 +16,7 @@ config/JheraldBootSound/yoshi_sound.wav  (o startup_example.wav)
 config/JheraldBootSound/config.ini
 ```
 
-El menú Original/Hack y `package3` se conservan. El sonido se reproduce al iniciar Atmosphère, cuando el servicio de audio esté disponible, y el módulo termina. No funciona en el Sistema Original sin CFW.
+El menú sysMMC/emuMMC y `package3` se conservan. El sonido se reproduce al iniciar Atmosphère, cuando el servicio de audio esté disponible, y el módulo termina. No funciona en el sysMMC sin CFW.
 
 BootSound es el nuevo nombre del módulo. Se conserva la carpeta histórica `config/JheraldBootSound/` y el identificador `42000000004A4253` para reutilizar las configuraciones y sonidos existentes. No hace falta mover ni renombrar tus archivos de audio.
 

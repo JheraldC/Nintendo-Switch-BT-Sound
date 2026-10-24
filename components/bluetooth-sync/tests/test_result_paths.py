@@ -77,7 +77,7 @@ int main(void){
  }
  gfx_con.mute=true;progress_stage=bar_right=0;show_progress(0,"Preparando...");
  assert(gfx_con.mute&&progress_stage==0&&!strcmp(label,"Preparando..."));checks++;
- show_progress(3,"Leyendo Original...");assert(progress_stage==3&&bar_right==401+476*3/7);checks++;
+ show_progress(3,"Leyendo sysMMC...");assert(progress_stage==3&&bar_right==401+476*3/7);checks++;
  unsigned saved_right=bar_right;show_progress(2,"No retroceder");assert(progress_stage==3&&bar_right==saved_right);checks++;
  show_progress(100,"Finalizando...");assert(progress_stage==7&&bar_right==877);checks++;
  screen_ready=false;progress_stage=0;show_progress(1,"No dibujar");assert(progress_stage==0);screen_ready=true;checks++;

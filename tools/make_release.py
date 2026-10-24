@@ -1,6 +1,6 @@
 """Empaqueta solo archivos registrados en Git. Nunca agrega output ni claves."""
 from pathlib import Path
-import argparse, hashlib, io, json, subprocess, tarfile, zipfile
+import argparse, hashlib, io, json, re, subprocess, tarfile, zipfile
 
 ROOT=Path(__file__).resolve().parents[1]
 FORBIDDEN={'prod.keys','title.keys','bluetooth_devices.db','history.bin','history.next','history.prev','transaction.bin','auto_binding.h','source-pairings.bts','hack-pairings.bth'}
@@ -27,7 +27,9 @@ def main():
     if set(entries)!=names:raise ValueError('El índice y el commit no contienen los mismos archivos')
     hashes={name:hashlib.sha256(data).hexdigest() for name,data in entries.items()}
     entries['SHA256-MANIFEST.json']=(json.dumps(hashes,indent=2)+'\n').encode()
-    out.parent.mkdir(parents=True,exist_ok=True);prefix='Nintendo-Switch-BT-Sound-v1.0.4/'
+    version=entries['VERSION'].decode('utf-8').strip()
+    if not re.fullmatch(r'\d+\.\d+\.\d+',version):raise ValueError('Versión del proyecto no válida')
+    out.parent.mkdir(parents=True,exist_ok=True);prefix='Nintendo-Switch-BT-Sound-v'+version+'/'
     with zipfile.ZipFile(out,'x',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
         for name,data in entries.items():z.writestr(prefix+name,data)
     with zipfile.ZipFile(out) as z:

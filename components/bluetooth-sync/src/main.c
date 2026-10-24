@@ -29,7 +29,7 @@ static unsigned progress_stage;
 static void show_progress(unsigned step,const char *label);
 void btd_status(const char *stage,int result){
     if(result>0&&!first_error)first_error=result;
-    if(screen_ready&&result==0&&!strcmp(stage,"NAND_INIT"))show_progress(3,"Leyendo Original...");
+    if(screen_ready&&result==0&&!strcmp(stage,"NAND_INIT"))show_progress(3,"Leyendo sysMMC...");
     if(screen_ready&&result==0&&!strcmp(stage,"CORE_READER"))show_progress(4,"Leyendo mandos...");
 }
 void btd_number(const char *label,u32 value){(void)label;(void)value;}
@@ -64,7 +64,7 @@ static int synchronize(void){
     size_t old_db_size=0,new_db_size=0,old_state_size=0,new_state_size=0;int boot_hack=0,completed=0;
     BtoTegraReader context={0};BsrError error={0};BtdBtSummary summary={0};BtaStats stats={0};
     if(!source||!destination||!merged||!before||!after||!old_db||!new_db||!old_state||!new_state){gfx_printf("Memoria insuficiente. Se vuelve a Hekate.\n");goto done;}
-    if(!bta_platform_guards()){gfx_printf("Configuracion cambiada. Sincronizacion suspendida.\nSe vuelve a Hekate sin modificar Original.\n");goto done;}
+    if(!bta_platform_guards()){gfx_printf("Configuracion cambiada. Sincronizacion suspendida.\nSe vuelve a Hekate sin modificar sysMMC.\n");goto done;}
     if(!bta_recover(io,bta_config_hash)){gfx_printf("No se pudo validar/recuperar la base SD.\nSe conserva la informacion para revisar.\n");goto done;}
     show_progress(2,"Leyendo datos actuales...");
     if(io->read(io->context,BTA_DB,old_db,BTA_DB_MAX,&old_db_size)!=1||!bta_database_decode(old_db,old_db_size,destination)
@@ -72,14 +72,14 @@ static int synchronize(void){
         gfx_printf("Lista o historial no valido. Se vuelve a Hekate.\n");goto done;
     }
     boot_hack=1; /* An already validated last-known database is available. */
-    show_progress(3,"Leyendo Original...");
+    show_progress(3,"Leyendo sysMMC...");
     BsrResult result=bto_tegra_open_from_sd(&context,&error);
     if(result==BSR_OK){show_progress(4,"Leyendo mandos...");result=btd_bt_collect(context.reader,&summary,source);}
     bto_tegra_close(&context);disconnectMMC();se_aes_key_clear(4);se_aes_key_clear(5);se_aes_key_clear(10);
-    if(result!=BSR_OK){gfx_printf("Lectura no completada (%d).\nSe mantiene la lista de Hack: %d registros.\n",(u32)result,(u32)destination->count);goto done;}
+    if(result!=BSR_OK){gfx_printf("Lectura no completada (%d).\nSe mantiene la lista de emuMMC: %d registros.\n",(u32)result,(u32)destination->count);goto done;}
     show_progress(5,"Comparando mandos...");
     if(!bta_merge(destination,source,before,merged,after,&stats)){
-        gfx_printf("Sincronizacion aplazada: limite de mandos.\nSe mantiene la lista de Hack: %d registros.\n",(u32)destination->count);goto done;
+        gfx_printf("Sincronizacion aplazada: limite de mandos.\nSe mantiene la lista de emuMMC: %d registros.\n",(u32)destination->count);goto done;
     }
     if(!stats.database_changed&&!stats.history_changed){completed=1;goto done;}
     if(!bta_database_encode(merged,new_db,BTA_DB_MAX,&new_db_size)||!bta_state_encode(after,bta_config_hash,new_state,BTA_STATE_MAX,&new_state_size)){
@@ -88,7 +88,7 @@ static int synchronize(void){
     show_progress(6,"Guardando cambios...");
     if(!bta_transaction(io,bta_config_hash,old_db,old_db_size,old_state,old_state_size,new_db,new_db_size,new_state,new_state_size)){
         boot_hack=bta_recover(io,bta_config_hash)?1:0;
-        gfx_printf(boot_hack?"Actualizacion incompleta recuperada.\nAbre este payload otra vez para reintentar.\n":"Actualizacion incompleta. Se vuelve a Hekate.\nNo se modifica la NAND original.\n");goto done;
+        gfx_printf(boot_hack?"Actualizacion incompleta recuperada.\nAbre este payload otra vez para reintentar.\n":"Actualizacion incompleta. Se vuelve a Hekate.\nNo se modifica la NAND sysMMC.\n");goto done;
     }
     completed=1;
  done:

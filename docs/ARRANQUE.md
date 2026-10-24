@@ -10,7 +10,7 @@ Hay tres mecanismos independientes. Cambiar uno no garantiza que se muestre en t
 
 ## Logo listo para Hekate
 
-Abre `instalar.cmd`, elige **2** e indica el nombre de la entrada Hack. El plan copia `bootloader/res/jherald_bootlogo.bmp` y configura `logopath=` solo en esa entrada, conservando su nombre y las otras opciones. No activa el arranque automático ni agrega entradas. El respaldo permite revertirlo.
+Abre `instalar.cmd`, elige **2** e indica el nombre de la entrada emuMMC. El plan copia `bootloader/res/jherald_bootlogo.bmp` y configura `logopath=` solo en esa entrada, conservando su nombre y las otras opciones. No activa el arranque automático ni agrega entradas. El respaldo permite revertirlo.
 
 **Este logo se usa en la ruta de autoboot de Hekate con tiempo de espera. Entrar manualmente desde Nyx/Launch puede omitirlo.** Por eso no promete replicar la pantalla interna de Atmosphère en todos los arranques. Si tu consola ya muestra el splash que quieres, conserva tu `package3`.
 

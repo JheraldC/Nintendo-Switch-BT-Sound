@@ -41,7 +41,7 @@
   },
   {
     "path": "src/main.c",
-    "sha256": "00eb5ca7487ce67b10a56d0df2c5841eaa711f53720d5e931071b204acd26742"
+    "sha256": "d1f2e8fcb06d2238760676bbe9707ed25262fb466261a73d02509ee3d7bce032"
   },
   {
     "path": "src/nand_policy.c",
