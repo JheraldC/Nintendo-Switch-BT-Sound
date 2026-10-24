@@ -27,7 +27,7 @@ def main():
     if set(entries)!=names:raise ValueError('El índice y el commit no contienen los mismos archivos')
     hashes={name:hashlib.sha256(data).hexdigest() for name,data in entries.items()}
     entries['SHA256-MANIFEST.json']=(json.dumps(hashes,indent=2)+'\n').encode()
-    out.parent.mkdir(parents=True,exist_ok=True);prefix='Nintendo-Switch-BT-Sound-v1.0.3/'
+    out.parent.mkdir(parents=True,exist_ok=True);prefix='Nintendo-Switch-BT-Sound-v1.0.4/'
     with zipfile.ZipFile(out,'x',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
         for name,data in entries.items():z.writestr(prefix+name,data)
     with zipfile.ZipFile(out) as z:

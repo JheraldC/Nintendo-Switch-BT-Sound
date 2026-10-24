@@ -1,5 +1,9 @@
 # Cambios
 
+## 1.0.4 — 2026-10-23
+
+- Conservar los acentos de los mensajes del instalador en el paquete de BootSound.
+
 ## 1.0.3 — 2026-10-23
 
 - Renombrar el módulo de audio a BootSound 0.4.1, sus fuentes, descriptor, archivo de compilación e imagen generada.

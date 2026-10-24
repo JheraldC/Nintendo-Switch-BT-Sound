@@ -12,7 +12,7 @@ Sonido, imágenes de arranque y sincronización manual de Pro Controller/Joy-Con
 
 ## Empezar en Windows
 
-1. Descarga **Nintendo-Switch-BT-Sound-v1.0.3.zip** desde [Releases](https://github.com/JheraldC/Nintendo-Switch-BT-Sound/releases/latest) y extráelo completamente en el PC.
+1. Descarga **Nintendo-Switch-BT-Sound-v1.0.4.zip** desde [Releases](https://github.com/JheraldC/Nintendo-Switch-BT-Sound/releases/latest) y extráelo completamente en el PC.
 2. Instala [Python 3.11 o posterior](https://www.python.org/downloads/windows/) si no lo tienes.
 3. Conecta una SD que ya arranque correctamente con Hekate, Atmosphère y emuMMC.
 4. Abre **instalar.cmd**, elige el componente y la letra de la SD. Primero se muestra el plan; solo se instala si escribes `INSTALAR`.

@@ -1,7 +1,7 @@
 {
   "component": "BootSound",
   "version": "0.4.1",
-  "collection_version": "1.0.3",
+  "collection_version": "1.0.4",
   "bytes": 90177,
   "sha256": "8b995212658bd8dae1526525b0b8022a728b423c233c7809a88482fc50f5f019",
   "npdm_name": "BootSound",
