@@ -1,5 +1,10 @@
 # Cambios
 
+## 1.0.2 — 2026-10-23
+
+- Nuevo título: Nintendo Switch · BT & Beats — Sonido y controles.
+- Nombre del repositorio, descripción, asistente y descarga centrados en Bluetooth y sonido.
+
 ## 1.0.1 — 2026-10-23
 
 - Nuevo nombre: Nintendo Switch Tools · Boot & Sync.
