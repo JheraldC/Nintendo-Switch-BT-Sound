@@ -48,6 +48,6 @@ export DEVKITPRO=/c/devkitPro
 make
 ```
 
-En Linux el valor habitual es `/opt/devkitpro`. El resultado `BootSound.nsp` se instala como `exefs.nsp`. El descriptor es `BootSound.json`. La versión 0.4.1 fue recompilada para este cambio de nombre y comprobada en PC; su prueba física específica está pendiente.
+En Linux el valor habitual es `/opt/devkitpro`. El resultado `BootSound.nsp` se instala como `exefs.nsp`. El descriptor es `BootSound.json`.
 
 El código conserva MIT. El clip Yoshi tiene [condiciones separadas](../LICENSES.md); el ejemplo es generado por `scripts/generate_example_startup.py`.

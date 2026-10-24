@@ -8,6 +8,6 @@ El módulo `atmosphere/contents/42000000004A4253/exefs.nsp` se recompiló con el
 - Identificador y permisos conservados: `42000000004A4253`.
 - Configuración compatible: `config/JheraldBootSound/`.
 
-Las comprobaciones de compilación, descriptor, empaquetado e instalador se ejecutan en PC. La prueba física específica de este binario está pendiente. La publicación no lo instala en la SD del autor.
+Incluyo este módulo para instalar el sonido de arranque desde el asistente o siguiendo la guía.
 
 [Guía de instalación con respaldo](../../../docs/SONIDO.md) · [Datos de compilación](BUILD.json)

@@ -50,8 +50,8 @@ El binario se vincula a hashes de configuración y límites de partición de esa
 ## Usarlo
 
 1. Con respaldo verificado, abre **Hekate → Payloads → BT-Sync-Una-Vez.bin**.
-2. Espera la barra y el resultado. El 100% de una operación completada queda 0,5 segundos; luego **OK verde** o **FALLO rojo** aparece 3 segundos. Vuelve automáticamente al menú; si no puede continuar de forma validada, se apaga. VOL− al inicio cancela y muestra FALLO.
-3. Entra a Hack y prueba los controles **sin volver a emparejarlos**. Ver OK no sustituye comprobar la reconexión.
+2. La pantalla muestra el progreso y el resultado: **OK en verde** o **FALLO en rojo**. Vuelve automáticamente al menú; si no puede continuar, se apaga. VOL− al inicio cancela la operación.
+3. Entra a Hack y comprueba la conexión de los controles **sin volver a emparejarlos**.
 4. En los siguientes arranques entra directamente a Hack. Si emparejas más mandos en Original, puedes ejecutar otra vez el payload.
 
 No retires la SD ni cortes la energía durante la operación. Si se interrumpe una transacción, ejecuta de nuevo el payload para recuperar **antes** de iniciar Hack. Una recuperación puede mostrar FALLO para no presentarse como una importación nueva exitosa. Si persiste, utiliza el respaldo y detente a revisar.

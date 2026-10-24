@@ -1,14 +1,14 @@
 # Nintendo Switch · BT & Beats — Sonido y controles
 
-**Ponle sonido al inicio de Hack, personaliza las imágenes de arranque y sincroniza tus Pro Controller y Joy-Con compatibles de Original a Hack en la misma consola.**
+**Creé este proyecto para personalizar el sonido y las imágenes de arranque de mi Nintendo Switch y sincronizar mis Pro Controller y Joy-Con compatibles de Original a Hack.**
 
 El sonido se reproduce al arrancar Hack. La sincronización Bluetooth se ejecuta cuando abres el payload desde Hekate. Puedes instalar cada función por separado en tu Nintendo Switch con Atmosphère y emuMMC.
 
 | Componente | Para qué sirve | Instalación |
 |---|---|---|
-| **Sonido de arranque** | Reproduce un WAV al entrar a Hack y después termina. Incluye el sonido Yoshi usado en la SD del autor y un ejemplo generado. | [Guía de sonido](docs/SONIDO.md) |
-| **Arranque e imágenes** | Incluye los diseños, un logo listo para Hekate y herramientas para preparar splashes de Atmosphère. | [Guía de imágenes](docs/ARRANQUE.md) |
-| **Sincronización de controles** | Importa los Pro Controller/Joy-Con compatibles de Original a la base externa de Hack de **la misma consola**, cuando abres el payload. | [Guía Bluetooth](docs/BLUETOOTH.md) |
+| **Sonido de arranque** | Reproducir un sonido al entrar a Hack. Incluyo el sonido Yoshi que uso y un ejemplo generado. | [Guía de sonido](docs/SONIDO.md) |
+| **Arranque e imágenes** | Personalizar las pantallas de arranque con diseños, un logo para Hekate y herramientas para Atmosphère. | [Guía de imágenes](docs/ARRANQUE.md) |
+| **Sincronización de controles** | Importar los Pro Controller/Joy-Con compatibles de Original a Hack en **la misma consola**, al abrir el payload. | [Guía Bluetooth](docs/BLUETOOTH.md) |
 
 ## Empezar
 
@@ -22,18 +22,15 @@ El sonido y el logo de Hekate incluyen archivos preparados para instalar. **La s
 
 ## Cómo funciona el payload Bluetooth
 
-Abre **Hekate → Payloads → BT-Sync-Una-Vez.bin**. Aparecen “Cargando...”, la etapa y una barra de progreso. Al completarse correctamente, el 100% permanece **0,5 segundos**. Después muestra **OK verde** o **FALLO rojo** durante **3 segundos** y vuelve al menú de Hekate. Si no puede volver de forma validada, se apaga.
+Abre **Hekate → Payloads → BT-Sync-Una-Vez.bin** para sincronizar los controles. La pantalla muestra el progreso y el resultado: **OK en verde** o **FALLO en rojo**. Al terminar, vuelve automáticamente al menú de Hekate.
 
-Luego entra normalmente a **Sistema Hack**. El sincronizador no se ejecuta en cada arranque y conserva las entradas Original/Hack. “Una vez” significa una ejecución manual: puedes volver a abrir el payload si emparejas más controles en Original. El sonido sí se reproduce una vez **por arranque de Hack**.
+Después entra en **Sistema Hack**. Puedes volver a ejecutar el payload cuando quieras importar controles que hayas emparejado en Original.
 
-## Compatibilidad y comprobaciones
+## Requisitos
 
-- Bluetooth se limita al perfil analizado de **Original 23.0.1**, SD **FAT32**, emuMMC habilitada, base Bluetooth externa existente y **Hekate 6.5.4 exacto**. No asumas compatibilidad con otras versiones o modelos sin verificarla.
-- Cada consola utiliza sus propias claves locales. **Nunca compartas `prod.keys`, la base Bluetooth, el historial ni un payload generado para otra SD.**
-- El autor comprobó físicamente el resultado OK y la pantalla de progreso del payload. La pausa final de 0,5 segundos tiene comprobación automática de código; no se documenta una nueva prueba física específica de esa pausa.
-- BootSound 0.4.1 se recompiló con el nuevo nombre y pasó sus comprobaciones de PC. Se conserva la configuración de las instalaciones anteriores; la prueba física específica de esta edición está pendiente.
-- [Verificación de esta publicación](docs/VERIFICACION.md), [reversión](docs/REVERSION.md) y [licencias y créditos](LICENSES.md).
+- Para Bluetooth: **Original 23.0.1**, SD **FAT32**, emuMMC habilitada, base Bluetooth externa existente y **Hekate 6.5.4 exacto**.
+- Cada consola necesita sus propias claves locales y un payload preparado para su SD.
 
-No se incluyen claves, datos de emparejamiento reales, copias NAND, juegos ni un `package3` completo. Las imágenes y clips conservan los derechos de sus respectivos titulares; su inclusión no los convierte en contenido MIT/GPL.
+[Reversión](docs/REVERSION.md) · [Licencias y créditos](LICENSES.md)
 
 ![Diseño original de BootSound](components/bootsplash/images/BootSound_splash.png)

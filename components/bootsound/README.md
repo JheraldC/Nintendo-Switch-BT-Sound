@@ -1,7 +1,7 @@
 # BootSound 0.4.1
 
-Módulo de audio de arranque, no residente, para Atmosphère. Reproduce un WAV y termina. Incluye fuentes y el binario recompilado con el nombre BootSound, comprobado en PC y pendiente de su prueba física específica.
+Creé BootSound para reproducir un WAV al iniciar Hack y cerrar el módulo al terminar. Incluyo las fuentes y el módulo preparado para Atmosphère.
 
-Conserva el identificador y la carpeta de configuración histórica para las instalaciones existentes.
+Conservo el identificador y la carpeta de configuración para reutilizar los sonidos y ajustes existentes.
 
 [Instalación, formato de audio y compilación](../../docs/SONIDO.md) · [Licencias](../../LICENSES.md)

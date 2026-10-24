@@ -24,7 +24,7 @@
 
 - Primera colección pública: JheraldBootSound, diseños/herramientas de splash y BT Sync manual.
 - Asistente Windows con revisión previa, respaldo fuera de la SD y comprobación de los archivos instalados.
-- Fuentes Bluetooth con progreso, 500 ms de pausa en 100%, resultado OK/FALLO por 3 s y regreso automático a Hekate.
+- Fuentes Bluetooth con progreso, resultado OK/FALLO y regreso automático a Hekate.
 - Instalación Bluetooth preparada por consola; no se distribuyen bindings, binarios privados ni datos de emparejamiento.
 - Conversores de splash con límites de dimensiones/alfa y guía que distingue las tres pantallas.
 - Herramienta local de splash temprano que comprueba firma, región de cambios y píxeles.

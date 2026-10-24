@@ -7,6 +7,6 @@
 - **Herramientas de splash**: MIT salvo los avisos específicos incluidos. `tools/package3/blz.py` conserva la licencia ISC de su implementación de origen. Las notas explican el formato de Atmosphère y no transfieren derechos sobre sus marcas.
 - **Asistente, herramientas nuevas y documentación original de esta colección**: MIT, texto en `LICENSE`.
 - **Audio de ejemplo generado**: creado mediante `components/bootsound/scripts/generate_example_startup.py`, incluido con el software MIT.
-- **Yoshi, Mario y otros personajes, imágenes y sonidos de terceros**: pertenecen a sus respectivos titulares. Los archivos de personalización aportados por el autor se incluyen a petición suya, sin afirmar que estén bajo MIT/GPL ni conceder una licencia de terceros. Debes contar con los permisos aplicables para reutilizarlos o redistribuirlos. Puedes usar tu propio material o el ejemplo generado.
+- **Yoshi, Mario y otros personajes, imágenes y sonidos de terceros**: pertenecen a sus respectivos titulares. Incluyo estos archivos para personalizar mi consola, sin afirmar que estén bajo MIT/GPL ni conceder una licencia de terceros. Debes contar con los permisos aplicables para reutilizarlos o redistribuirlos. Puedes usar tu propio material o el ejemplo generado.
 
 La licencia del código no se extiende a los clips, personajes, marcas o imágenes de terceros. No hay afiliación con Nintendo, Atmosphère, Hekate, devkitPro o TegraExplorer.
