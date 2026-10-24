@@ -1,7 +1,7 @@
 # Phase 5.7 — surgical `package3` repacking (replace one KIP, not the whole build)
 
-**Status: Tooling built and verified locally against a real, hardware-tested `package3`.
-Nothing installed on any SD card.** This is a third approach to customizing the second
+Status: Tooling built and verified locally against a real, hardware-tested `package3`.
+Nothing installed on any SD card. This is a third approach to customizing the second
 splash (see [`13-atmosphere-boot-splash.md`](13-atmosphere-boot-splash.md)) — instead of
 rebuilding all of Atmosphère from source just to change one KIP, patch the one component that
 actually changed directly inside an existing, working `package3`.
@@ -21,7 +21,7 @@ is both faster and safer than re-deriving them from source and hoping the rebuil
 by reading Atmosphère's own `fusee/build_package3.py` (not copied — this is an independent
 implementation of a documented data layout): a header up to `0x800` containing content
 metadata (offset/size/type per component) and per-KIP metadata (program ID/offset/size/SHA-256
-hash), a **fixed 0x300000-byte KIP region** starting at `0x100000` holding `emummc` plus seven
+hash), a fixed 0x300000-byte KIP region starting at `0x100000` holding `emummc` plus seven
 system KIPs in a known order, and everything else (early splash, `fusee`, `rebootstub`) as
 fixed regions the repacker never touches.
 
@@ -36,7 +36,7 @@ python replace_boot_kip.py package3.base my_custom.kip package3.custom
 - Extracts every component from the region unchanged, substitutes only the one KIP you're
   replacing, and reconstructs the region with the exact same `0x10`-byte alignment (`0xCC`
   padding) the official builder uses.
-- Patches **only** the header entries that actually changed (the replaced KIP's size, and the
+- Patches only the header entries that actually changed (the replaced KIP's size, and the
   offset of anything after it that got pushed forward) — every other byte of the header, and
   every byte outside the KIP region, is copied verbatim from the source `package3`.
 
@@ -56,7 +56,7 @@ ended up in the binary — extract it back out of the actual compressed KIP and 
 
 KIP segments (`.text`/`.rodata`/`.data`) are optionally BLZ-compressed (a Nintendo-specific
 "backward LZ" scheme). `tools/package3/blz.py` implements the decompressor — not invented, and
-specifically **not** based on the reference decoder in `switch-tools`' own `blz.c`, because that
+specifically not based on the reference decoder in `switch-tools`' own `blz.c`, because that
 function is entirely commented out and never actually called anywhere in that codebase (checked
 directly — zero real call sites). Instead it's a faithful Python 3 port of
 `kip1_blz_decompress()` from Atmosphère's own `utilities/nxo64.py` — a function that *is*

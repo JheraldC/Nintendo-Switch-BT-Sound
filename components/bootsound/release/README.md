@@ -2,7 +2,6 @@
 
 Incluyo el módulo `atmosphere/contents/42000000004A4253/exefs.nsp` para reproducir un sonido al iniciar emuMMC.
 
-- Versión del proyecto y del componente: **1.0.0**.
 - Tamaño: 90178 bytes.
 - SHA-256: `7fdc7c9f0d2b3ff053ce813fd541cfdf024065d290d6c051743ec51c650b955b`.
 - Nombre del programa: `BootSound`.

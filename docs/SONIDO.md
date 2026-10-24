@@ -4,7 +4,7 @@
 
 Para usar el asistente en Windows necesitas [Python 3.11 o posterior](https://www.python.org/downloads/windows/). Extrae por completo el ZIP antes de abrirlo.
 
-Ejecuta `instalar.cmd`, elige **1**, indica la letra de tu SD y selecciona Yoshi o el ejemplo generado. Revisa los archivos y escribe `INSTALAR`. El asistente agrega el módulo y guarda una copia de cualquier archivo reemplazado fuera de la SD. Una selección de sonido que ya exista se conserva.
+Ejecuta `instalar.cmd`, elige 1, indica la letra de tu SD y selecciona Yoshi o el ejemplo generado. Revisa los archivos y escribe `INSTALAR`. El asistente agrega el módulo y guarda una copia de cualquier archivo reemplazado fuera de la SD. Una selección de sonido que ya exista se conserva.
 
 En una instalación nueva se copian:
 
@@ -28,7 +28,7 @@ Guarda tu WAV dentro de `config/JheraldBootSound/` y selecciona su nombre en `co
 audio_file=mi_sonido.wav
 ```
 
-Solo se acepta un nombre de archivo, sin carpetas. Formato: **WAV PCM, estéreo, 48000 Hz, 16 bits**, máximo **2 MiB de datos PCM** (aproximadamente 10,9 segundos). Si la selección falla, el módulo intenta `startup.wav`; si tampoco es válido, termina sin reproducir sonido. El volumen depende del sistema; `volume`, `enabled` y `timeout_ms` no son opciones implementadas.
+Solo se acepta un nombre de archivo, sin carpetas. Formato: WAV PCM, estéreo, 48000 Hz, 16 bits, máximo 2 MiB de datos PCM (aproximadamente 10,9 segundos). Si la selección falla, el módulo intenta `startup.wav`; si tampoco es válido, termina sin reproducir sonido. El volumen depende del sistema; `volume`, `enabled` y `timeout_ms` no son opciones implementadas.
 
 Para cambiar explícitamente una configuración ya existente desde PC:
 
@@ -41,7 +41,7 @@ La primera instrucción solo muestra el plan. Sustituye `E:` y el respaldo por t
 
 ## Compilar las fuentes
 
-Instala devkitPro, **devkitA64**, **libnx** y **switch-tools**. Abre la terminal MSYS2 de devkitPro y ejecuta dentro de `components/bootsound`:
+Instala devkitPro, devkitA64, libnx y switch-tools. Abre la terminal MSYS2 de devkitPro y ejecuta dentro de `components/bootsound`:
 
 ```sh
 export DEVKITPRO=/c/devkitPro

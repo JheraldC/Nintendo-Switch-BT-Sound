@@ -1,17 +1,17 @@
 # Phase 5.0 — custom Atmosphère boot splash
 
-**Status: Generated and verified locally. `SD:/atmosphere/package3` NOT modified.** This is
+Status: Generated and verified locally. `SD:/atmosphere/package3` NOT modified. This is
 completely independent of the `JheraldBootSound` sysmodule itself — `0.4.0-fase4.0` is
 unchanged by this phase (no NPDM, Program ID, SAC, or binary changes).
 
 ## Two different splashes — don't confuse them
 
-Atmosphère has **two** unrelated splash mechanisms:
+Atmosphère has two unrelated splash mechanisms:
 
-- **(A) The official `package3` splash** — a 1280×720 image, officially supported and inserted
-  via `insert_splash_screen.py`. **This is what this phase covers.**
-- **(B) The `boot` sysmodule's own splash** (a smaller, different logo shown for roughly 2
-  seconds early in boot) — a separate mechanism, **not touched by this phase**. If the
+- (A) The official `package3` splash — a 1280×720 image, officially supported and inserted
+  via `insert_splash_screen.py`. This is what this phase covers.
+- (B) The `boot` sysmodule's own splash (a smaller, different logo shown for roughly 2
+  seconds early in boot) — a separate mechanism, not touched by this phase. If the
   `package3` splash turns out to disappear before `JheraldBootSound`'s own audio starts, that
   second mechanism is a candidate for a future, separate phase — not assumed or promised here.
 
@@ -23,12 +23,12 @@ Atmosphère version this project targets — see the "Tested compatibility" sect
 
 - Takes a PNG and a `package3` file.
 - If the PNG is 1280×720 (landscape), it's rotated 90° internally — the console's own splash
-  buffer is stored in **portrait orientation, 720×1280**.
+  buffer is stored in portrait orientation, 720×1280.
 - Converted to a raw BGRA buffer, one row per output line, with padding to match the buffer's
   internal stride. Total: exactly `0x3C0000` bytes.
 - Validates the `package3` magic (`PK31`) and total size (`0x800000` = 8 MiB) before writing.
 - Writes back: `package3[:0x400000]` (unchanged) + the converted splash + `package3[0x7C0000:]`
-  (unchanged). **The splash occupies exactly the byte range `0x400000`–`0x7BFFFF`** — nothing
+  (unchanged). The splash occupies exactly the byte range `0x400000`–`0x7BFFFF` — nothing
   outside that range is ever touched.
 
 ## Generic workflow
@@ -46,7 +46,7 @@ Atmosphère version this project targets — see the "Tested compatibility" sect
 5. Only after verification: copy the patched file back to SD:/atmosphere/package3.
 ```
 
-**Never replace your own `package3` with someone else's / an official download.** Your
+Never replace your own `package3` with someone else's / an official download. Your
 installation may carry environment-specific differences — always patch a copy of *your own*
 `package3`, taken from your own SD card.
 
@@ -58,7 +58,7 @@ are shared here.
 
 `assets/splash/JheraldBootSound_splash.png` — 1280×720, generated from scratch with
 `scripts/generate_splash.py` (Pillow + a font already installed on the machine that generates
-it — **no font files are bundled in this repository**). Minimalist dark design: a near-black
+it — no font files are bundled in this repository). Minimalist dark design: a near-black
 background, a very subtle violet glow, the project name, and a small subtitle. No Nintendo
 branding, no Atmosphère branding, no copied assets — an original, replaceable placeholder. Feel
 free to regenerate it with your own text/colors, or replace it with your own artwork entirely
@@ -73,8 +73,8 @@ start each one from the same untouched backup), run the binary-range and roundtr
 each, and only then copy your final choice to the SD card. This project's own development used
 exactly that process to compare multiple candidates locally.
 
-**One thing worth saying explicitly: don't use official game artwork, logos, or other
-copyrighted/trademarked material you don't have rights to** — even for a splash that only you
+One thing worth saying explicitly: don't use official game artwork, logos, or other
+copyrighted/trademarked material you don't have rights to — even for a splash that only you
 will see, and especially never in anything you publish or share. This repository only ever
 ships its own original placeholder design for that reason; swap in your own artwork, not
 someone else's copyrighted work.
@@ -91,15 +91,15 @@ python scripts/verify_splash.py path/to/package3 preview.png
 ```
 
 `preview.png` should look identical to the image you passed to `insert_splash_screen.py`. This
-project's own verification of this exact process produced a **pixel-exact** roundtrip (no
+project's own verification of this exact process produced a pixel-exact roundtrip (no
 difference in any channel, any pixel) against the generated splash — confirming the insertion
 and extraction logic agree exactly with each other and with the official script's own layout.
 
 ## Timing — don't expect exact synchronization
 
 This is Atmosphère/fusée's own early splash mechanism, shown before `JheraldBootSound` (or any
-`boot2` content) ever runs. **This project makes no claim that the splash stays visible until
-`JheraldBootSound`'s audio begins.** Based on phase 3.3/4.0 hardware measurements, the audio
+`boot2` content) ever runs. This project makes no claim that the splash stays visible until
+`JheraldBootSound`'s audio begins. Based on phase 3.3/4.0 hardware measurements, the audio
 service typically becomes available roughly 1.6 seconds after `JheraldBootSound` starts, with
 playback beginning almost immediately after — but the actual visual relationship between the
 splash and the audio has not yet been confirmed on hardware for this phase, and depends on
@@ -108,7 +108,7 @@ hardware test of phase 5.0 will determine the real timing relationship, not a pr
 
 ## Updating Atmosphère
 
-**Atmosphère updates normally replace `package3` outright.** After updating Atmosphère, the
+Atmosphère updates normally replace `package3` outright. After updating Atmosphère, the
 custom splash is gone and must be re-applied to the new `package3` using the matching version
 of `insert_splash_screen.py` — treat this as a one-time customization per Atmosphère version,
 not something that survives updates automatically.
