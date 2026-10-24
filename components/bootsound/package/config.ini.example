@@ -1,0 +1,47 @@
+; config/JheraldBootSound/config.ini  (EJEMPLO - copia/renombra a config.ini)
+;
+; Todo es OPCIONAL. Si este archivo no existe, se usa el comportamiento por
+; defecto (reproducir startup.wav). Si algo esta mal escrito, el modulo usa
+; el valor por defecto para esa clave (nunca falla por esto).
+;
+; Formato: lineas "clave = valor" (espacios opcionales alrededor de '=').
+; Se ignoran: lineas vacias, comentarios que empiecen por '#' o ';',
+; cabeceras de seccion '[...]' (se aceptan mas abajo solo por comodidad
+; visual, no cambian nada), y cualquier clave no reconocida.
+
+[JheraldBootSound]
+
+; --------------------------------------------------------------------------
+; audio_file  (FASE 4.0 en adelante -- UNICA clave que el sysmodule lee hoy)
+; --------------------------------------------------------------------------
+; Nombre de archivo DENTRO de config/JheraldBootSound/ (nunca una ruta).
+; Permite tener varios WAV guardados a la vez y elegir cual se reproduce sin
+; recompilar nada, por ejemplo:
+;
+;   config/JheraldBootSound/startup.wav
+;   config/JheraldBootSound/my_other_sound.wav
+;
+; audio_file = my_other_sound.wav
+;
+; Reglas:
+;  - Si esta clave no aparece (o este archivo no existe): se usa startup.wav.
+;  - El valor NO puede contener '/', '\', ':', ni la secuencia "..", y debe
+;    medir menos de 128 caracteres -- cualquier otro caso se trata como
+;    invalido y se usa startup.wav en su lugar (ver docs/SONIDO.md en la raíz de la colección
+;    para el detalle completo de las reglas de seguridad).
+;  - Si el archivo indicado no existe o no se puede cargar, tambien se cae a
+;    startup.wav (siempre que startup.wav exista y sea valido).
+;  - Formato exigido igual que siempre: RIFF/WAVE, PCM, 48000 Hz, 16-bit,
+;    estereo, little-endian; tamano de PCM hasta 2 MiB (~10,9 s).
+;
+audio_file = startup.wav
+
+; --------------------------------------------------------------------------
+; Claves siguientes: TODAVIA NO IMPLEMENTADAS.
+; Si las escribes aqui, el parser las ignora silenciosamente (no dan error,
+; simplemente no hacen nada por ahora). Se documentan para dejar constancia
+; de hacia donde podria evolucionar config.ini, no como funcionalidad actual.
+; --------------------------------------------------------------------------
+; enabled = 1
+; volume = 0.7
+; timeout_ms = 9000

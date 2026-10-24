@@ -1,0 +1,1898 @@
+[
+  {
+    "path": "src/auto_boot.c",
+    "sha256": "43829c61fb1b57cd00dc86a023d3e88e9cfaf280f356deda65d49c87dc3ebe32"
+  },
+  {
+    "path": "src/auto_boot_config.c",
+    "sha256": "50679f69c93b2265d5cebcf72be9990e27d9d5d4da695db3f19a8c270daf12c3"
+  },
+  {
+    "path": "src/auto_platform.c",
+    "sha256": "c16b0731c86bbd6611df45ecec4bdbb18d1b30e0e9df2693d298ed197d304f7a"
+  },
+  {
+    "path": "src/auto_sync.c",
+    "sha256": "1016a796e304c865c76ce0759b2a1dd34965b67baaf2be0631e955340c3d1d32"
+  },
+  {
+    "path": "src/auto_transaction.c",
+    "sha256": "9f3aa0e8a8f260f747700c340ed9c5914880370edf5f174eb0ff50d26ba8c4bb"
+  },
+  {
+    "path": "src/bt_probe.c",
+    "sha256": "ad509493476d51f031a4db64bd7e26ff25aa5e9516c718ffd55ced1de278edd8"
+  },
+  {
+    "path": "src/diag_report.c",
+    "sha256": "0dda8dffd24d3e6cf7da2f5182872097893a5ecb00aa5742688c368e3bb91cd6"
+  },
+  {
+    "path": "src/header_probe.c",
+    "sha256": "4c2bd8ff91edaf3aab54037235fae71c563ffb3b9a77096d5ea102373820ce16"
+  },
+  {
+    "path": "src/ivfc_bridge.c",
+    "sha256": "201d2cbb28d664e194d7e4ebf7684c592746a2be4476edc7d21ff8b2165ddb59"
+  },
+  {
+    "path": "src/ivfc_salt.c",
+    "sha256": "6be58cdf6d3a5248c62fcb42ef37705d4af0ecd567ba8a92e73e5a733c12dfa4"
+  },
+  {
+    "path": "src/main.c",
+    "sha256": "00eb5ca7487ce67b10a56d0df2c5841eaa711f53720d5e931071b204acd26742"
+  },
+  {
+    "path": "src/nand_policy.c",
+    "sha256": "a34b405b28efd1e661380250f6b43716e4e400d25b7b4ee12de1c8cbed1ca611"
+  },
+  {
+    "path": "src/native_storage.c",
+    "sha256": "3ef580c8b5dea7a8a14aca1591aad27ad4efb671ec1b0a8ea1cd70a265a1eb9b"
+  },
+  {
+    "path": "src/save_filesystem.c",
+    "sha256": "cb635f7024623a07e2d33a1aadee03bea7b36fe1343a4090b7fad824c1bf443e"
+  },
+  {
+    "path": "src/transfer.c",
+    "sha256": "0fa56d4a659e9639eaf18a7b661b8f01d211686f932516ab424648bef99d63d2"
+  },
+  {
+    "path": "include/auto_boot_config.h",
+    "sha256": "39f402449cfc90a5da89285184ff187bf867b47ce8f93a75da317fc97bb72cdc"
+  },
+  {
+    "path": "include/auto_platform.h",
+    "sha256": "75762fb01236720d242cd7774f5802419eb2987058a538370fb7b540508e2b49"
+  },
+  {
+    "path": "include/auto_sync.h",
+    "sha256": "c952147ec65af17e539ee0e66d9ac7939dcce85a355341b6a547c69a9e39f1ea"
+  },
+  {
+    "path": "include/bt_probe.h",
+    "sha256": "12b46ed6b6cc383288622456e252f2e538bada39590056d5b5424771c678aa1f"
+  },
+  {
+    "path": "include/diag_native.h",
+    "sha256": "b3948df40d04185ebe3768f9ff840e38dd8652b8c981b5b70f491232a370f4a9"
+  },
+  {
+    "path": "include/diag_report.h",
+    "sha256": "3ebea3264e2ab9836aa31e5f802a038ea4dcad34cd26ceb79736a2846b934cb5"
+  },
+  {
+    "path": "include/header_probe.h",
+    "sha256": "c9cec9c99f5c53297679ac270ef830526f724c960d6df89cd7ea9651d5f641de"
+  },
+  {
+    "path": "include/ivfc_bridge.h",
+    "sha256": "29360d8a8eaebb96642b3df1ad834a5a5ee95770019541aa48738ec58af982ec"
+  },
+  {
+    "path": "include/nand_policy.h",
+    "sha256": "544ee799bb2203921e520267ffcce84f9e839c631d44535a1847d622a2455698"
+  },
+  {
+    "path": "include/origin_packet.h",
+    "sha256": "743fdf7112116673ecffc9a8bdeeee881c10fa4846e917322b41e9e445214c80"
+  },
+  {
+    "path": "include/sd_export.h",
+    "sha256": "ad1c8d49c24b948f97f32284ea4f7cd5931c307e7450b2a28e59effafef67517"
+  },
+  {
+    "path": "include/transfer.h",
+    "sha256": "fd48fd8399df90d0965e81295611dad10c27f0301fbc71a63d75f89f3e69e3fb"
+  },
+  {
+    "path": "module/include/bt_keys.h",
+    "sha256": "f4e687945f85ea159203aebc6836db80753a8b7e653c460990db09b8bba6c7d5"
+  },
+  {
+    "path": "module/include/bt_only.h",
+    "sha256": "e806a525489d06dab361590cb4148d4e53a8d9b5dab08abd3de795661bbade7e"
+  },
+  {
+    "path": "module/src/bt_keys.c",
+    "sha256": "92c18d1db313cf3ffb1ac55064da4eb5b0f59662525ea35829485cc17e883361"
+  },
+  {
+    "path": "module/src/bt_only.c",
+    "sha256": "65a16333615385fefa669f1e7b1f88e1a12a16aa03323e1205b1b3e48dcb8a6f"
+  },
+  {
+    "path": "module/tegra/io_denials.c",
+    "sha256": "f287f9c16c9c248e43c84fa45982025d87d4c96fc1659c39e94c6b59c928afe5"
+  },
+  {
+    "path": "module/tegra/tegra_keys.c",
+    "sha256": "02d1d4d4aa0fd8efa619f58fe0b2caba77021e76f50e6930418dfbe691e4ba58"
+  },
+  {
+    "path": "module/tegra/tegra_keys.h",
+    "sha256": "357946324ece46188f94a126de5e6d157acd96a35aacd96ea6d4d36f0054e78e"
+  },
+  {
+    "path": "module/tegra/tegra_platform.h",
+    "sha256": "56946213f24ab78f1d9df2679a2a7f10e73575eb306821243639632fae044ab4"
+  },
+  {
+    "path": "module/tegra/tegra_reader.c",
+    "sha256": "3d8848ab5345a6a6da8cde797b750b4aa5a64f314428535809476d9c078c9b43"
+  },
+  {
+    "path": "module/tegra/tegra_reader.h",
+    "sha256": "81cfcedac0f2dd261f65c3335891cbe031deb5173f435c4a9ab5eee9b30ed3bf"
+  },
+  {
+    "path": "module/tests/mock_tegra.h",
+    "sha256": "1f618653398c76fdb79926e26ba872a885fb42de7c30b44008fcf29b497184ca"
+  },
+  {
+    "path": "module/tests/test_bt_keys.c",
+    "sha256": "7d0aa2ecd00fd9feaf8be0e9b63d750bc5bd1372464cb48042a2f5a06f97ed76"
+  },
+  {
+    "path": "module/tests/test_bt_only.c",
+    "sha256": "db434c0ab4ebc05b489428bc7a3f739dd06a2d8b0be21dbdb216b120a3a2eede"
+  },
+  {
+    "path": "module/tests/test_tegra_adapter.c",
+    "sha256": "3e6cace6b4627e877e3ef4477eca4f09d72b641b6eefdc0a4204075b9def406e"
+  },
+  {
+    "path": "module/vendor/core/include/bt_save_reader.h",
+    "sha256": "3a8326f22d3fd6615ce3b8ceb3bf7abf6126c02ca9ba66d1a3b26fed48d8cfab"
+  },
+  {
+    "path": "module/vendor/core/src/filesystem.c",
+    "sha256": "180d07b30ba2d251a0d6ae335b0824eb0094ba20d874179d0c776973aa7def44"
+  },
+  {
+    "path": "module/vendor/core/src/integrity.c",
+    "sha256": "95097afee83feb8854d68f3bb1c92776dcdd032b563cb696cdc14b40aae0f147"
+  },
+  {
+    "path": "module/vendor/core/src/internal.h",
+    "sha256": "60573ebee81ca60cbac3afaca0c4feca0d904aeaaf344f8153ed569da20fd88e"
+  },
+  {
+    "path": "module/vendor/core/src/reader.c",
+    "sha256": "59e914638fb98d806efa6fe51e5892796d7a4805bc49e9c196f392118359845b"
+  },
+  {
+    "path": "module/vendor/core/src/sha256.c",
+    "sha256": "7ddbe446a200c59b3d4e935a7dc77492f583046229d2faa88bba076ed41f663f"
+  },
+  {
+    "path": "module/vendor/core/src/sha256.h",
+    "sha256": "0ea630135cc7bb54facce8862a5b3aebda7610aca95763a2bdc84d7bbd9b817b"
+  },
+  {
+    "path": "module/vendor/core/src/storage.c",
+    "sha256": "1f92f22a0f52d62c61a8c12aafda4b5190082dc2303bd9acdb2317660999c531"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/display/di.c",
+    "sha256": "624cdee68ee23f0b786d303d88bfb81ae446a0ece42e57f7fef0cfd38487ac45"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/display/di.h",
+    "sha256": "c6e3ea308f8671b429c914a752babba3e9f74e86860f4e63f84e5a6305e226d8"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/exception_handlers.S",
+    "sha256": "24ea20ba034f246591e89bf7e272f56842586b2e1b3e9f38d381c00cdbefc589"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/fatfs_cfg.h",
+    "sha256": "aba3ac4205d961c9d8ec2a4d59ba67948a41811c38462fda71a27ac9b26858ec"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/gfx_utils.h",
+    "sha256": "61ab6c7857737dd5c346ea1c918ce2b1838f2ef0bc2eadbd99bcb33d5ae7bee1"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/ianos/elfload/elf.h",
+    "sha256": "04404b80b2e29f92a21002ee61c1739af80bf40c395156897a0f9b8edf9158f1"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/ianos/elfload/elfarch.h",
+    "sha256": "1ad73e1fb9f9660c0220583c1943a6acf155fcad83159569e739e824dcf34792"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/ianos/elfload/elfload.c",
+    "sha256": "c3ac48e9d83480a0480aa7ed3dcc38c0670758bd5621d099f2c507462c6c8e74"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/ianos/elfload/elfload.h",
+    "sha256": "d70188dbe45ec2d2d04537f871ad16cc67851eb9b7134e37d59eca7ef2623850"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/ianos/elfload/elfreloc_aarch64.c",
+    "sha256": "28438c81085fa90aef4cc9558b9adfffa615e2b8f434b411dec6450b7d07647f"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/ianos/elfload/elfreloc_arm.c",
+    "sha256": "af1915b633b3f742303dd14f7e9cb4dd88b576204c725398e9fab2c38b99be3d"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/ianos/ianos.c",
+    "sha256": "29ab6ca8c6bbdbc670463baf060615939b3c187cb26f85e6f92cba3a4462f7c2"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/ianos/ianos.h",
+    "sha256": "def60b3bb1ddd7ec1dc7b3f6ff9eb813b722cbb6ef7dc88847cab0081fcdfcdf"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/input/als.c",
+    "sha256": "244a70695cf2c333ff7e523d094c6478758325750a97fbaec3f79a37c575769e"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/input/als.h",
+    "sha256": "35a986104cdc3b8b3b78ebbb150232e56e1902270553a5d16c1bfa160fd7385a"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/input/joycon.c",
+    "sha256": "46f394bac8793626da1bb18efa961bc8a08128b51a2fc1de9bcb8ebe96b57924"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/input/joycon.h",
+    "sha256": "514034f12e3acbdaf5352474cfdcebca402c50350210ec65cd0f8da0083f2a70"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/input/touch.c",
+    "sha256": "75872d681a51e432ebe178895c6fce1e94ad2db5f3bb965efb4230a45c4f9f35"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/input/touch.h",
+    "sha256": "5d4bbe1346108760e34110407e44b36fb8ce966eee0c9a791bbdb1ad1440ef79"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/compr/blz.c",
+    "sha256": "8b6106ad4cc3735f70d776e0360c69dec1d75015711fdaf5113fb05eab723984"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/compr/blz.h",
+    "sha256": "ad4a53082cf82fb437cf4c890ded9c28eed42ad6699069f2e0212ba53408f1ca"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/compr/lz.c",
+    "sha256": "858d754cd72d951c3e0d99c0aebb5fa88fd8237f63306ba453ee1db0666948e6"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/compr/lz.h",
+    "sha256": "d73cada049e0d73e9a7e9444a85ed244f4631d1012996be79d22de82e9b97672"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/compr/lz4.c",
+    "sha256": "cda32de19b9b770759f7137da81f852cecc082f4e0574d66f8a7f1060dc71ec2"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/compr/lz4.h",
+    "sha256": "357b807fa18f90af4d93e15056ea99811b503c80ba6f5250527bfc31e8ec702e"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/fatfs/diskio.h",
+    "sha256": "d4781ecbf8221f7d5177ab3749c0f634c757ba189e7fcf3f26c73f970659b0b2"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/fatfs/ff.c",
+    "sha256": "542eca3d468660bca9074a97c13de018948819325dcb7d36e4a531924d0c7a97"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/fatfs/ff.h",
+    "sha256": "3ac1ef58e20c2acbb4aaa010c6f5c9f21703567258711482581eef51df3c87c1"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/fatfs/ffunicode.c",
+    "sha256": "95d027eb07ccf9cd8767ae0944253d655c2247ba69da0255c9094e266b5c63a2"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lv_conf.h",
+    "sha256": "2a9d91af27a5d813281fbe0d950fb3605287de909635cb88acac85050a067ba3"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_core/lv_group.c",
+    "sha256": "fd35bba91d5af4d979102767b2d4eef1f21b9da0adbb13156cbf6931d0f3d4c9"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_core/lv_group.h",
+    "sha256": "78e8e219f8ac0b167424c602428803a14c1e50ebefb892b6c69f34cbca09f36c"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_core/lv_indev.c",
+    "sha256": "5e70a0d063605551dcbd0e32f99f8d9fe35b4c3caecead1b542930703065dc6e"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_core/lv_indev.h",
+    "sha256": "b0e6bc81e3ee92ac626125a7ce9254134dad6f352ab7e1f561f8ac66eb34150b"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_core/lv_lang.c",
+    "sha256": "a7e957ad753c935512eb69868ce1b0f9b69a7747f2e076ed0e92b7ee56f06499"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_core/lv_lang.h",
+    "sha256": "ad932ae28c1fd1a94e1802043f2cd4371fd45bbc3a96716177f420be94ca4fa2"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_core/lv_obj.c",
+    "sha256": "b3e6097d1631a2db45aa5f01cfb0dbfd403a34b047acf10ed0acec596101e1de"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_core/lv_obj.h",
+    "sha256": "8f2274da70097fdf859886d8f77c59ade9e95911bd68ce4d11d5bda74254ed94"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_core/lv_refr.c",
+    "sha256": "dc4cab2a02e2ff6f258db2b610684d1abe15020f04879a2c8d013f5a6a3443af"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_core/lv_refr.h",
+    "sha256": "9a1b7551356ba016ba69c80fbd57416a51d0024c17b9687bebe8a3b5ee42dba9"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_core/lv_style.c",
+    "sha256": "1143184a6e09f275ac070d06b3879a916ffad79498084c84ce09c50a3ddd56e2"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_core/lv_style.h",
+    "sha256": "339ffb9bc70e6bd33d7d43c9ea3b770953438a45aec2cbeeef33f24868903909"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_core/lv_vdb.c",
+    "sha256": "6dc035a0a2df87789a2fa49ace588da197bed353f4c95cd6d0e54a29851cfef0"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_core/lv_vdb.h",
+    "sha256": "45aa2421b6463f2f7300a8e5861aef2e6a7b18e3880427772a8cda2526ef05a1"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_draw/lv_draw.c",
+    "sha256": "7b1a68474f5c82e3b31a35972a0e29f56f9dd5a9e7451a6d83016b148b34515e"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_draw/lv_draw.h",
+    "sha256": "81dcc3c76c965e8fbc46da5eab1b6b87a31e780150ee5fa0b9482ac09083eca7"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_draw/lv_draw_arc.c",
+    "sha256": "803e133f56b68cff4c2fe4a5c27de172507a684a96a946ff45b015b23820525b"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_draw/lv_draw_arc.h",
+    "sha256": "c0798fc1c2bd26cfd08e9bdcd349449d492a6b3477717519fa8c132f8eead392"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_draw/lv_draw_img.c",
+    "sha256": "7aaeb895368e3f89e80673a0de255f6a5cc8071a7b5ffe4e74707850d0fd8a25"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_draw/lv_draw_img.h",
+    "sha256": "abab21e83d47c3206f4d03887a8360e99e9d218f12c37c186703ac140f6d289a"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_draw/lv_draw_label.c",
+    "sha256": "5d062a3dad0b9702d95d1e30c5d2d5944bdcce44eca2eeb37de84a5a5ded7601"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_draw/lv_draw_label.h",
+    "sha256": "b3e2ada165ae73cfdf260d3b74f701bf4d5a6e7909f7fbe7f64549094455e5bb"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_draw/lv_draw_line.c",
+    "sha256": "6565c918559b8219bdaec0e99c538c10f598e0b6d099ef3edf95680409234ea3"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_draw/lv_draw_line.h",
+    "sha256": "a8ff4de537c2c07c63b10b48d1515201958e5c5acc671e7447ee8ce7a9b08996"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_draw/lv_draw_rbasic.c",
+    "sha256": "52e82b5db4e3a261d921214b7bb011cac1f91149a3837dc0e7a45495bdc8ee1b"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_draw/lv_draw_rbasic.h",
+    "sha256": "cf03ce5b20e0c61ba6e65181b231ee9add1c47cbc99e61d34ab84a249ed09fb6"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_draw/lv_draw_rect.c",
+    "sha256": "45deb3428632c1b8b3239dce2a5b8d5b1d9ee1781de52baea5e41368a0b3786e"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_draw/lv_draw_rect.h",
+    "sha256": "1927491879412c312fc2ec65641a40f91fa0c8ba68d4ef2a50418e7038a23569"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_draw/lv_draw_triangle.c",
+    "sha256": "0f5afda3474be1b5ebeef2d2e1ba5f073e1b1dba79f2d8eb5a285616ae95e1c3"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_draw/lv_draw_triangle.h",
+    "sha256": "85eb61f83d4df33e3cb9db728cd5b10bdf0c0a119cc499b6e077d597eddb8eff"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_draw/lv_draw_vbasic.c",
+    "sha256": "0615fbd5d3aae85724732763bbd03ffe8d661f8f486d97cad808fface3de214b"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_draw/lv_draw_vbasic.h",
+    "sha256": "a7ad60489a01691c90824149b72fae18989d029f5b05a4c2002ebb2f5c18600b"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_fonts/hekate_symbol_120.c",
+    "sha256": "41d19a7aec9fd6b8598637426ffacf7d793ee1256ffafd999214b411e1debc93"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_fonts/hekate_symbol_20.c",
+    "sha256": "d19a0583ac4b75f475891dc8d39e69c9281316d1b47373490e46111ac90e4676"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_fonts/hekate_symbol_30.c",
+    "sha256": "15473fe019f96fbe412596fcd30eb066fe4eef7ba0fe9a5c19a598b37d90dc32"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_fonts/interui_20.c",
+    "sha256": "179dfe6a51187f66ff96b37193c7333a7ec95ae205a64dab41786a5b17f68c59"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_fonts/interui_30.c",
+    "sha256": "07d7d84590dcdb04cbb64df85c8a4561cb32a9ef68737285bc6ce2f9ec2fa5fd"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_fonts/lv_font_builtin.c",
+    "sha256": "75eacc43bdcf22ef9773a82fcf16f2f8d87f55c53c08de7c58b8d0129839da27"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_fonts/lv_font_builtin.h",
+    "sha256": "d39809e6d9594349eebe0a96a569243fc6bb00b693b859063e9e2971bfe188e9"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_fonts/ubuntu_mono.c",
+    "sha256": "d6b0cdbfc5a2932aa0b8a655d365026e471e5b030e152aa1e0949f62b84f2c5d"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_hal/lv_hal.h",
+    "sha256": "0aaeb059125df9a0bd4da145b85ef51aaf621d30f1908787d4fb4700835f0bca"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_hal/lv_hal_disp.c",
+    "sha256": "15df7e30d9238e77c5cf36173aa5a30a8e850681d3bd68dd8da2ec7d8f9d3961"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_hal/lv_hal_disp.h",
+    "sha256": "225359edc4be5e5ae80e9937fc39ae736d1f3bdee14477872fa3c2d3324ec7b1"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_hal/lv_hal_indev.c",
+    "sha256": "c7fd8bca5699ef60cb97a1c7142f14b645dae1b5d71022bea5f02061cbd8d7d2"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_hal/lv_hal_indev.h",
+    "sha256": "b9216765b6a0251c6b1a46c50e0471e9ad612c638a2974eab8aa3d8734286c6a"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_hal/lv_hal_tick.c",
+    "sha256": "177d22cc836b240ff194867a7f59be39db5a9caa9b78326b586d8b0edea044fd"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_hal/lv_hal_tick.h",
+    "sha256": "588aba0c2fc3d4832c302536e8fd2488e91aaa1f1e9f8be7d43237f363bea6f3"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_misc/lv_anim.c",
+    "sha256": "83906802720086c2641c803f55f390e0ed1bc0b60c08ecabde726d8854f9a44b"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_misc/lv_anim.h",
+    "sha256": "0abc607b023d856972d69b7e130a95c321b30cdee7de2cee84c859b6baf1ba90"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_misc/lv_area.c",
+    "sha256": "b724b62d6863dfc7ddff94cd7b421081530d00c7e2bef940a0ef2c7ec9640e32"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_misc/lv_area.h",
+    "sha256": "1fc2c93148c03ede967d30bebffac8dd56b4e05c8f69728d2835f6e4fe30b051"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_misc/lv_circ.c",
+    "sha256": "e93de3b00e94cc57e8c2ec6f46fceedbd3b54ce23ff53158cb4f07fb7e082cf2"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_misc/lv_circ.h",
+    "sha256": "77657d25a6f8ffa34a930a23e775687555f7423197d942ca7936b413860f1dac"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_misc/lv_color.c",
+    "sha256": "636ee11622012672b5c3d29b0b7adada0a716a329d2adc2d0cff371e9a27f0a4"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_misc/lv_color.h",
+    "sha256": "f5f38a87eb3fdabc9d4305b4ec71cae9948f395c86ae8a7e72ade5784648e54c"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_misc/lv_font.c",
+    "sha256": "1a24fd728d9a660b07d627d5716753d2e1074c87ba4ae039536c19edaf6291c9"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_misc/lv_font.h",
+    "sha256": "93b07f3fe63b654bd37a19f627983a25df8df656abb38ef2b58ab3a46529ee73"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_misc/lv_fs.c",
+    "sha256": "e6559af04fc19f1b65f77b2b25ebd58d1bb03508166dd210fe6b43184541b4da"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_misc/lv_fs.h",
+    "sha256": "aa45449d748fe0e43310dfc3e7eec1f81afe5e88e0a16f20d55551a871b8d311"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_misc/lv_gc.c",
+    "sha256": "5a6be7b5c9a404c0dd13c806e30f499885b463330294d0920664a8867b9338d8"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_misc/lv_gc.h",
+    "sha256": "0b9023a111c5f74ab7cc3d0a50e25837230445c9bd31b93110b339a2c8c214b9"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_misc/lv_ll.c",
+    "sha256": "4dc226f63b2db6905c374b19be761c1de01235a601df5efb805eda1e143eed0c"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_misc/lv_ll.h",
+    "sha256": "b48c63df68671afc8f3c9be84d909a0b4229c9b073a76aa7be2719e97fea5aa7"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_misc/lv_log.c",
+    "sha256": "f77f1d7e1e618be428b85f8c834dc58b7ac725d59cd9bec042dd8798e504272c"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_misc/lv_log.h",
+    "sha256": "d8e44656bdecc5c10b28d924495291d3d19f8a875b7a2d335b69677523198d89"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_misc/lv_math.c",
+    "sha256": "2a239ee36c432a971f002931aea49dfc92feb9e6e0fb9148f15d152a8a213253"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_misc/lv_math.h",
+    "sha256": "a6e0d53b7e0d8b46231a716aa87b0feb26595376b8e9f4874717cd54675d23bf"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_misc/lv_mem.c",
+    "sha256": "9b56089087d0f3995070aea1f4cb02a3f75af8f7ae6633926902d86af83af726"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_misc/lv_mem.h",
+    "sha256": "e6199fc46038fbdd7eebb2cb5bbca3b6105d4432eadbf0b1ecbcc232772d4d65"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_misc/lv_symbol_def.h",
+    "sha256": "8dfbbf603a5232717ac5543306d50252dd81a1cafa42db630202bc9fc832f7dd"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_misc/lv_task.c",
+    "sha256": "8480c4a3954ee91030ffbab8ae39a7f054ea03915466eaa47b370cbb9e7df199"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_misc/lv_task.h",
+    "sha256": "d8e391ebd74d07a1afccb69b292fa4386ccdd21557d884ab165ba8e525b64654"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_misc/lv_templ.c",
+    "sha256": "80436f43f8c0bfa55889187ee1bfde837374b5bddadb0a4a01e5cb01dc3d07d1"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_misc/lv_templ.h",
+    "sha256": "7e98cb7eaf0bbf3c1f195f0b7cc61da4955ea7d2ecf955ad93e327402b531721"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_misc/lv_txt.c",
+    "sha256": "07c944896b20235bbdd0de77eb7b24366518ab825d72e2ca8026b2af1a222416"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_misc/lv_txt.h",
+    "sha256": "8c4bf185c7a611ea5f2ce26b42280a7a21486d346ff248f73135d6d6354f3fc1"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_misc/lv_ufs.c",
+    "sha256": "e654de6538e50b50988fa570891b74a51e9972aaeaa95f32b91b88f53c4c6538"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_misc/lv_ufs.h",
+    "sha256": "d135e62f810f966d1683fb3ed779e10c8379e5520c62001ca4c867b3c9add75d"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_arc.c",
+    "sha256": "e1d418e53beb6dff75d3526d1bb717537f686b9657a8d75fb00f22da3dc83a47"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_arc.h",
+    "sha256": "f30ef389873ed900e38a57a7358131324da265cf2f539a0513d1336570f2cba5"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_bar.c",
+    "sha256": "249f50b94bc1634267be87f45c10d08c2354a8344c721c47de8c4b9c1f56e55d"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_bar.h",
+    "sha256": "2d838b5b9ba538e6ad3f47cb88a666c51516cdd0d551e080da4c70d91515e4ec"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_btn.c",
+    "sha256": "a90421d8492b8f1e6a919340042c1292b3e4e7b603b133ddad7a040dc49c9380"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_btn.h",
+    "sha256": "b179a04ef5f02f37f0592f518138b94e5054589ed4857afea17f31d9bb021776"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_btnm.c",
+    "sha256": "9e07bb640c00411bf8014d8b636818c96e807beabf603ab057393194dc2f666c"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_btnm.h",
+    "sha256": "f0d7a56269a48cfe11d2bc65a170b7a5f6fd7af74b8f0e62d125a5e257bcd12a"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_calendar.c",
+    "sha256": "6e6b53ee707bafa0ca8ba6ee5fe32f6d2b066722ba22f5da3a229cbd4129a89e"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_calendar.h",
+    "sha256": "cce014e947243dbb238e963d1bb3fd8a38caa7c7babb13b395acc9c9ea73cf06"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_canvas.c",
+    "sha256": "bd10041889049e139d9766bd6c28ff011156cd890f58f7880c1b0edd94b010d1"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_canvas.h",
+    "sha256": "d11e3a7880067df1498709526b413bd2abc1dc38a68370ce9a76f9cf97134352"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_cb.c",
+    "sha256": "27dbdf2a97c317ab23be21e8f146c1198d2d1a201f8099bbae8ed72d98f034f3"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_cb.h",
+    "sha256": "139a988e13fd061cdcad9e8fa2e4cc5e391b17f2ff84146b52e4480ed454f1e2"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_chart.c",
+    "sha256": "b4e5d870bb431336c661e252ed1dd26c6643152dc88a77dd374861ed8bd76692"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_chart.h",
+    "sha256": "07120f9cd7cb0abcc115fcba5d7bddc051b72d8193f39e484617c04ccb910917"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_cont.c",
+    "sha256": "3f2442e46cb8b042765a434dae04d6d59c8255fd606cccec97c8d6c195105970"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_cont.h",
+    "sha256": "a73732e17b99b050ef4e63a8cc6ccc318109e819d3fbd46dd3297e5040614ae7"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_ddlist.c",
+    "sha256": "781d80e6e5c272b889d06ce54ddd0b245b56271a8f5e9105694d570c8c6413f3"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_ddlist.h",
+    "sha256": "bea7e2ba5c5b50dcced28d726fff04284347beed5f4086595666a5f44d4091cd"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_gauge.c",
+    "sha256": "fb0d697fa76d01a2df682691af0b020b2aacaa08ce82ac6995adcb2e80cf7d11"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_gauge.h",
+    "sha256": "1bd167e9a99939cebcac0f9c52655239b35c0ec29a8921dbd43e3fcd50cf1df8"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_img.c",
+    "sha256": "ce9207ada32f29b26e0d3045b35efa7017f00f9179274a5a6804a12002eeddec"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_img.h",
+    "sha256": "3260fec616d9857ed2f43c7158e17a58bdeba3db6ee7ffc99e7b5c97dc384da9"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_imgbtn.c",
+    "sha256": "468b13850aa425e5f6e116fd2ff5e5644521bcd166fcea9a9543cb774aefe4d7"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_imgbtn.h",
+    "sha256": "2bdeb4513f98f4975c04078802b16ea2ac5c68c2e736b5064767ba9da3c1a949"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_kb.c",
+    "sha256": "5dec69d3b9fc57f869447f7b053c5f7757a0a193b723b21823b8334dda75f675"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_kb.h",
+    "sha256": "12f2fef0e36353f658533a2463c3a804f7882e9e29949eed20003233b37ab820"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_label.c",
+    "sha256": "3ac759599c3fd0547e96a340d48e5d8b92f7c7369ffac736af4dfacd7a265870"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_label.h",
+    "sha256": "4899b412a5c51738b6d1213b4d91f993b798d2807491ce85d52c4a4690480d48"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_led.c",
+    "sha256": "3337bf3085b5e81b1f72d8b934ee999bb48d480141323814bec5a0e1f1e42e9d"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_led.h",
+    "sha256": "298d97b13c8efb7cbae99556a5c73c3d9c8e1398342405571b62bbe701bb1975"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_line.c",
+    "sha256": "2bd2c796ca91764712e6aabb07bac3b971933882782145a446babc1feb74f934"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_line.h",
+    "sha256": "6175d46ac59e164125d6a2f47917421a5e6e3b6df35f312a9673382452dcb431"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_list.c",
+    "sha256": "317419859cf4574666164ea3a98f78b08569ddb9b911482fd667baaf1e048a6b"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_list.h",
+    "sha256": "973699c03b009f2aeb271086221a83d51d7999947fb2cd418a00d64912b96053"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_lmeter.c",
+    "sha256": "adf52a586b1cbfd738ca37d1466167b9b5528c053640910db460c41007db1633"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_lmeter.h",
+    "sha256": "de5b066dc28d82dcbc2dd64e98c07fdffb0c72cf736421c810fc3573c95912d2"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_mbox.c",
+    "sha256": "7bea0d9bbc3203664160a204c533ea28e584539f05bef949a2321e0f08cd9339"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_mbox.h",
+    "sha256": "4abfe1190c3ff52512074217cf6ad1dc7bd56467a0a61d91f422e0f350a54fd8"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_objx_templ.c",
+    "sha256": "0179a3b132dfdcc9cb1b46c8e119d6f4b6c1960d0ba49dca477497e7656e4020"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_objx_templ.h",
+    "sha256": "8b2ebf019d2310614a89b93354942e05b9eb919ef385b077a2cb59b9c7e5133d"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_page.c",
+    "sha256": "30a9d9838f819dc957bb9e6aca540383fa31b65f7866024ee6ecc7b83c445594"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_page.h",
+    "sha256": "b24d8b54b999b649abe129dfd90e90862fdca184ad1f6da8e2a9966e586cd77d"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_preload.c",
+    "sha256": "6bf0d80f65c9f44fdfb6f404ef78a606da13f3d12e1bd72b5be3cfa0dfa5f6a4"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_preload.h",
+    "sha256": "6b8e64020d8a10830b65a56a319bd31c713110275334babdb6d53614859ddcae"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_roller.c",
+    "sha256": "bc0a1fdcf50ea5f806de7a23b87070f5c737bdd7969af0eb0b31615a64787b93"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_roller.h",
+    "sha256": "c78a1e8474ae859f277db107f0a8fdc490b228b80b7bea12b3df20f1599aed97"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_slider.c",
+    "sha256": "067f57315266aab62edc08cd3a85ab9991596fd90a1178c9c30af2931a3e9c74"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_slider.h",
+    "sha256": "a4d50bbc40cab53805c1181ff080ecabea98971de8bb73f6eeb5472d05f948f2"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_spinbox.c",
+    "sha256": "db3913129b10b208708089e792501968182e702740fc81814699ca8d4bc14d9c"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_spinbox.h",
+    "sha256": "275bff992f6661630e49c7cb0ccc7e45b56967f92a3cc76325e8723f9c93b720"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_sw.c",
+    "sha256": "c2e22045c50b0b8702b2cadbf3e04aca2cb1219ead2a5e6be295e6a39dc5b1fe"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_sw.h",
+    "sha256": "5951c4785bcef4f2e655559c16416382657318162fc476a9cf67e4720a4137dc"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_ta.c",
+    "sha256": "a09b6b02bcf1ee63757f3a9651b8de41ef6acd357440906afe8efaf470f0742f"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_ta.h",
+    "sha256": "c1df0137182244e3b53492017340424802214e5b5e2b7f12e32236aa4ad312f8"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_table.c",
+    "sha256": "567b0a37fb63b4ef0c5f0856f81abb22861215e9b65030de82ccf938b49fe645"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_table.h",
+    "sha256": "ee70c35eefad2fd36370ecf807f8cf248fda8acd980c8e7a0b497f0c579a4a79"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_tabview.c",
+    "sha256": "cb11738baa7844eb1d57ec626344ffc4a730a32aa55c44f4ac87eecc5ad8ecb4"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_tabview.h",
+    "sha256": "b10c022b8ccabae5ccdd66c4c957450bde89ce3bb66e4913618f520f6ae0f6a9"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_tileview.c",
+    "sha256": "b7193450001410f0d3217a148d64ecfffec0408c62edca29c6960e17829bc291"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_tileview.h",
+    "sha256": "4784add95dd9addaca3bab34a1569e9f381df00a0b0deef6b84798e27d95a4d7"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_win.c",
+    "sha256": "d9b3e31015d76ddce58e755de7161a88c65b4130ff2fcfc4e6ce29100233dc1f"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_objx/lv_win.h",
+    "sha256": "3d00cf39146b017236dbe11e76bf212e3eca014048fc4d705889597d5d59dfbc"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_themes/lv_theme.c",
+    "sha256": "b7c2ed37b92406a7b6ff274e275ddf829f04f7e86b12ad1cbf78594d457a27ed"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_themes/lv_theme.h",
+    "sha256": "e07168c3e1ca7482324c00d8df761cf627be381eafdf5aad0f9e8e95d168ef8a"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_themes/lv_theme_hekate.c",
+    "sha256": "d8a403337ebfea50fc68b887cd556ce2ead3b491e3a84f35bbb5cfc5687985f7"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_themes/lv_theme_hekate.h",
+    "sha256": "c9e9fe902e16345f1b2bcc89abc19191b31e61f1588927853816ccd40a2cbb90"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lv_version.h",
+    "sha256": "3cb3f1ee35605a24f1f94dc82f96bf8fd0aa3eb5767b1b22695f27ce9861b3aa"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/lvgl/lvgl.h",
+    "sha256": "61b128317747ebc0b4a472e2d8e288b475a77ee4a2bcdaefad9da671933ca86b"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/allocation_table.c",
+    "sha256": "adaf4bfe3f79982f36e25d523c56eb684320797b95572ee5035d8123f4e48661"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/allocation_table.h",
+    "sha256": "e75bfed169fb19c535a13e36072c584fd4d1a8ce8b6132799c683a461245449d"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/allocation_table_iterator.c",
+    "sha256": "9945f5454db5a85bd1a773a2cbfa325e94d967e5508af733672f5138944d1a64"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/allocation_table_iterator.h",
+    "sha256": "4de10d5f62368d269714b4c6fe4d3a4d4db02cce4747de13b3f50047567a7196"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/allocation_table_storage.c",
+    "sha256": "3fff563f4ce691ba9d181c0b59acc21910347b521fea30b9a4956a9199eb0c00"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/allocation_table_storage.h",
+    "sha256": "c3a232a4d5ab425ddfa8ecabae3cb8ad98ab0475da961af9cfb6ab5158b7e87a"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/cached_storage.c",
+    "sha256": "c9077fe8792d6601c29df4b9322e09e411c0ce425f0d10e080260e6a71fbea4c"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/cached_storage.h",
+    "sha256": "065b80d385c6c230052719c616a11c3b809bb70041c74784a9d0f6c451e2babb"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/directory_entry.h",
+    "sha256": "ce6db9ab1173d18d22ea5886dc36535e892fba6ecbf90d50d024f9a5b1e8ccdd"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/duplex_storage.c",
+    "sha256": "2ea79b80178463f1987db535993ada02f4a669452cc4d0d7e723b05bc9b53003"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/duplex_storage.h",
+    "sha256": "c1b5fa511c0e8f7b7db5880af958c450308e77e5f735a00640913cfe1ed74275"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/fs_int64.h",
+    "sha256": "86ef830274f800c060ada4f33bae70c4b4ca2a9e1e108da2af07a66508dfdb1b"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/header.h",
+    "sha256": "02a342af0773dea6dc282794b53090e684a575b81cb957c92d780f4e0716b381"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/hierarchical_duplex_storage.c",
+    "sha256": "dc91a8f8e65f9bf45c9bbcd9870ec3a259e0a98d7aef66c368ad6069894679bf"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/hierarchical_duplex_storage.h",
+    "sha256": "d89fa574039493aaaa6f4d3295df68bc0d587504a5f0856be38cbe852c66b275"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/hierarchical_integrity_verification_storage.c",
+    "sha256": "07fdef9135c53f0b49e47bcf3314b6805cb1de07f975d46b4e09e5d899f558cd"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/hierarchical_integrity_verification_storage.h",
+    "sha256": "bfa338086185fee44e5775c1b09f714dc5b2d30316c4cb7a19d387a3519a6588"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/hierarchical_save_file_table.c",
+    "sha256": "d4ea5d1b649b9130f8532aaf83d628d22130bcdeb9d54bd0b650cb798d63aac1"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/hierarchical_save_file_table.h",
+    "sha256": "0844bae43577924c7cba798c8832961bd1169734232f8f9c9715be3a7eda53ab"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/integrity_verification_storage.c",
+    "sha256": "49f707414503931ee3a9078969156e81251c791480b31fef50d81bc7ae65f77a"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/integrity_verification_storage.h",
+    "sha256": "b2eda8b1dfc87af38eba0a9b2bbc8fe95a8b60e051339d77de1ccc6f7124b67d"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/journal_map.c",
+    "sha256": "86574452e6520687c0e1da4d3993beea344e08914d3c54b3849cc8a3a64ceea1"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/journal_map.h",
+    "sha256": "90d2b996aed7719e4fec609335871dc040f833fa2d2a8f3ad7171509ca4c447f"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/journal_storage.c",
+    "sha256": "f0a246a899c3f4471e53111c42b7ad282e9d1ca773a19a771d4a2181a06cce94"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/journal_storage.h",
+    "sha256": "7b54122e0dbbdb870717e63926677350b09b0653efc4f8f2633876ba8516f370"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/path_parser.c",
+    "sha256": "b0d8cfaa4a4530a3aba82dee46fa293d2ccc6221e00dbaabdbfd3aaa866e341a"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/path_parser.h",
+    "sha256": "2b829bda1d8f9139bb322d9e5f512b48e972a6ba933e2f20eb1d66fd96c3b9cf"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/remap_storage.c",
+    "sha256": "c161c1622ee62402333d77d114f05cc335251e383656931e689d46e675fc0e96"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/remap_storage.h",
+    "sha256": "669c7c5e424000c352d2803c749911fdf1a10e9eaec13377530777d5a37b2e23"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/save.c",
+    "sha256": "773d672b14bdd42a22321618d9f24074257d24f0a7c1f03d89587ad4ece74924"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/save.h",
+    "sha256": "3646648c10bec212e31f39b59a9f2c055d4cdded4f3c4ef33ac476d4482809ef"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/save_data_directory.c",
+    "sha256": "6155ef34e560afe01c50cebccd807aaab2f1dacdda00019a741d47fabb0a55a7"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/save_data_directory.h",
+    "sha256": "10f1a02f23d7d664359ff955309055a73c25979c5e4486357044dee1bae3901b"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/save_data_file.c",
+    "sha256": "e29eae7dca259e1bece952d6badf279e1606245091e2a19fe1bf5e5e1a15fd4b"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/save_data_file.h",
+    "sha256": "43fd7c0833b1dbda2de143681ca87f1ae7a6ffbed40d3d4073c4ad223b6c2563"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/save_data_file_system_core.c",
+    "sha256": "3919b5e2af562f5623e9d402b7eba6931c3b00ace928a2449f02ac80a10f9e35"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/save_data_file_system_core.h",
+    "sha256": "bd65506007e1108f78e72c7dfe6c266dfb8f2b46b79b1451a8189bb2a6a4eadb"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/save_fs_entry.h",
+    "sha256": "879136baaeccf474ec425e5a6f46877eeca987c59727c2506017823ea623faa4"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/save_fs_list.c",
+    "sha256": "eaa132c1c843dd591d23ba9ccb9e030ad1b1fb34bbd3e91c5566c29c749a5f85"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/save_fs_list.h",
+    "sha256": "3d19306b57f98dad708ad8c297449e5c1221ad408d46ba5335100b488043a5e8"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/storage.c",
+    "sha256": "e6c76fd878ae6310bd1c5f452cef6273352443b92c1450a9cad8ae51eea38f74"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/libs/nx_savedata/storage.h",
+    "sha256": "e57e87bca1074be050da93af9db7025c83c46645dd4f43db539d3330d0c49f05"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/mem/emc.h",
+    "sha256": "760cba7e38e12ad6dd488528d8d30f92dfe0911b92281c51e404f62b75662cd5"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/mem/heap.c",
+    "sha256": "92904c3b8dabcf9e75c2d778f3598a1c04c81d811204ced8c71fbadc5c405e74"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/mem/heap.h",
+    "sha256": "43d065e7f33596085e9b2b8879dbda55bdf0048cf667344be68970fcfc97b234"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/mem/mc.c",
+    "sha256": "4de4b04019075a4ab10d250d660dd272c70e0237d44641efc019ea466f745669"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/mem/mc.h",
+    "sha256": "5705374abea1eb3b882e159f29d423ca28562b2e07a697673e96bdf1a3740de0"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/mem/mc_t210.h",
+    "sha256": "1b3c1d71c413d7da18557c0f41081c4c6b139d947d6b5c0d27fe2a74c3731f5a"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/mem/minerva.c",
+    "sha256": "c0d6bc2d82c833c3604132dbee6a8b1c22a43d5a21698984092d3e128b3c1ca6"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/mem/minerva.h",
+    "sha256": "458542be38af006ad47e245aab3c45297c5fbdae6a990fb9a79d13a9c92cad68"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/mem/mtc_table.h",
+    "sha256": "47cd490bbb1a9e950df0e1807418532110700003994cce2fcf5280ce5018ee4c"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/mem/sdram.c",
+    "sha256": "b5f75111b9c120ff22826a82087a911dea7f66c6cbbc125b71e8763514fa1990"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/mem/sdram.h",
+    "sha256": "293e2b194e84d7000a1abc1c12b344b361b0a343b50e47a6d30a7bbddd92cc57"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/mem/sdram_lp0.c",
+    "sha256": "e692999c1738508d8a5bf196f0344059317e1c1a7ff4116197b735872f17a037"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/mem/sdram_lp0_param_t210.h",
+    "sha256": "31dda836f0101fc593e181586fc2558d22ae322b26916c4f6ac539d13343822f"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/mem/sdram_lp0_param_t210b01.h",
+    "sha256": "a196a75202f7bb98753bf1c205c9104ad59b7cf1a0f0a6277ca168ca0c5892a5"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/mem/sdram_param_t210.h",
+    "sha256": "94929ae815be9035415b4314f140d378402fb126fd6ea7bcad3ebdf886d2f026"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/mem/sdram_param_t210b01.h",
+    "sha256": "6e6becc37b9ca8d7ba73bc0ec18c62a6142a3198d4d1c982b1f4b7295333e59a"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/mem/smmu.c",
+    "sha256": "091acae1f59f603f82908dff0fd07c3293662b0c2ef02b9c68f11e0c5c2f23a6"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/mem/smmu.h",
+    "sha256": "f3477320735ff9067e8e07cd1594ce1e5d6de1ce08e76710029e4e93c22e097a"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/memory_map.h",
+    "sha256": "b079291e27cbdfa888f11125b0ed1be8f4826fc53877842a2056a5c5578bc861"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/module.h",
+    "sha256": "1f334b4b0976c8fbc9874c99e37cc8666bfa0d769448f6f3506f6300fe58d053"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/power/bm92t36.c",
+    "sha256": "1565c27396b6ee2a8ef3e8b53347419e1f6d9382ec0b3a6699ec3301a2604d8f"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/power/bm92t36.h",
+    "sha256": "5c1ff60f8ad00da394f84066f0c29a84e61f3896efc113f827dceb1ffc5252c7"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/power/bq24193.c",
+    "sha256": "a3d41d1dc194a388609aa8df7c0fb8782a5cf6ef75e907580382349a9b65e42e"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/power/bq24193.h",
+    "sha256": "3e5994cb92646310c4d5094b3e2f14ffae2273c09fd4d73ea1d1128d1ff78f54"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/power/max17050.c",
+    "sha256": "84e78b8b7935b25162311b8973fc288409639388fa4c6d39aca4d6ab027d1b4f"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/power/max17050.h",
+    "sha256": "fc0b9ce3a48ac0b4a49719816b172a4c5effca4423512a42d5fa370cd7e3f641"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/power/max77620.h",
+    "sha256": "d1b58fb7f21372833e8b46902de7af7aabf2cde8b5cfdef91e5c0757a3c26266"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/power/max7762x.c",
+    "sha256": "03d2a20397abb7a414d8dba4633a3ed3938c99d8b040ec736f51e10d9002584c"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/power/max7762x.h",
+    "sha256": "1fa277a0f64ee6f3513eed4bc213f8aefd9c06ebcde614bff17e022ba9339020"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/power/max77812.h",
+    "sha256": "8d0b6e64d8c4d55d8224e060ef97363f62eb4af5f4d0a85e58d6791205cf035d"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/power/regulator_5v.c",
+    "sha256": "a6bac8b54ce33eaa01ecdc604dbd8ac2eb6b4a70babd10639c052f4768dff80e"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/power/regulator_5v.h",
+    "sha256": "18520a32b809594dc2960581244c71f66eaaa3f3746a86a4477e6907a7554c69"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/rtc/max77620-rtc.c",
+    "sha256": "d4825baaa9064863e8bf43b8cdda6d8648948a6f1ca59d0e4420c575a4e96307"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/rtc/max77620-rtc.h",
+    "sha256": "86824b84c05b1419e91ce5348e344e28a04c9995d2736df24c02f3f249e6421f"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/sec/se.c",
+    "sha256": "a92762d7d74bd1dafe89c9cff59578eecc0a4bab165af943b09f51f88cf80067"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/sec/se.h",
+    "sha256": "84a038f59ec96b2f562a1ae4f4d4ea7090ba90b3583b38d2c5879cce05aa2f3d"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/sec/se_t210.h",
+    "sha256": "0c34ff9ad3a3340ad475e937b69ff213f8b56b9333c221acdd7bf6f62ffb85f1"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/sec/tsec.c",
+    "sha256": "9cbf3e27374a7e8e6212f2bc0670f0c47365ed8eb5c8e1a7f52f8d12bb932cf3"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/sec/tsec.h",
+    "sha256": "909468b24cb983bba60020191ac29d2e54d54f140738c2b74555786665ad1053"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/sec/tsec_t210.h",
+    "sha256": "bbfb8e29cd37a7f3fab10c894af3cbf989c47a01b99850527cb860cd992e301c"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/soc/bpmp.c",
+    "sha256": "5fc8ca0ce3f09dad70dfd39d5446c60c7979d18142d30aebdd5abd69c6b5e843"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/soc/bpmp.h",
+    "sha256": "327ca3c69887db5c3310ee95b09feaed9b5587fd959458cb042132213bd2fe20"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/soc/ccplex.c",
+    "sha256": "ac4a0a3d24f9a39d48c802357df3f4e111098ca0b044b04c71de01f63c408f9f"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/soc/ccplex.h",
+    "sha256": "9a825f805379d113999719c9885202812b3912cb2973f6547deaa0755c48f57e"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/soc/clock.c",
+    "sha256": "f123d0e134a7dd7a7061c5ad9544ab4d4cfbbb4821fe37e0880a7d5d56b060df"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/soc/clock.h",
+    "sha256": "409024b54d829f33a19a2b8d5e556f940c6463c13bdb65ec4035554029eda1e5"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/soc/fuse.c",
+    "sha256": "ea9e1e6624a67c01426a4cd0e915e2694c4277ca637dd05dc7447960656a4af5"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/soc/fuse.h",
+    "sha256": "da3c881def34533cd8df0fd3efc8af6f34f642483833f42930eaa86b25f62182"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/soc/gpio.c",
+    "sha256": "abf571ff20af5d82cb0f58afca22a17af44219715d02d40dc42daec4960c1a1e"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/soc/gpio.h",
+    "sha256": "ab173c74fc3a1a8cb2e3f764b580bfbdad663da2efaadac33be33a690a7feafc"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/soc/hw_init.c",
+    "sha256": "624133493bd0b22c18092e565d1f500e836067d4c6cd2f3336e7f98299a8f533"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/soc/hw_init.h",
+    "sha256": "9d917d25c748974a5722d7caec1755a10490438b19662be2876e6d6a82fed90c"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/soc/i2c.c",
+    "sha256": "4adbbde3522ecc1bacbbad75bb85a9c4783d6a2286404d94a9e2a7ef550d14e3"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/soc/i2c.h",
+    "sha256": "025b4d9ece46ea59dd4e1db321d481ace733d04528410a972af2c9858bc4d4d0"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/soc/irq.c",
+    "sha256": "e88270c75fd716b4b8e59eea861387d89bc7048fdbf8609a6bda0cdfa3302343"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/soc/irq.h",
+    "sha256": "cc15fe5fd15f9ccdd4f0c9eeb5cd14af4d973fa0643c1c8b154767af4b6c8af1"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/soc/kfuse.c",
+    "sha256": "a2a6bf6ee1561ec9549574b4c5e0b5d7eb53154165a61d725a813cb7ea18770f"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/soc/kfuse.h",
+    "sha256": "4588ad379b8bf34231507b1d6b05185bb4c5e6d8b3ed6da6fee5dc1a25c2e84e"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/soc/pinmux.c",
+    "sha256": "985404e033fcfa6b9b1fbd4eb01d7962e376653bf5ff47a6007dc2b526da2424"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/soc/pinmux.h",
+    "sha256": "7c9f97e84e2573f7425a51f79144342145445239b5cd25b5a30c34a1dadb23e5"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/soc/pmc.c",
+    "sha256": "b06801d9ec160ad46d4a07d71b9807651aa409cceae86791f2383a4ebda7da38"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/soc/pmc.h",
+    "sha256": "10e480bed7e3613db3b1a1347bb0527604cf9d86e72231248fef646cf5925387"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/soc/pmc_lp0_t210.h",
+    "sha256": "40c41a9376bde055ff2230dc2f8d97eb1bd1bac8ab3cd067958f2f99b8536340"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/soc/t210.h",
+    "sha256": "8e0d535be8d7c67b07f66d3e7fbbfaaa7e56be35d30a6c48394f5d2102d8afaf"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/soc/uart.c",
+    "sha256": "f8523888280ba29e80bdaa2d8f851ef3df778ee2af91db17f933db19bf175a9c"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/soc/uart.h",
+    "sha256": "c375aa8061f674443c81e83d08ed0102b44b27232b9c0ae5e9db31f66326d690"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/storage/mbr_gpt.h",
+    "sha256": "642c7dd372617433114e29978f2cc64ee245f2a2dd010bd1c705c39ed8638c37"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/storage/mmc.h",
+    "sha256": "e0a1e873cffcb8263a9d044b04bc9a0385ede96e607b7e2e0a0a587ab7c79cb4"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/storage/nx_sd.h",
+    "sha256": "498cff324dcfa8c63e35c404c09a1c3c8107d8662563e866006b79c013b9a0c7"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/storage/ramdisk.c",
+    "sha256": "a0c8f752c7f5a0b46a2c0cba232db44480b01980e6515dfcab6b9e26f4266841"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/storage/ramdisk.h",
+    "sha256": "d692be87c3c597d9caa125ec43a9c3b8fad29ae00e3615e171b96efbb15b9dd2"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/storage/sd.h",
+    "sha256": "2d7599034296a75f6ba8c0dd95fb2f5f0897c189d3f3227ab1024e60f54c0a59"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/storage/sdmmc.c",
+    "sha256": "e773a6b2a24fe76504bb0bbd5cf64ad2fc77272fe9ef127f8ac8a6f21c23f7cf"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/storage/sdmmc.h",
+    "sha256": "d5ccdb270ab34300a43b3b91c2ef1a0e423eeb7decbcd6a3089484e0f709229d"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/storage/sdmmc_driver.c",
+    "sha256": "cdbedd4481ae6e99998ee8bca128a93c69c4ddec6811d56deaf8eb762397ae41"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/storage/sdmmc_driver.h",
+    "sha256": "96673a8e88ccf22e6a28bfcd4662601995c35c04ebebcd602456f57791054c16"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/storage/sdmmc_t210.h",
+    "sha256": "3156c399088ad84483ae3b531a8d92b3a192b342f42049b97874d85bd1ba330f"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/thermal/fan.c",
+    "sha256": "e38fec4075f8bddb3e1c30a851a7c7feb293488751fe4096ca70e83b21721796"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/thermal/fan.h",
+    "sha256": "84c7f0f8d709c76f3117e77fe422bd8f5137502608a9a92c0712a249455108eb"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/thermal/tmp451.c",
+    "sha256": "bbaf3b34ed0f07e6839fde5c93708c1410c68b6b3159d51f5e73a10c4601aee4"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/thermal/tmp451.h",
+    "sha256": "6df479dd56d78ae09dfea7e549299406180db73cb005d42db21795b4935b205d"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/usb/usb_descriptor_types.h",
+    "sha256": "627d452186601477027cf5873a25b95a2e3708f79f009191a22f66b2fe336233"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/usb/usb_descriptors.c",
+    "sha256": "95e6983262b8b5bf5028149df779a60c1d62864aa384b7969842b7c4df0412ff"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/usb/usb_gadget_hid.c",
+    "sha256": "cda5aff3aba70412bd7b7cdd11427eb255c1ac4fee8f6d6399818b49e40f23b5"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/usb/usb_gadget_ums.c",
+    "sha256": "e829c8020e69d799eeef5c0b5032ae69c5b600eb7b55b5a5de05075ca22db434"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/usb/usb_t210.h",
+    "sha256": "88104814ffcd6b15373bdf157f0f1281903d1e6111fcbf7ef3fb9fc581923a89"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/usb/usbd.c",
+    "sha256": "28ee06819173e6726ef1f296b8c12ee7ce520564eff06dc5fd11541421957fc9"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/usb/usbd.h",
+    "sha256": "1fff6117d9ba5703bf6e073823d83bd7750f58ff7db81fb76e652061fe042abc"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/usb/xusbd.c",
+    "sha256": "7783ac5e19743843c8f1db61fe7c44ca9113b0c9ed459d65661fc2bc543bfaae"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/utils/aarch64_util.h",
+    "sha256": "cd0ee11e2e9154c337f557e8f6191af3276dd285dc817015291fd4652d9d7984"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/utils/btn.c",
+    "sha256": "3a507e439b32ef81a3a7135ed22bf6ce0485dbd9f1ad00330b14b4b9f51de7d0"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/utils/btn.h",
+    "sha256": "73b9e7e3c4c0125c77d2e395839155b70c09c112e377dc823fae4f954a5af76c"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/utils/dirlist.c",
+    "sha256": "69dc3a14a5dff62f8bce3e3de9caf2d2c2e45577e58d311d597324018c9a6b0a"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/utils/dirlist.h",
+    "sha256": "90d313af4d2d31a3742777a91002bcdc4f7f312352aeb4964babb2778b2961d9"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/utils/ini.c",
+    "sha256": "ccd37d3a60f9fc984b5d0c1487af14d309642aae423f689db777a969b055db9d"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/utils/ini.h",
+    "sha256": "8404503a0071e9e3ca43d2b66a8cf79cf214a7d8ba365760f72d7e9b719c8004"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/utils/list.h",
+    "sha256": "454b4faebe3ce5eaaef69f6814a93aff9b530ab728afb3b6b1a203c74594d332"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/utils/sprintf.c",
+    "sha256": "9d3c195aa4ccd9e474bc9788753191b4d0622af85c3cbe4991c8cdaba7af887f"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/utils/sprintf.h",
+    "sha256": "ca6780bb045e49f807db7e120525836240413ad56e8a7d1fe3de149207ea3cd5"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/utils/types.h",
+    "sha256": "89692b0d45864ed1233e5ceb1c46c490013a79000c09e0f1288b0f5c2218bac0"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/utils/util.c",
+    "sha256": "9a7e560dab667f8f11508bd9a6867a08ac0d9811b8e5439137ea6ff63708c963"
+  },
+  {
+    "path": "vendor/tegraexplorer/bdk/utils/util.h",
+    "sha256": "47310cf62b2ab0f1898b36487621358a8489be949bb8f1babd5984126c2599a4"
+  },
+  {
+    "path": "vendor/tegraexplorer/loader/loader.c",
+    "sha256": "a1eccdd0db625da2435e32dd922066b6fd7c93afbeafc82c09ab70ccca77b031"
+  },
+  {
+    "path": "vendor/tegraexplorer/loader/start.S",
+    "sha256": "c4a3de0e7f0c86fc7c22455dc3b5c0bd5a18c225ef7788acee93295f50ba40ff"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/config.c",
+    "sha256": "0b1130e2a634f1b9875065aa4a767e804d50876c26f4f7461f2484409a75333f"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/config.h",
+    "sha256": "001c3dc2b14c05afa8e130c884368ef56a8d3a6f1c30a51e7870e93f7be64926"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/err.c",
+    "sha256": "02257da2daa243f875214560d4c62f3ef98fd343d554da9c2adc521eb7927ec9"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/err.h",
+    "sha256": "47311c53137115a87199831c5b0a60db1aef0b8c798de12836d43bee0596166a"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/fs/fscopy.c",
+    "sha256": "c8865ffe61def61465241e17d2459a8b5d92be02d4c814a01975c31e3499e625"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/fs/fscopy.h",
+    "sha256": "2983e9795d83ca92fd3a65c592749a23c91ecbb3e1e6fec67b58377354567851"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/fs/fstypes.h",
+    "sha256": "073d7cc5687fab0bfee2ba9356c66d98a1e61b9d3d3580f88b98220ad2cb3926"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/fs/fsutils.c",
+    "sha256": "2395614fcaeacdfcb1619f8fceb3f4bf4032c22b3f473fd425eff8eeed250d79"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/fs/fsutils.h",
+    "sha256": "56cc2813d2b1d48f99286eb08dc3ad55ffdf04644ace18c29ed5f60d55890cae"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/fs/menus/explorer.c",
+    "sha256": "eea42a5f7f8b39cef2c207aedf754c055f7f2f73c94cbaa1010bbfc4e0ca3b2b"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/fs/menus/explorer.h",
+    "sha256": "9ccf8109f97f290303b7a8494de85ebf76017b9979e71dbe2e6e6cf648b2008a"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/fs/menus/filemenu.c",
+    "sha256": "2ac14a48371bb419e93075b1bec9723519459893e483d59db1364d3ee0656962"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/fs/menus/filemenu.h",
+    "sha256": "0b8c781967de12c2a602db76ddc82f0fce1a66297d7d4b2d3e9f12df5cfd067e"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/fs/menus/foldermenu.c",
+    "sha256": "a6d94c9970515e1b4d9217d8b68c095590fc313527c631b5858937b91790ed0c"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/fs/menus/foldermenu.h",
+    "sha256": "ba0c4f5d4deb067b52b73d8474215da5e4278a34a23b6b08937657a37126a113"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/fs/readers/folderReader.c",
+    "sha256": "470d162563d4ae3d082a78c2a0fae6ee5a33e73c6917b878d33114ee4d44d8b3"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/fs/readers/folderReader.h",
+    "sha256": "ca7725fd82becb1c6d84fdcec46b349c94ee2d8e1992c03acf3cc9a04bd77481"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/gfx/gfx.c",
+    "sha256": "fd1b52be063a8e27e21e75db7c65bdb91b8031074a10365a41ef0b77f113eb6a"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/gfx/gfx.h",
+    "sha256": "0d969b2289aa132a6993406160196038417eabbd8cb93f7f1cd57963a4a37f31"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/gfx/gfxutils.c",
+    "sha256": "cadb2089131a1f7ed21cc6843145e73eb9f1c4b9285a612df8b17410e36758bb"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/gfx/gfxutils.h",
+    "sha256": "2fb2df55e3ac2febfad3b401c4e6f2298d96c22a6543dffdcdbabd16695d30f9"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/gfx/menu.c",
+    "sha256": "fb8d58e83f0180e7e59b80d6a8f8ec43886d614c55dc8e3e7826f8d7311b59c5"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/gfx/menu.h",
+    "sha256": "86f3f722152e6490db72e896bab7957feb11b84fd7753909b179dd892ebadb76"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/hid/hid.c",
+    "sha256": "e31d29c5fec0e327e00196e888010ba9dedf95b4d14291ef4aa69c3d950a0395"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/hid/hid.h",
+    "sha256": "79c14aae6137d25601637f6d072749c1ac4b520489fddc42194f66b946b90bcc"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/keys/keyfile.c",
+    "sha256": "5b1b80f82cd6c1765b2f6e5e48814099309471c2dbad37ff42b8c1120010575c"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/keys/keyfile.h",
+    "sha256": "ada7f1c9dfed9c08228347d6c8848d6a31b32af3267eadcc58b88b853877a9e1"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/keys/keys.c",
+    "sha256": "f9fa68885d378e6d56393a9bf411a6eb8c24d904ae9c37f986b94dacc623d145"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/keys/keys.h",
+    "sha256": "593780177d26e653ed5aeca86b2f47f4cca4592b7e58e4226040fde23e612c36"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/keys/nca.c",
+    "sha256": "aaa13477b954b1aea44de879795956a058fa9677c0a7a5ea9e6ecacc20c64991"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/keys/nca.h",
+    "sha256": "a0e1e9244ee841702148db3ce0d2935878f2e3d507743247c98fc650e565d923"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/keys/save.c",
+    "sha256": "d7a27d3d775210604c6c47bc74e45f13246f60d186ec0a7cbba1dd032edd401a"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/keys/save.h",
+    "sha256": "9f67b191bd14f36e2fe7028c079fc9df78719327a4b09d0e507c93548ba641a1"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/libs/fatfs/diskio.c",
+    "sha256": "d5b709ae7b1d1656394a5f621ca799714a6146201df55af92205baefdfbb60c6"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/libs/fatfs/ffconf.h",
+    "sha256": "dde7dff4bb584f29b1d171bb40ddaf1c661a992b159090e1b1eca6cb9f759b79"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/libs/fatfs/ffsystem.c",
+    "sha256": "e9b47643aba9cf8bf79fe93280a6427ca2830754a6879c924c11e87f211ee948"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/main.c",
+    "sha256": "1b0f55499c798d157ee8c11c6789f0d0611cdfc834dd56b66a140a278e983c75"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/ABadIdeaVersion3.c",
+    "sha256": "8eed9c809230b021266b5d98aff988d255db6c4f8c368d721a7c84af75f964d3"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/arrayClass.c",
+    "sha256": "fc03c06ba95cae5a1fbe81679b5849cdc85f3dbcd8fae9acb35528557f2a5adb"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/arrayClass.h",
+    "sha256": "e554e90f9a75d9be2158930f596589a508ee99af6fcc3daead87b69d42b816b0"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/arrayReferenceClass.c",
+    "sha256": "7f757d5385856dc8756173da9015b32cfe9838a1a1756a3559fbc8d6b1924914"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/arrayReferenceClass.h",
+    "sha256": "5274b89a46f66cb13ed67275deb17bd22d59ea8f01722fc9d5a1807094d2a64d"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/compat.h",
+    "sha256": "2c72a5d4a13796472dcd4082f4d3bcea22b9e778409403425a5d8c669ac6c65a"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/dictionaryClass.c",
+    "sha256": "38c9ab6d0fe92af86341fe6171f8718520b2c9fb99a50bb235a5903477432b4d"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/dictionaryClass.h",
+    "sha256": "d5320cc04b13d6dee5f243d00a8b939a0ded755a61bf9fcc8b79943594ef7014"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/else.c",
+    "sha256": "d70ef086e2ea3aa84b6a5146c0ac1ab4844354803b9583cac91d8bf8d5247c38"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/else.h",
+    "sha256": "557c9052c4ca49b589e32aa1551a452e0549f04bd19a965e2e66ee4b2f26f893"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/eval.c",
+    "sha256": "046680e8a56d478e9cf2793581532c05d48dc9afc2b0647389db4b52b67ba6cd"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/eval.h",
+    "sha256": "0581ca00a3ece85d72ae7682c71f026c35918d385b64a6573b9fb8eaec620966"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/functionClass.c",
+    "sha256": "2c5508b92d080f71b1fb3b2cf40a9d9f8ad0d99e6a6e37188363e0c734d6d5e4"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/functionClass.h",
+    "sha256": "179b8681b4ff84ff5826c48e98d277e6a188394c1c23b28dc30a701daabcfe1e"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/garbageCollector.c",
+    "sha256": "9ba0e5b3aa77e059af0a62ad99d1226b0b92bd232a0f01db6a2f5712181a48d8"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/garbageCollector.h",
+    "sha256": "a1a83850a4cb71df2e1ff43fae401834c04bdc804e3fe57344bc880a5a05ba79"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/genericClass.c",
+    "sha256": "1f4d3173b27652f34c9bf455b2b97782ccc9c3890f371a3236403f9f580848cd"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/genericClass.h",
+    "sha256": "50cfd80b446bb6e9c4aad06c35b18a1ae33414c7e6dcc95c7426226bfa1169a3"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/intClass.c",
+    "sha256": "e63cc92a1ee660a121d36cd8083830535d54d9e4c8aec69fa8985552d5aa8f93"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/intClass.h",
+    "sha256": "87690eb7c2b18b078478b97f7f8396b004b66428ce96d37a658de6b359876d33"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/model.c",
+    "sha256": "3497933e77cfe61bf616d42b3f332908864bf16e9565e67fb13415affee43574"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/model.h",
+    "sha256": "700183207f3dca16c1daacfad9f89a4f7bfc0b0e2e1f89260e7b0192692a6210"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/parser.c",
+    "sha256": "63530883ae310f906b81c184b1bc5123e0ad44f20f8ebe6d4d019d63897d2c13"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/parser.h",
+    "sha256": "ab07ddbf4107bc5cb57bfb48c5fb3f3c45a9ad0ddb31f7b261bc056998fd47e7"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/saveClass.c",
+    "sha256": "586ea2f90f010aba4110ab32b0e8c4e3ce36b96b3fc5e0e9535c14810093fcc6"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/saveClass.h",
+    "sha256": "79b0b712f742965ab0bd17305ce476c8130315113984c6b9ae79108587e2b1e1"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/scriptError.c",
+    "sha256": "88ba582f3e9fb19228f20acd3872803c3bc05a7e53f882b0c822cdb3ca4519dc"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/scriptError.h",
+    "sha256": "b48aa640c89ade72bfbf1cabe3d329c9b56303ac834f47ea7630295646148da2"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/standardLibrary.c",
+    "sha256": "50815b0691b29c3c19870f2c8083cc8f8cb36a5bcbca3be5c738682d64b5115b"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/standardLibrary.h",
+    "sha256": "4406a09a9b6854b90a2dcdc1e3a3eed5e00e00da6d2c0aa8f6cdaaaa6a1eb561"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/StringClass.c",
+    "sha256": "1f2c093a5b1e9aff6fda97cb5737c75051e49aa88b4c2fed102cd6b86f40f85b"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/StringClass.h",
+    "sha256": "7358db3a9f9a62ddcf86b0d0e19a45853fff3ccbff86c6b0dc52847b2f3bc910"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/unsolvedArrayClass.c",
+    "sha256": "2d3ec804fabe6f8a606a1702cb3d4a41bbdfc5ceaa9988327e4adbf14b522432"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/unsolvedArrayClass.h",
+    "sha256": "4db48ed9212dc49bb1799dd8ac1c4cd4c49c124040afc44194662e3d2ec9101e"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/vector.c",
+    "sha256": "e8b868aa545d120d8f0e53667daee81cad80b6a18b7a6c40770120980f344027"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/script/vector.h",
+    "sha256": "38714f31631ae1cf19712d76963ea88bbfa8dcecbe3577970905c29b60294323"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/start.S",
+    "sha256": "081a718ae02bcffca953c9a02b08cfc05594468d89e01fda73cd20a68ac89b33"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/storage/emmcfile.c",
+    "sha256": "3d6d054b00cce4be759f542449d30a4375eb27ef8fff2ec8445f19ed6b94a0a8"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/storage/emmcfile.h",
+    "sha256": "6b3aa4ab1872bb866b906721f6ddc97a0fe46930260652c177ca4ebfe7347e14"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/storage/emummc.c",
+    "sha256": "4c106fb0fc9c67772cdff59ae3bc86549a286409f2eda88a7d1907e393b1a2ad"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/storage/emummc.h",
+    "sha256": "18a4a06a89da09dfe8db157610659e2a643651b671d308d88130b9eb1eb637fe"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/storage/gptmenu.c",
+    "sha256": "bc80de0bded5140a5e4a4b3bf9a7f0965befa7b165d786f39cad7486b82eb5f7"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/storage/gptmenu.h",
+    "sha256": "d39b5cee8d983f970eb7d3116c4298c01fd3aaacbf599c3e8477f195da9fb63b"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/storage/mountmanager.c",
+    "sha256": "1b8b873d010d00f2ab924d0b9a2fe3f460d3372bf7017763c14d89c1959638de"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/storage/mountmanager.h",
+    "sha256": "185d98e3606958ef193609bdde453625f251192ca049762b4595c3151267faac"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/storage/nx_emmc.c",
+    "sha256": "48257489776a7d57544bc8bd48441c2c708d8c2d6d6de53a1747ebe759eb7258"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/storage/nx_emmc.h",
+    "sha256": "ef32958c495f745aa85ef510e80c299f5f3b235f6d07d229a4b3b434f9cf5b63"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/storage/nx_emmc_bis.c",
+    "sha256": "dad4cc3589007cf04c0a66c74707fd7b49dc28e3263a106975f29422cb214cc2"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/storage/nx_emmc_bis.h",
+    "sha256": "8365d7d881ca578a19591a86539506ba21f5a9886d24542949e0112965f40e58"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/storage/nx_sd.c",
+    "sha256": "22deba8705f8b2292c10326ac7f8ca7e533419c3263d0f38b7ff848a3b12dc98"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/tegraexplorer/mainmenu.c",
+    "sha256": "32eeae577c2f80bfa5d91d7f698939c34956b7c84c5bff48981f8540bf46e19d"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/tegraexplorer/mainmenu.h",
+    "sha256": "205efba3a751030b221117e7706650d3cfd6ea4b843d2f564abd01f22aa4ce8d"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/tegraexplorer/tconf.c",
+    "sha256": "c937aaf94009b1a60a1a357382db620a7c6fe61a1e51221ffb242bc1640bd481"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/tegraexplorer/tconf.h",
+    "sha256": "cb840ec25e8ef4e72511e459991a01b35dd472b5970eab1d2fae8ec4778df14a"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/tegraexplorer/tools.c",
+    "sha256": "15752dbc13ecf3e7865628aab15ff5b743571a6ee973d2d8f7f9032900b2f245"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/tegraexplorer/tools.h",
+    "sha256": "f206368af03d0d92fc146c31ba3c7561135de2595a5f69291c749b115a431988"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/utils/utils.c",
+    "sha256": "bf878aff9f93c32982294372e66063126e0078a5a557491a2377b6551aebbae9"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/utils/utils.h",
+    "sha256": "8f22742fc7e4f5d95c4c6c411c7fa29123b1268d0bed67ead24a81982308e2a2"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/utils/vector.c",
+    "sha256": "1c69b8ef8a1a7e98e3f01b20d45cf20ac36988d7b209118504716ce210312778"
+  },
+  {
+    "path": "vendor/tegraexplorer/source/utils/vector.h",
+    "sha256": "501c26f18b24f832e5ee00f366496da807a03882b9084d0e27e490f593749667"
+  },
+  {
+    "path": "vendor/tegraexplorer/tools/bin2c/bin2c.c",
+    "sha256": "c039e56c0d96d998a511fe9f35a69ea51bdf608949cb3cfb9abbc425128b1e86"
+  },
+  {
+    "path": "vendor/tegraexplorer/tools/lz/lz.c",
+    "sha256": "0f422ec584880cd3825105b5a9e6b65b5b2aae9f94fe1cba93997f8b995bfb68"
+  },
+  {
+    "path": "vendor/tegraexplorer/tools/lz/lz.h",
+    "sha256": "7ccef4ac4f684c24d5c4af87c4c039c53c7f5adf77ee113deb6b4001a9fe0546"
+  },
+  {
+    "path": "vendor/tegraexplorer/tools/lz/lz77.c",
+    "sha256": "750da21b32b35ba6c4f80c0cf72bdfe15c722c743b2c9474c7c3f4810b96ee0d"
+  }
+]

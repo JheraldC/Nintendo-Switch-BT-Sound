@@ -1,0 +1,34 @@
+[
+  {
+    "path": "include/bt_save_reader.h",
+    "sha256": "3a8326f22d3fd6615ce3b8ceb3bf7abf6126c02ca9ba66d1a3b26fed48d8cfab"
+  },
+  {
+    "path": "src/internal.h",
+    "sha256": "60573ebee81ca60cbac3afaca0c4feca0d904aeaaf344f8153ed569da20fd88e"
+  },
+  {
+    "path": "src/reader.c",
+    "sha256": "59e914638fb98d806efa6fe51e5892796d7a4805bc49e9c196f392118359845b"
+  },
+  {
+    "path": "src/storage.c",
+    "sha256": "1f92f22a0f52d62c61a8c12aafda4b5190082dc2303bd9acdb2317660999c531"
+  },
+  {
+    "path": "src/integrity.c",
+    "sha256": "95097afee83feb8854d68f3bb1c92776dcdd032b563cb696cdc14b40aae0f147"
+  },
+  {
+    "path": "src/filesystem.c",
+    "sha256": "180d07b30ba2d251a0d6ae335b0824eb0094ba20d874179d0c776973aa7def44"
+  },
+  {
+    "path": "src/sha256.c",
+    "sha256": "7ddbe446a200c59b3d4e935a7dc77492f583046229d2faa88bba076ed41f663f"
+  },
+  {
+    "path": "src/sha256.h",
+    "sha256": "0ea630135cc7bb54facce8862a5b3aebda7610aca95763a2bdc84d7bbd9b817b"
+  }
+]

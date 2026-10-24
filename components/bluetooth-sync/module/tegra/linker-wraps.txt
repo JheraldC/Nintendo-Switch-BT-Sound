@@ -1,0 +1,9 @@
+--wrap=f_open
+--wrap=f_write
+--wrap=f_unlink
+--wrap=f_mkdir
+--wrap=f_rename
+--wrap=emummc_storage_write
+--wrap=sdmmc_storage_write
+--wrap=nx_emmc_bis_write
+--wrap=emummc_storage_set_mmc_partition

@@ -1,0 +1,7 @@
+{
+  "generator_original_sha256": "d3b123ceea1c06ea77b2ed24292ab8c20aa302e059c0377eb76510d02714f1f5",
+  "generator_change": "HMAC key=label, message=seed; prior fixture mirrored the bug",
+  "test_original_sha256": "827f5fdcbc342211563138f41c89facdbf2277d95f21ef2fe55e0f89ad9d8aa0",
+  "cmac": "synthetic marker only",
+  "no_console_material": true
+}

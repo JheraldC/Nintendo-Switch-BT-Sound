@@ -1,0 +1,19 @@
+BT SYNC - PAYLOAD MANUAL
+
+Abrir Hekate > Payloads > BT-Sync-Una-Vez.bin cuando quieras sincronizar.
+Desde el inicio aparece Cargando..., la etapa actual y una barra de avance.
+La barra avanza por etapas reales: comprobar, leer, comparar y guardar.
+No representa una estimacion de tiempo ni se rellena al fallar.
+
+Al completar la barra espera 0,5 segundos con el avance lleno.
+Despues muestra durante 3 segundos OK en verde (completado o sin cambios)
+o FALLO en rojo (error, cancelacion o trabajo incompleto), y vuelve a Hekate.
+No hay que pulsar botones. Si la SD/Hekate no se pueden validar, muestra
+FALLO y se apaga automaticamente en vez de usar una continuacion sin validar.
+
+Los menus, emparejamientos e historial permanecen intactos durante esta
+actualizacion del payload. Hack no sincroniza automaticamente al arrancar.
+Despues de OK, entrar en Hack y verificar la reconexion de los mandos.
+No retirar SD ni cortar energia durante escritura. Tras una interrupcion,
+reabrir este payload para recuperar antes de entrar en Hack normal.
+No copiar el binario preparado ni claves/historial a otra Switch.

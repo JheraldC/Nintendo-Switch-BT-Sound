@@ -1,0 +1,24 @@
+name: Comprobaciones
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  host:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -v
+      - run: python components/bluetooth-sync/tests/test_portable.py
+      - run: python components/bluetooth-sync/tests/test_result_paths.py
+      - name: Pruebas de sonido
+        working-directory: components/bootsound
+        run: |
+          python tests/gen_fixtures.py
+          python tests/run_tests.py
+          python tests/run_config_tests.py
+          python tests/run_audio_tests.py
+          python tests/check_ipc_dispatch.py
