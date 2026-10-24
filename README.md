@@ -1,8 +1,8 @@
 # Nintendo Switch · BT & Beats — Sonido y controles
 
-**Sincroniza tus controles y dale sonido al arranque.**
+**Ponle sonido al inicio de Hack, personaliza las imágenes de arranque y sincroniza tus Pro Controller y Joy-Con compatibles de Original a Hack en la misma consola.**
 
-Sonido, imágenes de arranque y sincronización manual de Pro Controller/Joy-Con para Nintendo Switch con Atmosphère y emuMMC.
+El sonido se reproduce al arrancar Hack. La sincronización Bluetooth se ejecuta cuando abres el payload desde Hekate. Puedes instalar cada función por separado en tu Nintendo Switch con Atmosphère y emuMMC.
 
 | Componente | Para qué sirve | Instalación |
 |---|---|---|
