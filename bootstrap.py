@@ -10,6 +10,7 @@ URL='https://github.com/JheraldC/Nintendo-Switch-BT-Sound/releases/download/v1.1
 def cache_root():return Path(os.environ.get('BT_SOUND_CACHE') or Path.home()/'.bt-sound').expanduser().resolve()
 
 def verified_project(cache):
+    cache=Path(cache).resolve()
     directory=cache/'source'/COMMIT[:12]
     marker=directory/'BOOTSTRAP-SHA256.json'
     if marker.is_file():
@@ -24,7 +25,7 @@ def verified_project(cache):
     directory.parent.mkdir(parents=True,exist_ok=True)
     print('Descargando Nintendo-Switch-BT-Sound 1.1.0, revisión '+COMMIT[:7]+'...')
     with tempfile.TemporaryDirectory(prefix='project-',dir=directory.parent) as temp:
-        temp=Path(temp);archive=temp/'project.zip';digest=hashlib.sha256();size=0
+        temp=Path(temp).resolve();archive=temp/'project.zip';digest=hashlib.sha256();size=0
         with urllib.request.urlopen(URL,timeout=60) as response,archive.open('xb') as target:
             while block:=response.read(1024*1024):
                 size+=len(block)

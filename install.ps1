@@ -35,7 +35,7 @@ try {
         Move-Item -LiteralPath $btExtract -Destination $btPythonRoot
     }
     $btBootstrap = Join-Path $btTemp 'bootstrap.py'
-    Get-BtVerified 'https://github.com/JheraldC/Nintendo-Switch-BT-Sound/releases/download/v1.1.0/bootstrap-v1.1.0-inicial.py' $btBootstrap 'd4dac7986590ce8a8e65f676a7ed6f10ae8f5e065762e52ced5963730122a08c'
+    Get-BtVerified 'https://github.com/JheraldC/Nintendo-Switch-BT-Sound/releases/download/v1.1.0/bootstrap-v1.1.0.py' $btBootstrap '52d0f69dd3756ef3123b248b530070f4f663e210f35d502176e91bf4c5b5db37'
     $btLaunchArgs = @()
     if ($CheckOnly) { $btLaunchArgs += '--smoke-test' }
     & $btPython $btBootstrap @btLaunchArgs
