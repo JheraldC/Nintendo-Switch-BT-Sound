@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "checks": 46,
+  "asan_ubsan": true,
+  "main_source_sha256": "d1f2e8fcb06d2238760676bbe9707ed25262fb466261a73d02509ee3d7bce032",
+  "test_source_sha256": "e73b4570928449dd15d77ef2b76cc5054c8137c2abccb104bdb1a40e141ca733",
+  "success_colour": "0xFF00FF00",
+  "failure_colour": "0xFFFF0000",
+  "display_ms": 3000,
+  "hardware_tested": false
+}

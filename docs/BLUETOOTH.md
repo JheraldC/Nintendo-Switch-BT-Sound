@@ -22,6 +22,10 @@ Arranca emuMMC una vez para que Atmosphère cree `atmosphere/bluetooth_devices.d
 
 ## Instalar para una consola
 
+**Flujo automático en Windows, macOS, Ubuntu y Fedora:** inicia el [asistente desde un enlace](INSTALACION.md) y elige 3. Detecta los límites de la partición, verifica las precondiciones y las pruebas publicadas, obtiene el compilador ARM si falta, prepara, compila y audita localmente. Antes de instalar muestra el plan y pide `INSTALAR`. No requiere preparar manualmente WSL, make ni un compilador C del sistema. Los requisitos de firmware, Hekate y datos propios anteriores siguen vigentes.
+
+Los pasos siguientes conservan el flujo manual de desarrollo; las pruebas C necesitan un entorno Linux con gcc/make (en Windows puede ser WSL). El instalador automático usa evidencia verificada de esas pruebas y audita cada payload localmente.
+
 Extrae una copia nueva del proyecto por SD. Configura devkitARM si no está en la ruta:
 
 ```powershell

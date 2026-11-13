@@ -21,9 +21,10 @@ counts={}
 for name,pattern in patterns.items():
     match=re.search(pattern,log);assert match,name
     counts[name]=int(match[1])
-files=[p for p in ROOT.rglob('*') if p.is_file() and 'output' not in p.relative_to(ROOT).parts and
+files=[p for p in ROOT.rglob('*') if p.is_file() and p!=ROOT/'include/auto_binding.h' and 'output' not in p.relative_to(ROOT).parts and
        'build' not in p.relative_to(ROOT).parts and (p.suffix in ('.c','.h') or p.name=='Makefile')]
 record={'passed':True,'asan_ubsan':True,'counts':counts,'synthetic_media':True,'aes_and_cmac':'mocks',
+        'binding_validation':'generated locally; checked against compiled build',
         'sha256':'real frozen implementation','hardware_execution':False,
         'tested_sources':{p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(files)}}
 (OUT/'test-results.json').write_text(json.dumps(record,indent=2),encoding='utf-8')

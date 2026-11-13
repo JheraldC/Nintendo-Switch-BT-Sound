@@ -9,6 +9,8 @@ from toolchain import tool
 
 R=Path(__file__).resolve().parent;O=R/'output';V=R/'baseline';TE=R/'vendor/tegraexplorer'
 e=json.loads((O/'build-evidence.json').read_text());binary=O/e['binary']
+assert e['binding_sha256']==hashlib.sha256((R/'include/auto_binding.h').read_bytes()).hexdigest()
+assert e['binding_sha256']==json.loads((O/'preparation.json').read_text())['binding_sha256']
 assert hashlib.sha256(binary.read_bytes()).hexdigest()==e['sha256']
 symbols=(O/'symbols.txt').read_text();names={s.split()[-1] for s in symbols.splitlines() if s.split()}
 for forbidden in ('f_mkdir','f_mkfs','f_truncate','f_chmod','f_fdisk','f_fdisk_mod','save_commit','save_data_file_write','nx_emmc_bis_write','emummc_storage_write',

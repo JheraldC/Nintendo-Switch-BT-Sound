@@ -7,8 +7,11 @@ import json
 import os
 import re
 import subprocess
+import sys
 
 ROOT=Path(__file__).resolve().parent
+sys.path.insert(0,str(ROOT.parents[1]))
+from tools.partition_info import partition_info
 OUT=ROOT/'output'
 HEKATE_SHA='95f6e933e32e028f3ae90f0b0857ff47800e834bdace38a0ab019d8ed35a8c24'
 MANUAL_ENTRY='Sincronizar Bluetooth una vez'
@@ -53,18 +56,7 @@ def boot_configs(ipl,original,hack):
     return after,inner
 
 def partition(sd):
-    require(os.name=='nt','This first installer supports Windows drive letters only')
-    drive=sd.drive
-    require(re.fullmatch('[A-Za-z]:',drive) is not None and sd==Path(drive+'/'),'Use a drive root such as E:/')
-    letter=drive[0]
-    cmd='Get-Volume -DriveLetter '+letter+' | Select-Object FileSystem,FileSystemLabel | ConvertTo-Json'
-    volume=json.loads(subprocess.check_output(['powershell.exe','-NoProfile','-Command',cmd],text=True))
-    require(volume['FileSystem']=='FAT32','Target must be FAT32')
-    cmd='Get-Partition -DriveLetter '+letter+' | Select-Object Offset,Size | ConvertTo-Json'
-    part=json.loads(subprocess.check_output(['powershell.exe','-NoProfile','-Command',cmd],text=True))
-    offset,size=part['Offset'],part['Size']
-    require(offset%512==size%512==0 and 0<offset//512<(offset+size)//512<=0xffffffff,'Invalid partition bounds')
-    return offset//512,(offset+size)//512
+    return partition_info(sd)
 
 def prepare(sd,original,hack,first,end,declared_profile):
     require(declared_profile=='23.0.1','Only the analyzed 23.0.1 settings profile is supported')

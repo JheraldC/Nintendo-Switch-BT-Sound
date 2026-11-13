@@ -1,0 +1,122 @@
+{
+  "windows-x86_64": {
+    "arm": {
+      "url": "https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/releases/download/v15.2.1-1.1/xpack-arm-none-eabi-gcc-15.2.1-1.1-win32-x64.zip",
+      "sha256": "bae6a3d1667697ce750c3b13d6d26d80973ecedc2cc87bf04869e83447fd93ea",
+      "bytes": 335571206,
+      "version": "v15.2.1-1.1",
+      "root": "xpack-arm-none-eabi-gcc-15.2.1-1.1"
+    },
+    "python": {
+      "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261110/cpython-3.12.16%2B20261110-x86_64-pc-windows-msvc-install_only_stripped.tar.gz",
+      "sha256": "355ee61b8207b91574491b1c6dc9b0ebb4408fc56bfafe498f3ef439314b52dc",
+      "bytes": 22365213,
+      "executable": "python/python.exe"
+    },
+    "ffmpeg": {
+      "url": "https://files.pythonhosted.org/packages/82/0c/a1d49f3dd2688bd750b4986f8e271ad11f8e729a896070ea25f587b44da8/imageio_ffmpeg-0.8.1-py3-none-win_amd64.whl",
+      "sha256": "f27ca4cb85e2d4946deedbce1a81245dfd942a2bcf94b53676fb3956aa95bf1b",
+      "bytes": 38893483,
+      "member": "imageio_ffmpeg/binaries/ffmpeg-win-x86_64-v9.0.2.exe",
+      "executable_sha256": "3256173f3f8bffd7df12227c68adf68025edb1832273a9530688a7bb1ed8edec",
+      "license_member": "imageio_ffmpeg-0.8.1.dist-info/licenses/LICENSE",
+      "version": "imageio-ffmpeg-0.8.1"
+    }
+  },
+  "darwin-x86_64": {
+    "arm": {
+      "url": "https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/releases/download/v15.2.1-1.1/xpack-arm-none-eabi-gcc-15.2.1-1.1-darwin-x64.tar.gz",
+      "sha256": "5be906a5194c3173e145a58048e5607ffff947773237802b93e55e23c415f1b6",
+      "bytes": 298312329,
+      "version": "v15.2.1-1.1",
+      "root": "xpack-arm-none-eabi-gcc-15.2.1-1.1"
+    },
+    "python": {
+      "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261110/cpython-3.12.16%2B20261110-x86_64-apple-darwin-install_only_stripped.tar.gz",
+      "sha256": "b78a4c479f1964ec484880bee567568266f68da102269fb93a05fe8716b45f91",
+      "bytes": 24957926,
+      "executable": "python/bin/python3"
+    },
+    "ffmpeg": {
+      "url": "https://files.pythonhosted.org/packages/da/24/2c3a7c69453bfb8374ddbbb5007346bad4a4247bc86882f3521cd615f929/imageio_ffmpeg-0.8.1-py3-none-macosx_10_13_x86_64.whl",
+      "sha256": "9538a10e598257263b5de1a1c1b86e7603417bc219245b1e279b452e5e48cc20",
+      "bytes": 26974382,
+      "member": "imageio_ffmpeg/binaries/ffmpeg-macos-x86_64-v9.0.2",
+      "executable_sha256": "a45b462cf91ed89148ae218c4577e30896485d7a6792c3673bcf5f823fa01b63",
+      "license_member": "imageio_ffmpeg-0.8.1.dist-info/licenses/LICENSE",
+      "version": "imageio-ffmpeg-0.8.1"
+    }
+  },
+  "darwin-aarch64": {
+    "arm": {
+      "url": "https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/releases/download/v15.2.1-1.1/xpack-arm-none-eabi-gcc-15.2.1-1.1-darwin-arm64.tar.gz",
+      "sha256": "574082d35e49a2bcbdc355836b2a3ae5e5bb3b9456c9f5e37177db2ab4aad870",
+      "bytes": 293820200,
+      "version": "v15.2.1-1.1",
+      "root": "xpack-arm-none-eabi-gcc-15.2.1-1.1"
+    },
+    "python": {
+      "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261110/cpython-3.12.16%2B20261110-aarch64-apple-darwin-install_only_stripped.tar.gz",
+      "sha256": "2f11b8aa3726bdbd87dd9eb76568412faddf4f47e26913fa45d6a2e424972acd",
+      "bytes": 25237581,
+      "executable": "python/bin/python3"
+    },
+    "ffmpeg": {
+      "url": "https://files.pythonhosted.org/packages/2b/47/9f9b654f853598bae0850fa22bba168103e45d31b5a2a893ed474f28d54a/imageio_ffmpeg-0.8.1-py3-none-macosx_12_0_arm64.whl",
+      "sha256": "5636d691e36e5274b13fe38182b1f627b2e35dcecc63944012c2470f9484fc45",
+      "bytes": 22625474,
+      "member": "imageio_ffmpeg/binaries/ffmpeg-macos-aarch64-v9.0",
+      "executable_sha256": "591260c945d0eef150e3bf82b0ef988bd36a9cecc18ff05d6679617159f0a95e",
+      "license_member": "imageio_ffmpeg-0.8.1.dist-info/licenses/LICENSE",
+      "version": "imageio-ffmpeg-0.8.1"
+    }
+  },
+  "linux-x86_64": {
+    "arm": {
+      "url": "https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/releases/download/v15.2.1-1.1/xpack-arm-none-eabi-gcc-15.2.1-1.1-linux-x64.tar.gz",
+      "sha256": "da6a49ad4003944b823c6c93702a8787c922ab34bd7e918ec0eaf6933a9b1ff6",
+      "bytes": 307090703,
+      "version": "v15.2.1-1.1",
+      "root": "xpack-arm-none-eabi-gcc-15.2.1-1.1"
+    },
+    "python": {
+      "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261110/cpython-3.12.16%2B20261110-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz",
+      "sha256": "6a9e62dad033790aef722dbd370e0ce76ce17b73627ba3ae679f537049350b39",
+      "bytes": 34709145,
+      "executable": "python/bin/python3"
+    },
+    "ffmpeg": {
+      "url": "https://files.pythonhosted.org/packages/de/0f/49292fbef69ee10ebcf97bb741602521caafcc6966d5fa1a2b868cc15655/imageio_ffmpeg-0.8.1-py3-none-manylinux_2_28_x86_64.whl",
+      "sha256": "050d6850601c3b3890bd2b28306f3b842b3daea390a561101174375a1c460bda",
+      "bytes": 67998402,
+      "member": "imageio_ffmpeg/binaries/ffmpeg-linux-x86_64-v9.0.2",
+      "executable_sha256": "0d709a0bed1a43f24cd2c420878c63afea4580671b6949ad19ed124572f3bc3d",
+      "license_member": "imageio_ffmpeg-0.8.1.dist-info/licenses/LICENSE",
+      "version": "imageio-ffmpeg-0.8.1"
+    }
+  },
+  "linux-aarch64": {
+    "arm": {
+      "url": "https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/releases/download/v15.2.1-1.1/xpack-arm-none-eabi-gcc-15.2.1-1.1-linux-arm64.tar.gz",
+      "sha256": "67980c7990eba7bb7ffdf39699102effd70889f5ac427be19a8c8a6c5fab2972",
+      "bytes": 302624714,
+      "version": "v15.2.1-1.1",
+      "root": "xpack-arm-none-eabi-gcc-15.2.1-1.1"
+    },
+    "python": {
+      "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261110/cpython-3.12.16%2B20261110-aarch64-unknown-linux-gnu-install_only_stripped.tar.gz",
+      "sha256": "b6a41defec4975d94b4ff1950236e7383e5c02ba40ea48c9ec33c66087a35aab",
+      "bytes": 29440910,
+      "executable": "python/bin/python3"
+    },
+    "ffmpeg": {
+      "url": "https://files.pythonhosted.org/packages/53/02/e139e53a71f33f728cb2ce6c1124edc29e4c008427923f01a4d37f9a1867/imageio_ffmpeg-0.8.1-py3-none-manylinux_2_28_aarch64.whl",
+      "sha256": "fad3176f859b25869e60a8ed79957d4e3ed74a97a95e5f0cdcb91455f6c6d00e",
+      "bytes": 60956631,
+      "member": "imageio_ffmpeg/binaries/ffmpeg-linux-aarch64-v9.0.2",
+      "executable_sha256": "0b0b5ac30495b4e07ce1321b8d58200f901f57782884a8b6b264c7528c2c9e77",
+      "license_member": "imageio_ffmpeg-0.8.1.dist-info/licenses/LICENSE",
+      "version": "imageio-ffmpeg-0.8.1"
+    }
+  }
+}

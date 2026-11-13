@@ -2,9 +2,13 @@
 
 ## Instalación sencilla
 
-Para usar el asistente en Windows necesitas [Python 3.11 o posterior](https://www.python.org/downloads/windows/). Extrae por completo el ZIP antes de abrirlo.
+Puedes iniciar el asistente en Windows, macOS o Linux con los [comandos de un enlace](INSTALACION.md). Ese método prepara Python automáticamente. Para usar una copia local de las fuentes necesitas Python 3.11 o posterior; ejecuta `python instalar.py` (en macOS/Linux, `python3 instalar.py`).
 
-Ejecuta `instalar.cmd`, elige 1, indica la letra de tu SD y selecciona Yoshi o el ejemplo generado. Revisa los archivos y escribe `INSTALAR`. El asistente agrega el módulo y guarda una copia de cualquier archivo reemplazado fuera de la SD. Una selección de sonido que ya exista se conserva.
+Elige 1, indica la raíz de tu SD y selecciona Yoshi, el ejemplo generado o **3: elegir mi archivo**. En la tercera opción se abre un selector nativo; si el escritorio no lo ofrece, puedes pegar la ruta. Cancelarlo no instala nada. Indica el segundo de inicio y una duración de hasta 10 segundos. El asistente convierte localmente el audio, comprueba el WAV resultante y muestra el plan antes de pedir `INSTALAR`.
+
+MP3, M4A, AAC, FLAC, OGG, WAV y otros formatos admitidos por el FFmpeg utilizado pueden convertirse; también se puede extraer la primera pista de audio de un vídeo local. El original se conserva. El resultado se instala como `config/JheraldBootSound/custom_sound.wav` y se selecciona en `config.ini`, conservando sus comentarios y otras opciones. Un sonido propio anterior con ese nombre y la configuración se respaldan antes del reemplazo. Para los sonidos incluidos, el asistente permite conservar o cambiar explícitamente la selección actual.
+
+Se reutiliza FFmpeg de `FFMPEG_BINARY` o PATH. Si falta, se descarga la distribución portátil fijada en `tools/runtime-manifest.json`, se verifica su SHA-256 y se conserva solo su ejecutable y sus avisos de licencia. No se necesitan ffprobe, ffplay, DLL separadas, imageio, NumPy ni librerías Python de audio. Un WAV corto que ya cumple el formato no requiere FFmpeg ni descarga. FFmpeg convierte audio; no descompila ni adapta el ejecutable del módulo a otra versión de Atmosphère.
 
 En una instalación nueva se copian:
 
@@ -40,6 +44,8 @@ python tools/install_sd.py audio --sd E:/ --clip yoshi --replace-config --apply 
 La primera instrucción solo muestra el plan. Sustituye `E:` y el respaldo por tus rutas. No uses una carpeta de respaldo que ya exista.
 
 ## Compilar las fuentes
+
+Esta sección es para desarrollar el módulo: no se necesita compilar BootSound para convertir o instalar un sonido.
 
 Instala devkitPro, devkitA64, libnx y switch-tools. Abre la terminal MSYS2 de devkitPro y ejecuta dentro de `components/bootsound`:
 

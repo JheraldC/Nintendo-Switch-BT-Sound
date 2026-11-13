@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+output/
+build/
+converted/
+runtime/
+components/bluetooth-sync/include/auto_binding.h
+*.keys
+bluetooth_devices.*
+history.bin
+history.next
+history.prev
+transaction.bin

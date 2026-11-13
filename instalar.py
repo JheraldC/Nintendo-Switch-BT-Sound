@@ -1,6 +1,7 @@
-"""Asistente local. No envía claves ni archivos de la consola a Internet."""
+"""Asistente local para Windows, macOS y Linux. Los datos de la SD no se suben."""
 from pathlib import Path
-import subprocess, sys
+import argparse,re,subprocess,sys,tempfile
+from datetime import datetime
 
 ROOT=Path(__file__).resolve().parent
 
@@ -16,39 +17,72 @@ def choose_entry(sd,system):
 def run(args,cwd=ROOT):
     subprocess.run([sys.executable,*map(str,args)],cwd=cwd,check=True)
 
+def install_files(sd,component,backup,**kwargs):
+    from tools.install_sd import plan,apply
+    actual,files,before=plan(sd,component,**kwargs)
+    for name,data in files.items():
+        print(('Sin cambio' if before[name]==data else 'Reemplazar' if before[name] is not None else 'Añadir')+': '+name)
+    print('Respaldo de los archivos anteriores:',backup)
+    if input('Escribe INSTALAR para aplicar este plan: ').strip()=='INSTALAR':
+        apply(actual,files,before,backup)
+    else:print('Cancelado. No se escribió en la SD.')
+
+def audio_flow(sd,backup):
+    selected=input('Sonido: 1 Yoshi / 2 ejemplo generado / 3 elegir mi archivo [1]: ').strip() or '1'
+    if selected not in ('1','2','3'):raise ValueError('Opción de sonido no válida')
+    if selected!='3':
+        replace=input('¿Activar este sonido en lugar del seleccionado actualmente? [s/N]: ').strip().lower()=='s'
+        install_files(sd,'audio',backup,clip='yoshi' if selected=='1' else 'ejemplo',replace_config=replace)
+        return
+    from tools.file_picker import select_audio_file
+    source=select_audio_file()
+    if not source:
+        print('Selección cancelada. No se escribió en la SD.');return
+    start=float(input('Segundo de inicio [0]: ').strip() or '0')
+    duration=float(input('Duración del fragmento, hasta 10 segundos [10]: ').strip() or '10')
+    from tools.audio_convert import convert_audio
+    with tempfile.TemporaryDirectory(prefix='bootsound-selected-') as temp:
+        converted=Path(temp)/'custom_sound.wav'
+        info=convert_audio(source,converted,start,duration,download=True)
+        print(f"Audio listo: {info['seconds']:.2f} s, WAV PCM de 16 bits, estéreo, 48000 Hz.")
+        print('Se activará tu audio como custom_sound.wav. El original se conserva.')
+        install_files(sd,'audio',backup,custom_wav=converted)
+
 def main():
-    print('Nintendo Switch · BT & Beats — Sonido y controles\n1. Sonido al arrancar emuMMC\n2. Imagen de Hekate\n3. Preparar payload Bluetooth para esta SD')
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--smoke-test',action='store_true',help=argparse.SUPPRESS)
+    args=parser.parse_args()
+    if args.smoke_test:
+        from tools.portable_runtime import platform_key
+        from tools.audio_convert import validate_wav
+        from tools.partition_info import partition_info
+        print('Asistente disponible:',platform_key(),(ROOT/'VERSION').read_text().strip());return
+    print('Nintendo Switch · BT & Beats — Sonido y controles\n1. Sonido y conversor de audio\n2. Imagen de Hekate\n3. Preparar payload Bluetooth para esta SD')
     choice=input('Elige 1, 2 o 3: ').strip()
     if choice not in ('1','2','3'):raise ValueError('Opción no válida')
-    sd=Path(input('Letra de la microSD (por ejemplo E:): ').strip().rstrip('/\\')+'/').resolve()
-    backup=Path.home()/'Documents/SwitchBackups'
-    from datetime import datetime
-    backup=backup/('jherald-'+datetime.now().strftime('%Y%m%d-%H%M%S'))
-    if choice in ('1','2'):
-        args=['tools/install_sd.py','audio' if choice=='1' else 'logo','--sd',sd]
-        if choice=='1':
-            args+=['--clip','yoshi' if input('Sonido: 1 Yoshi / 2 ejemplo generado [1]: ').strip()!='2' else 'ejemplo']
-            print('Si ya tienes una selección de sonido, se conserva.')
-        else:args+=['--entry',choose_entry(sd,'emuMMC')]
-        run(args)
-        if input('Escribe INSTALAR para aplicar este plan con copia de seguridad: ').strip()=='INSTALAR':
-            run([*args,'--apply','--backup-dir',backup])
-        return
-    bt=ROOT/'components/bluetooth-sync'
-    original=choose_entry(sd,'sysMMC')
-    hack=choose_entry(sd,'emuMMC')
-    profile=input('Firmware de sysMMC (solo 23.0.1): ').strip()
-    print('Necesitas Python, devkitARM y WSL con gcc/make/python3. Puede tardar varios minutos.')
-    print('La base externa debe estar activada y creada al arrancar emuMMC una vez; consulta docs/BLUETOOTH.md.')
-    run(['prepare.py','--sd',sd,'--sysmmc',original,'--emummc',hack,'--firmware-profile',profile],bt)
-    for command in (['build_payload.py'],['tests/test_portable.py'],['tests/test_result_paths.py'],['run_host_tests.py'],['audit_auto.py'],['deploy_portable.py','--sd',sd]):
-        run(command,bt)
-    print('Se añadirán cuatro archivos. El menú y la base actual se conservan. No se ejecuta la sincronización ahora.')
+    value=input('Raíz de la microSD (E:/, /Volumes/SWITCH SD o /media/usuario/SWITCH SD): ').strip().strip('"')
+    if not value:raise ValueError('Debes seleccionar la microSD')
+    if re.fullmatch('[A-Za-z]:',value):value+='/'
+    sd=Path(value).expanduser().resolve()
+    if not (sd/'bootloader/hekate_ipl.ini').is_file() or not (sd/'atmosphere/package3').is_file():
+        raise ValueError('Selecciona una microSD ya configurada con Hekate y Atmosphère')
+    backup=Path.home()/'Documents/SwitchBackups'/('jherald-'+datetime.now().strftime('%Y%m%d-%H%M%S-%f'))
+    if choice=='1':audio_flow(sd,backup);return
+    if choice=='2':install_files(sd,'logo',backup,entry=choose_entry(sd,'emuMMC'));return
+    original=choose_entry(sd,'sysMMC');hack=choose_entry(sd,'emuMMC')
+    profile=input('Firmware de sysMMC (perfil admitido: 23.0.1): ').strip()
+    print('La base Bluetooth externa debe estar activada y creada al arrancar emuMMC una vez.')
+    print('Preparación local automática. El compilador se descarga solo si falta (unos 300 MiB).')
+    from tools.bluetooth_setup import prepare_bluetooth,BT
+    prepare_bluetooth(sd,original,hack,profile)
+    print('Se añadirán cuatro archivos. El menú y la base actual se conservan. No se sincroniza durante la instalación.')
     if input('Escribe INSTALAR para guardar el respaldo privado e instalar el payload: ').strip()=='INSTALAR':
-        run(['deploy_portable.py','--sd',sd,'--apply','--backup-dir',backup],bt)
+        run(['deploy_portable.py','--sd',sd,'--apply','--backup-dir',backup],BT)
         print('Después: Hekate > Payloads > BT-Sync-Una-Vez.bin. Comprueba OK y la reconexión en emuMMC.')
+    else:print('Cancelado. No se escribió en la SD.')
 
 if __name__=='__main__':
     try:main()
+    except KeyboardInterrupt:print('\nCancelado. Revisa el último paso mostrado antes de volver a ejecutar.');sys.exit(130)
     except (ValueError,OSError,subprocess.CalledProcessError) as exc:
         print('No se pudo completar:',exc,file=sys.stderr);sys.exit(1)

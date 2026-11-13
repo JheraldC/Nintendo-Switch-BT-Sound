@@ -14,12 +14,25 @@ Uso sysMMC (OFW) para referirme al sistema original de la consola y emuMMC (CFW 
 
 ## Empezar
 
-1. Descarga Nintendo-Switch-BT-Sound-v1.0.0.zip desde la [versión 1.0.0](https://github.com/JheraldC/Nintendo-Switch-BT-Sound/releases/tag/v1.0.0) y extrae su contenido en tu ordenador.
-2. Conecta la microSD de una Switch que ya arranque correctamente con Hekate, Atmosphère y emuMMC. Guarda un respaldo de los archivos que vayas a cambiar.
-3. Elige qué quieres instalar: sonido de arranque, imágenes o sincronización de controles. Abre su guía en la tabla de arriba para revisar los requisitos y preparar los archivos.
-4. Sigue los pasos de esa guía para instalar el componente en la microSD y comprobarlo en la consola.
+Conecta la microSD de una Switch que ya arranque con Hekate, Atmosphère y emuMMC. Abre una terminal normal, sin administrador, y pega el comando de tu sistema:
 
-El sonido y el logo de Hekate incluyen archivos preparados para instalar. La sincronización Bluetooth necesita prepararse y compilarse para la SD de cada consola; su guía explica el proceso. Las guías también indican las herramientas necesarias y cómo volver a la configuración anterior.
+**Windows — PowerShell**
+
+```powershell
+irm https://raw.githubusercontent.com/JheraldC/Nintendo-Switch-BT-Sound/main/install.ps1 | iex
+```
+
+**macOS, Ubuntu o Fedora — Terminal**
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/JheraldC/Nintendo-Switch-BT-Sound/main/install.sh | sh
+```
+
+El enlace descarga una versión fijada del proyecto y un Python portátil verificados por SHA-256. No requiere servidor propio, Git, administrador ni instalar Python en el sistema. Las dependencias se guardan en `~/.bt-sound/` y se reutilizan. [Detalles y plataformas](docs/INSTALACION.md).
+
+Elige sonido, imagen de Hekate o preparación Bluetooth. Puedes seleccionar tu propio audio, convertir un fragmento con FFmpeg y activarlo. El asistente muestra el plan y solo escribe en la SD al confirmar `INSTALAR`, con un respaldo fuera de ella.
+
+El sonido y el logo usan archivos ya preparados. Bluetooth se prepara y compila automáticamente en tu ordenador para cada SD; el compilador ARM se descarga si falta. Las claves y emparejamientos no se suben. La instalación no ejecuta la sincronización ni modifica el menú. Las pantallas internas de Atmosphère siguen siendo una operación avanzada de su [guía de imágenes](docs/ARRANQUE.md).
 
 ## Cómo funciona el payload Bluetooth
 
@@ -30,7 +43,7 @@ Después entra en emuMMC. Puedes volver a ejecutar el payload cuando quieras imp
 ## Requisitos
 
 - Para Bluetooth: sysMMC 23.0.1, SD FAT32, emuMMC habilitada, base Bluetooth externa existente y Hekate 6.5.4 exacto.
-- Cada consola necesita sus propias claves locales y un payload preparado para su SD.
+- Cada consola necesita sus propias claves locales y un payload preparado para su SD. Automatizar el instalador no amplía los perfiles de firmware o Hekate admitidos.
 
 [Reversión](docs/REVERSION.md) · [Licencias y créditos](LICENSES.md)
 
