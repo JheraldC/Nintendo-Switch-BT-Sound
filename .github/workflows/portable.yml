@@ -17,11 +17,18 @@ jobs:
       - run: python -m pip install -r requirements.txt
       - run: python instalar.py --smoke-test
       - run: python tools/ci_portable_check.py
+      - name: Probar lanzador Windows con Python portable
+        if: runner.os == 'Windows'
+        run: powershell.exe -NoProfile -File install.ps1 -CheckOnly
+      - name: Probar lanzador Unix con Python portable
+        if: runner.os != 'Windows'
+        run: sh install.sh --smoke-test
   fedora:
     runs-on: ubuntu-latest
     container: fedora:latest
     steps:
-      - run: dnf install -y git python3 python3-pillow
+      - run: dnf install -y git python3 python3-pillow curl tar gzip coreutils
       - uses: actions/checkout@v4
       - run: python3 instalar.py --smoke-test
       - run: python3 tools/ci_portable_check.py
+      - run: sh install.sh --smoke-test
