@@ -26,7 +26,9 @@ try {
         Get-BtVerified 'https://github.com/astral-sh/python-build-standalone/releases/download/20261110/cpython-3.12.16%2B20261110-x86_64-pc-windows-msvc-install_only_stripped.tar.gz' $btArchive '355ee61b8207b91574491b1c6dc9b0ebb4408fc56bfafe498f3ef439314b52dc'
         $btExtract = Join-Path $btTemp 'runtime'
         New-Item -ItemType Directory -Path $btExtract | Out-Null
-        & tar.exe -xzf $btArchive -C $btExtract
+        $btTar = Join-Path $env:SystemRoot 'System32/tar.exe'
+        if (-not (Test-Path -LiteralPath $btTar)) { throw 'Windows tar.exe is required (Windows 10/11)' }
+        & $btTar -xzf $btArchive -C $btExtract
         if ($LASTEXITCODE -ne 0) { throw 'Python extraction failed' }
         Assert-BtChild $btExtract
         Assert-BtChild $btPythonRoot

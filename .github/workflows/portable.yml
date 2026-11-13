@@ -19,7 +19,7 @@ jobs:
       - run: python tools/ci_portable_check.py
       - name: Probar lanzador Windows con Python portable
         if: runner.os == 'Windows'
-        run: powershell.exe -NoProfile -File install.ps1 -CheckOnly
+        run: '& ([scriptblock]::Create((Get-Content -Raw install.ps1))) -CheckOnly'
       - name: Probar lanzador Unix con Python portable
         if: runner.os != 'Windows'
         run: sh install.sh --smoke-test
