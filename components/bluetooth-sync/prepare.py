@@ -14,6 +14,8 @@ sys.path.insert(0,str(ROOT.parents[1]))
 from tools.partition_info import partition_info
 OUT=ROOT/'output'
 HEKATE_SHA='95f6e933e32e028f3ae90f0b0857ff47800e834bdace38a0ab019d8ed35a8c24'
+HEKATE_RELEASES={HEKATE_SHA:'6.5.4','09752abd207803708add6e22151e94b71ffbaaff769d1bad759584b76ef6f05e':'6.5.5'}
+CONTROLLER_PROFILES=('nintendo','missioncontrol')
 MANUAL_ENTRY='Sincronizar Bluetooth una vez'
 PAYLOAD_PATH='bootloader/payloads/BT-Sync-Una-Vez.bin'
 
@@ -58,8 +60,13 @@ def boot_configs(ipl,original,hack):
 def partition(sd):
     return partition_info(sd)
 
-def prepare(sd,original,hack,first,end,declared_profile):
+def prepare(sd,original,hack,first,end,declared_profile,controller_profile='nintendo',continuation='current'):
     require(declared_profile=='23.0.1','Only the analyzed 23.0.1 settings profile is supported')
+    require(controller_profile in CONTROLLER_PROFILES,'Unknown controller profile')
+    require(continuation in ('current','existing'),'Unknown continuation mode')
+    if controller_profile=='missioncontrol':
+        mc=sd/'atmosphere/contents/010000000000bd00'
+        require((mc/'exefs.nsp').is_file() and (mc/'flags/boot2.flag').is_file(),'The experimental controller profile requires MissionControl enabled in emuMMC')
     config=(sd/'emuMMC/emummc.ini').read_bytes();settings=(sd/'atmosphere/config/system_settings.ini').read_bytes();ipl=(sd/'bootloader/hekate_ipl.ini').read_bytes()
     require(parse(config)['emummc'].get('enabled')=='1','Enable emuMMC first')
     require(parse(settings)['atmosphere'].get('enable_external_bluetooth_db')=='u8!0x1','Enable external Bluetooth DB and boot Hack once first')
@@ -68,10 +75,14 @@ def prepare(sd,original,hack,first,end,declared_profile):
     after,inner=boot_configs(ipl,original,hack)
     for p in (sd/'bootloader/ini').glob('*.ini'):
         require(not re.search(rb'(?m)^\s*id\s*=\s*BTREAL\s*$',p.read_bytes()),'BTREAL ID collision')
-    hekate=(sd/'bootloader/update.bin').read_bytes()
-    require(hashlib.sha256(hekate).hexdigest()==HEKATE_SHA,'Exact Hekate 6.5.4 release binary required')
+    running=(sd/'bootloader/update.bin').read_bytes();running_sha=hashlib.sha256(running).hexdigest()
+    require(running_sha in HEKATE_RELEASES,'Only exact official Hekate 6.5.4/6.5.5 release binaries are recognized')
+    hekate=(sd/'switch/bt-autosync-v1/hekate-continue.bin').read_bytes() if continuation=='existing' else running
+    continuation_sha=hashlib.sha256(hekate).hexdigest()
+    require(continuation_sha in HEKATE_RELEASES,'Existing Hekate continuation is not a recognized official release')
     require(0<first<end<=0xffffffff,'Invalid partition bounds')
-    dependencies={'atmosphere/package3':hashlib.sha256((sd/'atmosphere/package3').read_bytes()).hexdigest()} if (sd/'atmosphere/package3').is_file() else {}
+    dependencies={'bootloader/update.bin':running_sha}
+    if (sd/'atmosphere/package3').is_file():dependencies['atmosphere/package3']=hashlib.sha256((sd/'atmosphere/package3').read_bytes()).hexdigest()
     fusee_boot=parse(ipl)[hack].get('payload')=='bootloader/payloads/fusee.bin'
     if fusee_boot:
         fusee=(sd/'bootloader/payloads/fusee.bin').read_bytes()
@@ -87,6 +98,9 @@ def prepare(sd,original,hack,first,end,declared_profile):
     header+=f'#define BTA_HEKATE_BYTES {len(hekate)}u\n#define BTA_SD_FIRST {first}u\n#define BTA_SD_END {end}u\n#endif\n'
     (ROOT/'include/auto_binding.h').write_text(header)
     info={'sd':str(sd),'original_entry':original,'hack_entry':hack,'declared_firmware_profile':declared_profile,
+          'controller_profile':controller_profile,'running_hekate_sha256':running_sha,'running_hekate_version':HEKATE_RELEASES[running_sha],
+          'continuation_sha256':continuation_sha,'continuation_version':HEKATE_RELEASES[continuation_sha],
+          'compatibility_status':'candidate' if running_sha!=HEKATE_SHA or controller_profile!='nintendo' else 'legacy',
           'mode':'standalone-payload','launch_payload':PAYLOAD_PATH,
           'continuation_mode':'hekate-menu','boot_dependencies':dependencies,
           'sd_first':first,'sd_end':end,'config_sha256':hashlib.sha256(config).hexdigest(),
@@ -98,8 +112,9 @@ def prepare(sd,original,hack,first,end,declared_profile):
     return info
 
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--sd',required=True);p.add_argument('--sysmmc','--original',dest='original',required=True,help='Nombre exacto de la entrada sysMMC');p.add_argument('--emummc','--hack',dest='hack',required=True,help='Nombre exacto de la entrada emuMMC');p.add_argument('--firmware-profile',required=True,choices=['23.0.1']);a=p.parse_args()
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--sd',required=True);p.add_argument('--sysmmc','--original',dest='original',required=True,help='Nombre exacto de la entrada sysMMC');p.add_argument('--emummc','--hack',dest='hack',required=True,help='Nombre exacto de la entrada emuMMC');p.add_argument('--firmware-profile',required=True,choices=['23.0.1']);p.add_argument('--controller-profile',choices=CONTROLLER_PROFILES,default='nintendo');p.add_argument('--continuation',choices=['current','existing'],default='current');a=p.parse_args()
     sd=Path(a.sd).resolve();first,end=partition(sd)
-    prepare(sd,a.original,a.hack,first,end,a.firmware_profile)
+    info=prepare(sd,a.original,a.hack,first,end,a.firmware_profile,a.controller_profile,a.continuation)
+    print('Profile:',info['controller_profile'],'Hekate:',info['running_hekate_version'],'return:',info['continuation_version'],'status:',info['compatibility_status'])
     print('Prepared standalone payload for this SD. Boot menus stay byte-identical; completion returns to Hekate. No SD files changed.')
 if __name__=='__main__':main()

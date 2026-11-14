@@ -52,6 +52,7 @@ static void show_result(int success){
     gfx_con.mute=false;gfx_clear_grey(0x1b);
     gfx_con_setcol(success?0xFF00FF00:0xFFFF0000,1,0xFF1B1B1B);
     gfx_con_setpos(success?624:600,352);gfx_printf(success?"OK":"FALLO");
+    if(!success){gfx_con_setpos(520,400);gfx_printf("Etapa %d",(int)progress_stage);}
     msleep(3000);
 }
 static void release(void *p,size_t n){if(p){bth_wipe(p,n);free(p);}}

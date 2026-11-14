@@ -22,9 +22,9 @@ def verified_host_evidence():
         raise ValueError('Las pruebas de interfaz cambiaron respecto a la evidencia')
     shutil.copyfile(BT/'evidence/result-ui-tests.json',out/'result-ui-tests.json')
 
-def prepare_bluetooth(sd,original,hack,profile):
+def prepare_bluetooth(sd,original,hack,profile,controller_profile='nintendo'):
     # Preflight first: an unsupported SD must not trigger a large toolchain download.
-    subprocess.run([sys.executable,'prepare.py','--sd',str(sd),'--sysmmc',original,'--emummc',hack,'--firmware-profile',profile],cwd=BT,check=True)
+    subprocess.run([sys.executable,'prepare.py','--sd',str(sd),'--sysmmc',original,'--emummc',hack,'--firmware-profile',profile,'--controller-profile',controller_profile],cwd=BT,check=True)
     print('Verificando pruebas publicadas del núcleo y preparando el compilador ARM...')
     verified_host_evidence()
     ensure_arm_toolchain()

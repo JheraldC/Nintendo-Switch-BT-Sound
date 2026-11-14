@@ -8,12 +8,16 @@ for item in freeze:
     actual=MOD/'vendor/core'/item['path']
     assert hashlib.sha256(actual.read_bytes()).hexdigest()==item['sha256'],'frozen core changed: '+item['path']
 CC=tool('gcc')
+preparation=json.loads((OUT/'preparation.json').read_text())
+controller_profile=preparation.get('controller_profile','nintendo')
+assert controller_profile in ('nintendo','missioncontrol'),'unknown controller profile'
 OBJCOPY=tool('objcopy');NM=tool('nm');SIZE=tool('size')
 arch=['-march=armv4t','-mtune=arm7tdmi','-mthumb','-mthumb-interwork']
 flags=arch+['-Os','-g','-ffunction-sections','-fdata-sections','-fomit-frame-pointer','-std=gnu11','-Wall','-Wno-missing-braces','-Wno-incompatible-pointer-types','-Wno-implicit-function-declaration','-Wno-int-conversion','-DIPL_LOAD_ADDR=0x40008000']
 flags+=['-DBTO_DIAGNOSTIC','-DFFCFG_INC="'+(TE/'source/libs/fatfs/ffconf.h').as_posix()+'"','-DGFX_INC="'+(TE/'source/gfx/gfx.h').as_posix()+'"']
 includes=[ROOT/'include',TE,TE/'bdk',MOD/'include',MOD/'tegra',MOD/'vendor/core/include',MOD/'vendor/core/src']
 flags+=['-I'+str(p) for p in includes]
+flags+=['-DBTA_EXTENDED_CONTROLLERS='+('1' if controller_profile=='missioncontrol' else '0')]
 sources=[ROOT/'src/main.c',ROOT/'src/native_storage.c',ROOT/'src/nand_policy.c',ROOT/'src/diag_report.c',ROOT/'src/header_probe.c',MOD/'src/bt_only.c',MOD/'src/bt_keys.c',MOD/'tegra/tegra_reader.c',MOD/'tegra/tegra_keys.c']
 sources+=sorted(p for p in (MOD/'vendor/core/src').glob('*.c') if p.name not in ('integrity.c','filesystem.c'))
 sources+=[ROOT/'src/ivfc_salt.c',ROOT/'src/ivfc_bridge.c',ROOT/'src/save_filesystem.c',ROOT/'src/bt_probe.c',ROOT/'src/transfer.c',ROOT/'src/auto_sync.c',ROOT/'src/auto_transaction.c',ROOT/'src/auto_platform.c',ROOT/'src/auto_boot.c',ROOT/'src/auto_boot_config.c']
@@ -45,6 +49,7 @@ subprocess.run([str(OBJCOPY),'-S','-O','binary','--gap-fill=0','--pad-to='+hex(l
 assert binary.stat().st_size<=126296,'payload exceeds uncompressed upstream size budget'
 record={'binary':binary.name,'bytes':binary.stat().st_size,'sha256':hashlib.sha256(binary.read_bytes()).hexdigest(),'objects':len(objects),'limits':limits,'frozen_core_files_verified':len(freeze),'source_files':[p.relative_to(ROOT).as_posix() for p in sources],'hardware_tested':False,'purpose':'manual Original-to-Hack sync; readonly NAND; scoped SD transaction'}
 record['binding_sha256']=hashlib.sha256((ROOT/'include/auto_binding.h').read_bytes()).hexdigest()
+record['controller_profile']=controller_profile
 record['compiler_version']=subprocess.check_output([str(CC),'--version'],text=True).splitlines()[0]
 inputs=[p for folder in ('src','include','module','vendor') for p in (ROOT/folder).rglob('*') if p.is_file() and p.suffix in ('.c','.h','.S') and 'build' not in p.relative_to(ROOT).parts]
 record['compiled_sources']={p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(inputs)}

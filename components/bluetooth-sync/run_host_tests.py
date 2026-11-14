@@ -12,12 +12,13 @@ def run(directory,targets):
     print(result.stdout,end='');print(result.stderr,end='',file=sys.stderr)
     if result.returncode:raise SystemExit(result.returncode)
     return result.stdout+result.stderr
-log=run(ROOT,['test','auto-test','auto-platform-test','auto-boot-test','fatfs-map-test'])+run(ROOT/'module',['keys-test','sanitizers','adapter-test'])
+log=run(ROOT,['test','auto-test','auto-platform-test','auto-boot-test','fatfs-map-test','controller-profile-test'])+run(ROOT/'module',['keys-test','sanitizers','adapter-test'])
 (OUT/'host-tests.log').write_text(log,encoding='utf-8')
 patterns={'fatfs_mapping':r'Actual FatFs mapping: (\d+) checks','auto_sync':r'Automatic sync: (\d+) checks','auto_platform':r'Actual SD platform: (\d+) checks','auto_boot':r'Hekate continuation: (\d+) checks','bluetooth_probe':r'BT probe: (\d+) checks','gpt':r'GPT v2: (\d+) checks','native':r'Native storage: (\d+) checks','report':r'Report: (\d+) checks',
           'headers':r'Header probe: (\d+) checks','diagnostic_adapter':r'tegra adapter: (\d+) checks',
           'console_geometry':r'Console geometry: (\d+) checks','filesystem_geometry':r'FS geometry: (\d+) checks','ivfc_hmac':r'IVFC HMAC: (\d+) checks','full_reader':r'PASS: (\d+) cases; ASan/UBSan'}
 counts={}
+patterns['controller_profiles']=r'Controller profiles: (\d+) checks'
 for name,pattern in patterns.items():
     match=re.search(pattern,log);assert match,name
     counts[name]=int(match[1])

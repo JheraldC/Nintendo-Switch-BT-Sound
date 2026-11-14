@@ -6,7 +6,7 @@ import json
 import os
 import struct
 from datetime import datetime,timezone
-from prepare import ROOT,OUT,HEKATE_SHA,PAYLOAD_PATH,partition,require,section_bytes,boot_configs
+from prepare import ROOT,OUT,HEKATE_SHA,HEKATE_RELEASES,PAYLOAD_PATH,partition,require,section_bytes,boot_configs
 from install_formats import parse_external
 
 def sha(data):return hashlib.sha256(data).hexdigest()
@@ -63,7 +63,9 @@ def plan_for(sd,check_partition=True):
     require((sd/'bootloader/hekate_ipl.ini').read_bytes()==(OUT/'hekate_ipl.before.ini').read_bytes(),'Boot config changed')
     expected_after,expected_inner=boot_configs((OUT/'hekate_ipl.before.ini').read_bytes(),prep['original_entry'],prep['hack_entry'])
     require((OUT/'hekate_ipl.after.ini').read_bytes()==expected_after==(OUT/'hekate_ipl.before.ini').read_bytes() and expected_inner==b'','Boot menu must remain unchanged')
-    for name,h in [('emuMMC/emummc.ini',prep['config_sha256']),('atmosphere/config/system_settings.ini',prep['settings_sha256']),('bootloader/update.bin',HEKATE_SHA)]:
+    running_sha=prep.get('running_hekate_sha256',HEKATE_SHA)
+    require(running_sha in HEKATE_RELEASES,'Unrecognized Hekate profile')
+    for name,h in [('emuMMC/emummc.ini',prep['config_sha256']),('atmosphere/config/system_settings.ini',prep['settings_sha256']),('bootloader/update.bin',running_sha)]:
         require(sha((sd/name).read_bytes())==h,'Target config/loader changed')
     for name,h in prep.get('boot_dependencies',{}).items():require(sha((sd/name).read_bytes())==h,'Existing boot component changed')
     import re
@@ -72,6 +74,7 @@ def plan_for(sd,check_partition=True):
     require(audit['passed'] and tests['passed'] and tests['asan_ubsan'],'Audit/tests required')
     binary=(OUT/'bt-autosync-v1.bin').read_bytes();require(sha(binary)==audit['sha256']==build['sha256'],'Binary evidence mismatch')
     require(sha((ROOT/'include/auto_binding.h').read_bytes())==build['binding_sha256'],'Build predates bindings')
+    require(build.get('controller_profile','nintendo')==prep.get('controller_profile','nintendo'),'Controller profile differs from compiled build')
     for name,h in build['compiled_sources'].items():require(sha((ROOT/name).read_bytes())==h,'Stale build')
     for name,h in tests['tested_sources'].items():require(sha((ROOT/name).read_bytes())==h,'Stale tests')
     verify_keys((sd/'switch/prod.keys').read_bytes())

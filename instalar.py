@@ -57,9 +57,9 @@ def main():
         from tools.audio_convert import validate_wav
         from tools.partition_info import partition_info
         print('Asistente disponible:',platform_key(),(ROOT/'VERSION').read_text().strip());return
-    print('Nintendo Switch · BT & Beats — Sonido y controles\n1. Sonido y conversor de audio\n2. Imagen de Hekate\n3. Preparar payload Bluetooth para esta SD')
-    choice=input('Elige 1, 2 o 3: ').strip()
-    if choice not in ('1','2','3'):raise ValueError('Opción no válida')
+    print('Nintendo Switch · BT & Beats — Sonido y controles\n1. Sonido y conversor de audio\n2. Imagen de Hekate\n3. Preparar instalación Bluetooth nueva\n4. Actualizar/reparar el único sincronizador Bluetooth (con respaldo)')
+    choice=input('Elige 1, 2, 3 o 4: ').strip()
+    if choice not in ('1','2','3','4'):raise ValueError('Opción no válida')
     value=input('Raíz de la microSD (E:/, /Volumes/SWITCH SD o /media/usuario/SWITCH SD): ').strip().strip('"')
     if not value:raise ValueError('Debes seleccionar la microSD')
     if re.fullmatch('[A-Za-z]:',value):value+='/'
@@ -71,10 +71,21 @@ def main():
     if choice=='2':install_files(sd,'logo',backup,entry=choose_entry(sd,'emuMMC'));return
     original=choose_entry(sd,'sysMMC');hack=choose_entry(sd,'emuMMC')
     profile=input('Firmware de sysMMC (perfil admitido: 23.0.1): ').strip()
+    controllers=input('Mandos: 1 Pro/Joy-Con (conserva el perfil anterior) / 2 MissionControl experimental [1]: ').strip() or '1'
+    if controllers not in ('1','2'):raise ValueError('Perfil de mandos no válido')
+    controller_profile='missioncontrol' if controllers=='2' else 'nintendo'
+    if controllers=='2':print('Candidatos limitados a modelos Sony/Xbox identificados; requiere MissionControl y emparejamiento válido en el origen. Sin garantía de prueba física.')
+    if choice=='4':
+        from tools.repair_bluetooth import repair_plan,apply_repair
+        plan=repair_plan(sd,original,hack,profile,controller_profile)
+        print('Se actualizará BT-Sync-Una-Vez.bin. Las versiones anteriores se respaldan en PC; registros conservados:',plan['counts'])
+        if input('Escribe INSTALAR para actualizarlo con respaldo privado: ').strip()=='INSTALAR':apply_repair(plan,backup)
+        else:print('Cancelado. No se escribió en la SD.')
+        return
     print('La base Bluetooth externa debe estar activada y creada al arrancar emuMMC una vez.')
     print('Preparación local automática. El compilador se descarga solo si falta (unos 300 MiB).')
     from tools.bluetooth_setup import prepare_bluetooth,BT
-    prepare_bluetooth(sd,original,hack,profile)
+    prepare_bluetooth(sd,original,hack,profile,controller_profile)
     print('Se añadirán cuatro archivos. El menú y la base actual se conservan. No se sincroniza durante la instalación.')
     if input('Escribe INSTALAR para guardar el respaldo privado e instalar el payload: ').strip()=='INSTALAR':
         run(['deploy_portable.py','--sd',sd,'--apply','--backup-dir',backup],BT)

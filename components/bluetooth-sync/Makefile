@@ -67,3 +67,10 @@ auto-platform-test:
 auto-boot-test:
 	$(CC) $(CFLAGS) -Iinclude -Imodule/vendor/core/src src/transfer.c src/auto_boot_config.c module/vendor/core/src/sha256.c tests/test_auto_boot.c -o output/test_auto_boot
 	./output/test_auto_boot
+
+controller-profile-test:
+	mkdir -p output
+	$(CC) $(CFLAGS) -DBTA_EXTENDED_CONTROLLERS=0 -Iinclude -Imodule/vendor/core/src src/transfer.c src/auto_sync.c module/vendor/core/src/sha256.c tests/test_controller_profiles.c -o output/test_controller_legacy
+	./output/test_controller_legacy
+	$(CC) $(CFLAGS) -DBTA_EXTENDED_CONTROLLERS=1 -Iinclude -Imodule/vendor/core/src src/transfer.c src/auto_sync.c module/vendor/core/src/sha256.c tests/test_controller_profiles.c -o output/test_controller_extended
+	./output/test_controller_extended

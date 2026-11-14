@@ -1,6 +1,7 @@
 /* SPDX-License-Identifier: GPL-2.0-only */
 #include "auto_sync.h"
 #include "sha256.h"
+#include "controller_profiles.h"
 #include <string.h>
 _Static_assert(sizeof(BtaSeen)==40,"history ABI");
 static uint32_t le32(const uint8_t *p){return (uint32_t)p[0]|((uint32_t)p[1]<<8)|((uint32_t)p[2]<<16)|((uint32_t)p[3]<<24);}
@@ -8,7 +9,8 @@ static void put32(uint8_t *p,uint32_t n){for(size_t i=0;i<4;i++)p[i]=(uint8_t)(n
 static bool nonzero(const uint8_t *p,size_t n){while(n--)if(*p++)return true;return false;}
 bool bta_controller(const uint8_t r[512]){
     if(!r||!memchr(r+0xD6,0,0xF9)||r[0x39]!=1||!nonzero(r+0x29,16)||(r[0x27]&0x1F)!=5)return false;
-    return !strcmp((const char *)r+0xD6,"Pro Controller")||!strcmp((const char *)r+0xD6,"Joy-Con (L)")||!strcmp((const char *)r+0xD6,"Joy-Con (R)");
+    if(!strcmp((const char *)r+0xD6,"Pro Controller")||!strcmp((const char *)r+0xD6,"Joy-Con (L)")||!strcmp((const char *)r+0xD6,"Joy-Con (R)"))return true;
+    return BTA_EXTENDED_CONTROLLERS&&bta_missioncontrol_candidate(r);
 }
 static bool state_valid(const BtaState *s){
     if(!s||s->count>BTH_MAX)return false;

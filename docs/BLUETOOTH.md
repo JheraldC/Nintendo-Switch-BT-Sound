@@ -7,6 +7,7 @@ Importa selectivamente mandos Pro/Joy-Con compatibles de sysMMC a emuMMC dentro 
 - sysMMC 23.0.1. Es el único perfil analizado; no basta con tener el último Atmosphère.
 - SD FAT32, emuMMC habilitada y entradas de arranque válidas para sysMMC y emuMMC.
 - `bootloader/update.bin` oficial de Hekate 6.5.4, SHA-256 `95f6e933e32e028f3ae90f0b0857ff47800e834bdace38a0ab019d8ed35a8c24`.
+- Se conserva ese perfil y se añade el release oficial exacto 6.5.5 como candidato (`09752abd207803708add6e22151e94b71ffbaaff769d1bad759584b76ef6f05e`). Sus hashes y el de la continuación se comprueban por separado. [Perfiles y limitaciones](COMPATIBILIDAD.md).
 - Atmosphère con soporte de base externa, configurado como sigue. La referencia utilizada es [Atmosphère 1.12.1](https://github.com/Atmosphere-NX/Atmosphere/blob/1.12.1/config_templates/system_settings.ini).
 - `switch/prod.keys` propio de esa consola, con `bis_key_02` y `save_mac_key` válidas. Se leen localmente, nunca se suben al repositorio.
 - Windows, Python 3.11+, devkitARM y WSL con `gcc`, `make` y `python3` para compilar y ejecutar las comprobaciones.
@@ -52,6 +53,8 @@ El instalador añade exactamente cuatro archivos: `bootloader/payloads/BT-Sync-U
 En los comandos, usa los nombres exactos de las entradas de tu Hekate aunque sean distintos de `sysMMC` y `emuMMC`. El asistente y el instalador conservan esos nombres.
 
 El binario se vincula a hashes de configuración y límites de partición de esa SD. Cambiar la configuración puede exigir preparar de nuevo. No hay un `.bin` universal para copiar de una consola a otra. Los nombres internos `bt-autosync-v1` son históricos: esta edición se ejecuta manualmente.
+
+Para una instalación existente, usa la opción **4** del asistente: respalda la versión anterior en PC y actualiza el único `BT-Sync-Una-Vez.bin`, conservando su retorno, base e historial. Las antiguas copias `Compat` también se respaldan y se retiran del menú; no hay que ejecutar varios payloads en orden. Puedes elegir el perfil anterior `nintendo` o el perfil limitado y experimental `missioncontrol`; el segundo exige MissionControl habilitado y emparejamientos válidos de origen. No habilita BLE ni hace compatibles mandos desconocidos.
 
 ## Usarlo
 

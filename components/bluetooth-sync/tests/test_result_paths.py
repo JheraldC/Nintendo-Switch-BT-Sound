@@ -23,16 +23,16 @@ enum {NO_CHANGES,UPDATED,BAD_GUARDS,BAD_RECOVERY,BAD_DB_READ,BAD_STATE_READ,
 static int scenario,alloc_step,fail_alloc,recover_calls;
 static unsigned checks,wait_ms,clear_count,colour,progress_stage,bar_right;
 static bool screen_ready=true;
-static char label[64];
+static char label[64],detail[64];static unsigned cursor_y;
 static struct {bool mute;} gfx_con;
 static void gfx_clear_grey(unsigned shade){assert(shade==0x1b);clear_count++;}
 static void gfx_con_setcol(unsigned fg,int fill,unsigned bg){assert(fill==1&&bg==0xFF1B1B1B);colour=fg;}
-static void gfx_con_setpos(unsigned x,unsigned y){assert(x<=1279&&(y==312||y==350||y==352));}
+static void gfx_con_setpos(unsigned x,unsigned y){assert(x<=1279&&(y==312||y==350||y==352||y==400));cursor_y=y;}
 static void gfx_box(int x0,int y0,int x1,int y1,unsigned c){
  assert(x0>=0&&x0<=x1&&x1<=1279&&y0>=0&&y0<=y1&&y1<=719);
  if(c==0xFF55BBD0){assert(x0==402&&y0==392&&x1<=877&&y1==407);bar_right=(unsigned)x1;}
 }
-static void gfx_printf(const char *fmt,...){if(gfx_con.mute)return;va_list ap;va_start(ap,fmt);vsnprintf(label,sizeof(label),fmt,ap);va_end(ap);}
+static void gfx_printf(const char *fmt,...){if(gfx_con.mute)return;va_list ap;va_start(ap,fmt);vsnprintf(cursor_y==400?detail:label,sizeof(label),fmt,ap);va_end(ap);}
 static void msleep(unsigned ms){if(ms==500)assert(progress_stage==7&&bar_right==877);wait_ms=ms;}
 void bth_wipe(void *p,size_t n){memset(p,0,n);}
 static void disconnectMMC(void){}
@@ -85,6 +85,7 @@ int main(void){
  assert(!gfx_con.mute&&clear_count==1&&wait_ms==3000&&colour==0xFF00FF00&&!strcmp(label,"OK"));checks++;
  gfx_con.mute=true;clear_count=wait_ms=colour=0;show_result(0);
  assert(!gfx_con.mute&&clear_count==1&&wait_ms==3000&&colour==0xFFFF0000&&!strcmp(label,"FALLO"));checks++;
+ assert(strstr(detail,"Etapa ")==detail);checks++;
  printf("Result paths: %u checks passed; real stage progress stays monotonic; failures cannot complete the bar; result colours and 3s delay preserved\n",checks);
  return 0;
 }

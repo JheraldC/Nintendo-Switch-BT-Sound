@@ -43,8 +43,11 @@ Después entra en emuMMC. Puedes volver a ejecutar el payload cuando quieras imp
 ## Requisitos
 
 - Para Bluetooth: sysMMC 23.0.1, SD FAT32, emuMMC habilitada, base Bluetooth externa existente y Hekate 6.5.4 exacto.
+- Hekate 6.5.5 exacto se añade como perfil candidato, conservando 6.5.4. El perfil Pro/Joy-Con anterior permanece como opción predeterminada; los candidatos limitados para otras marcas se habilitan aparte con MissionControl. [Matriz y estado de compatibilidad](docs/COMPATIBILIDAD.md).
 - Cada consola necesita sus propias claves locales y un payload preparado para su SD. Automatizar el instalador no amplía los perfiles de firmware o Hekate admitidos.
 
 [Reversión](docs/REVERSION.md) · [Licencias y créditos](LICENSES.md)
+
+Si el payload muestra FALLO después de cambiar la configuración, la opción **4** actualiza el único `BT-Sync-Una-Vez.bin`, con la versión anterior respaldada en PC y sus datos conservados. En la consola solo abres ese payload; no hay varios scripts que ejecutar en orden. [Qué verifica la reparación](docs/COMPATIBILIDAD.md#reparar-una-configuración-cambiada).
 
 ![Diseño original de BootSound](components/bootsplash/images/BootSound_splash.png)

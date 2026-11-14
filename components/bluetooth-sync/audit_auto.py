@@ -11,6 +11,7 @@ R=Path(__file__).resolve().parent;O=R/'output';V=R/'baseline';TE=R/'vendor/tegra
 e=json.loads((O/'build-evidence.json').read_text());binary=O/e['binary']
 assert e['binding_sha256']==hashlib.sha256((R/'include/auto_binding.h').read_bytes()).hexdigest()
 assert e['binding_sha256']==json.loads((O/'preparation.json').read_text())['binding_sha256']
+assert e.get('controller_profile','nintendo')==json.loads((O/'preparation.json').read_text()).get('controller_profile','nintendo')
 assert hashlib.sha256(binary.read_bytes()).hexdigest()==e['sha256']
 symbols=(O/'symbols.txt').read_text();names={s.split()[-1] for s in symbols.splitlines() if s.split()}
 for forbidden in ('f_mkdir','f_mkfs','f_truncate','f_chmod','f_fdisk','f_fdisk_mod','save_commit','save_data_file_write','nx_emmc_bis_write','emummc_storage_write',
@@ -67,6 +68,7 @@ assert '"BTREAL",7' in cfg and 'image[0x94]=hack?5:1' in cfg
 tests=json.loads((O/'test-results.json').read_text());assert tests['passed'] and tests['asan_ubsan']
 for path,expected in tests['tested_sources'].items():assert hashlib.sha256((R/path).read_bytes()).hexdigest()==expected,path
 for key in ('auto_sync','auto_platform','auto_boot','full_reader','bluetooth_probe','native'):assert tests['counts'][key]>0
+assert tests['counts'].get('controller_profiles',0)>0
 for relative in ('src/native_storage.c','vendor/tegraexplorer/bdk/storage/sdmmc.c','vendor/tegraexplorer/source/libs/fatfs/ffconf.h'):
     (O/(Path(relative).stem+'-auto.diff')).write_text(''.join(difflib.unified_diff((V/relative).read_text().splitlines(True),(R/relative).read_text().splitlines(True),fromfile='proven-export/'+relative,tofile='automatic/'+relative)))
 report={'passed':True,'binary':e['binary'],'bytes':e['bytes'],'sha256':e['sha256'],'nand_command_policy_unchanged':True,

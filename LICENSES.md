@@ -4,6 +4,7 @@
 - BT Sync Una Vez: GPL-2.0, en `components/bluetooth-sync/LICENSE` y `module/LICENSE`. Conserva los avisos de sus dependencias y el núcleo congelado identificado por `core-freeze.json`.
 - TegraExplorer/BDK: código y avisos originales en `components/bluetooth-sync/vendor/tegraexplorer/`, bajo su GPL-2.0. No se afirma autoría sobre este código. El lector incluido conserva sus avisos internos.
 - Hekate 6.5.4: el binario oficial sin modificar de `test-assets` se usa como fixture de pruebas; no es un payload Bluetooth universal. GPL-2.0. [Fuentes correspondientes y licencia](https://github.com/CTCaer/hekate/tree/v6.5.4), [release original](https://github.com/CTCaer/hekate/releases/tag/v6.5.4). La licencia GPL-2.0 también se conserva en el componente.
+- Hekate 6.5.5: fixture oficial adicional, sin modificar; [fuentes y licencia GPL-2.0](https://github.com/CTCaer/hekate/tree/v6.5.5), [release original](https://github.com/CTCaer/hekate/releases/tag/v6.5.5). No sustituye el fixture anterior.
 - Herramientas de splash: MIT salvo los avisos específicos incluidos. `tools/package3/blz.py` conserva la licencia ISC de su implementación de origen. Las notas explican el formato de Atmosphère y no transfieren derechos sobre sus marcas.
 - Asistente, herramientas nuevas y documentación original de esta colección: MIT, texto en `LICENSE`.
 - Audio de ejemplo generado: creado mediante `components/bootsound/scripts/generate_example_startup.py`, incluido con el software MIT.

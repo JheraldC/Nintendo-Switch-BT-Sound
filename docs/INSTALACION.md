@@ -21,7 +21,7 @@ Las versiones, URL, tamaños y SHA-256 de las dependencias están en `tools/runt
 ## Uso
 
 1. Conecta la SD ya configurada. En Windows usa su raíz, como `E:/`; en macOS, `/Volumes/SWITCH SD`; en Linux, el punto de montaje exacto, como `/media/usuario/SWITCH SD`.
-2. Abre el asistente con el comando del README y elige sonido, logo de Hekate o Bluetooth.
+2. Abre el asistente con el comando del README y elige sonido, logo de Hekate, Bluetooth nuevo o reparación del único sincronizador, con respaldo de su versión anterior.
 3. El asistente prepara y muestra los archivos que cambiarán. Revisa el destino y confirma `INSTALAR` para crear el respaldo y aplicar. Cancelar antes de ese paso no escribe en la SD.
 4. Expulsa la SD de forma segura y prueba en la consola. La conversión o compilación correcta no sustituye la prueba física.
 
@@ -29,11 +29,11 @@ Los audios propios, claves y emparejamientos se procesan en tu ordenador. La fun
 
 ## Bluetooth
 
-La opción automática conserva los requisitos de `docs/BLUETOOTH.md`: sysMMC 23.0.1, Hekate 6.5.4 exacto, partición FAT32, emuMMC y base Bluetooth externa creadas y claves propias válidas. No actualiza firmware, no obtiene claves ni modifica particiones. Una instalación o transacción Bluetooth previa se rechaza para no sobrescribir su estado.
+La instalación nueva conserva los requisitos de `docs/BLUETOOTH.md` y rechaza una instalación previa para no sobrescribirla. La opción 4 respalda la versión anterior en PC y actualiza el único `BT-Sync-Una-Vez.bin`, conservando los emparejamientos y el historial. Ambas exigen sysMMC 23.0.1, un Hekate oficial reconocido por hash, FAT32, base externa creada y claves propias válidas. Una transacción pendiente o un historial inválido detienen la reparación. No actualiza firmware, no obtiene claves ni modifica particiones.
 
 Las pruebas C con ASan/UBSan se ejecutan en el desarrollo/CI sobre medios sintéticos. La distribución contiene evidencia ligada a los hashes de esas fuentes. En el ordenador del usuario se vuelve a verificar esa evidencia, se generan los enlaces a su SD, se compila el payload y se audita el binario y sus dependencias. Los enlaces generados se comprueban contra la preparación y la compilación; no se reutilizan los de otra consola. No hace falta instalar un compilador C de escritorio, WSL ni make para este flujo.
 
-No se afirma compatibilidad con versiones futuras de Hekate ni con otros perfiles de sysMMC. En particular, ampliar el perfil a Hekate 6.5.5 queda pendiente de su prueba física; el número de versión del instalador no constituye esa validación.
+El perfil anterior Hekate 6.5.4 se conserva; 6.5.5 se añade como candidato con pruebas sintéticas y sin afirmar validación física. Tampoco se aceptan versiones futuras arbitrarias ni otros formatos de sysMMC. [Matriz de perfiles](COMPATIBILIDAD.md).
 
 ## Uso local y conversión sin SD
 
