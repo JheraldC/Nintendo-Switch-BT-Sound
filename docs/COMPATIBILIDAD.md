@@ -28,6 +28,8 @@ Las pruebas usan registros sintéticos para comprobar selección, exclusión y f
 
 ## Hekate, Atmosphère y consola
 
+En la instalación del autor, con Atmosphère 1.12.2 y Hekate 6.5.5, el usuario confirmó que el payload actualizado terminó en **OK** y regresó a Hekate. Esta reparación conservó la continuación oficial 6.5.4 anterior. El resultado confirma ese recorrido concreto; no valida todavía una instalación nueva con continuación 6.5.5, la reconexión de los mandos ni cada dispositivo de otras marcas. La versión anterior con Hekate 6.5.4 se conserva.
+
 - Se conserva Hekate 6.5.4 exacto, identificado por SHA-256.
 - Se reconoce también el release oficial exacto Hekate 6.5.5 como **perfil candidato**, sin aceptar binarios modificados ni versiones futuras arbitrarias.
 - Una reparación puede conservar la continuación oficial 6.5.4 existente aunque `bootloader/update.bin` sea 6.5.5. Se guardan y comprueban por separado ambos hashes. La instalación nueva usa el release actual reconocido para su continuación.

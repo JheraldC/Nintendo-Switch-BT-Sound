@@ -1,20 +1,12 @@
-# Nintendo Switch · BT & Beats — Sonido y controles
+# Nintendo Switch · BT & Beats — 1.2.0
 
-Creé este proyecto para personalizar el sonido y las imágenes de arranque de mi Nintendo Switch y sincronizar mis Pro Controller y Joy-Con compatibles de sysMMC a emuMMC.
+Creé este proyecto para personalizar el sonido y las imágenes de arranque de mi Nintendo Switch y sincronizar controles de sysMMC a emuMMC.
 
-El sonido se reproduce al arrancar emuMMC. La sincronización Bluetooth se ejecuta cuando abres el payload desde Hekate. Puedes instalar cada función por separado en tu Nintendo Switch con Atmosphère y emuMMC.
+El asistente permite elegir tu audio y convertirlo con FFmpeg, instalar un logo de Hekate y preparar un único sincronizador Bluetooth. Muestra los cambios antes de instalar y guarda un respaldo en tu ordenador.
 
-Uso sysMMC (OFW) para referirme al sistema original de la consola y emuMMC (CFW con Atmosphère) para el sistema de la microSD.
+## Instalar
 
-| Componente | Para qué sirve | Instalación |
-|---|---|---|
-| Sonido de arranque | Reproducir un sonido al entrar a emuMMC. Incluyo el sonido Yoshi que uso y un ejemplo generado. | [Guía de sonido](docs/SONIDO.md) |
-| Arranque e imágenes | Personalizar las pantallas de arranque con diseños, un logo para Hekate y herramientas para Atmosphère. | [Guía de imágenes](docs/ARRANQUE.md) |
-| Sincronización de controles | Importar los Pro Controller/Joy-Con compatibles de sysMMC a emuMMC en la misma consola, al abrir el payload. | [Guía Bluetooth](docs/BLUETOOTH.md) |
-
-## Empezar
-
-Conecta la microSD de una Switch que ya arranque con Hekate, Atmosphère y emuMMC. Abre una terminal normal, sin administrador, y pega el comando de tu sistema:
+Conecta la microSD de tu Switch, con Hekate, Atmosphère y emuMMC ya funcionando. Abre una terminal sin administrador y pega el comando de tu sistema.
 
 **Windows — PowerShell**
 
@@ -28,26 +20,25 @@ irm https://raw.githubusercontent.com/JheraldC/Nintendo-Switch-BT-Sound/main/ins
 curl -fsSL https://raw.githubusercontent.com/JheraldC/Nintendo-Switch-BT-Sound/main/install.sh | sh
 ```
 
-El enlace descarga una versión fijada del proyecto y un Python portátil verificados por SHA-256. No requiere servidor propio, Git, administrador ni instalar Python en el sistema. Las dependencias se guardan en `~/.bt-sound/` y se reutilizan. [Detalles y plataformas](docs/INSTALACION.md).
+El asistente descarga las herramientas necesarias. No necesitas instalar Git, Python ni compilar manualmente. [Detalles de instalación](docs/INSTALACION.md).
 
-Elige sonido, imagen de Hekate o preparación Bluetooth. Puedes seleccionar tu propio audio, convertir un fragmento con FFmpeg y activarlo. El asistente muestra el plan y solo escribe en la SD al confirmar `INSTALAR`, con un respaldo fuera de ella.
+## Versiones y compatibilidad
 
-El sonido y el logo usan archivos ya preparados. Bluetooth se prepara y compila automáticamente en tu ordenador para cada SD; el compilador ARM se descarga si falta. Las claves y emparejamientos no se suben. La instalación no ejecuta la sincronización ni modifica el menú. Las pantallas internas de Atmosphère siguen siendo una operación avanzada de su [guía de imágenes](docs/ARRANQUE.md).
+| Componente | Versión de mi instalación |
+|---|---|
+| BT & Beats | 1.2.0 |
+| Atmosphère | 1.12.2 |
+| Hekate | 6.5.4 anterior y 6.5.5 actual |
+| sysMMC | 23.0.1, con microSD FAT32 y emuMMC habilitada |
 
-## Cómo funciona el payload Bluetooth
+En la instalación actual, BT Sync terminó en **OK** y volvió a Hekate, conservando la continuación 6.5.4. Falta comprobar la reconexión de los mandos. El perfil habitual es Pro Controller/Joy-Con; otros modelos mediante MissionControl siguen siendo experimentales. [Compatibilidad y alcance de las pruebas](docs/COMPATIBILIDAD.md).
 
-Abre Hekate → Payloads → BT-Sync-Una-Vez.bin para sincronizar los controles. La pantalla muestra el progreso y el resultado: OK en verde o FALLO en rojo. Al terminar, vuelve automáticamente al menú de Hekate.
+## Sincronizar controles
 
-Después entra en emuMMC. Puedes volver a ejecutar el payload cuando quieras importar controles que hayas emparejado en sysMMC.
+Después de preparar Bluetooth, abre **Hekate → Payloads → BT-Sync-Una-Vez.bin** y entra en emuMMC cuando vuelva a Hekate. Solo ejecutas ese archivo; repítelo cuando cambien los emparejamientos de sysMMC.
 
-## Requisitos
+Si aparece FALLO tras cambiar la configuración, usa la opción **4** del asistente para actualizar el sincronizador con respaldo. Cada consola necesita su propia preparación.
 
-- Para Bluetooth: sysMMC 23.0.1, SD FAT32, emuMMC habilitada, base Bluetooth externa existente y Hekate 6.5.4 exacto.
-- Hekate 6.5.5 exacto se añade como perfil candidato, conservando 6.5.4. El perfil Pro/Joy-Con anterior permanece como opción predeterminada; los candidatos limitados para otras marcas se habilitan aparte con MissionControl. [Matriz y estado de compatibilidad](docs/COMPATIBILIDAD.md).
-- Cada consola necesita sus propias claves locales y un payload preparado para su SD. Automatizar el instalador no amplía los perfiles de firmware o Hekate admitidos.
-
-[Reversión](docs/REVERSION.md) · [Licencias y créditos](LICENSES.md)
-
-Si el payload muestra FALLO después de cambiar la configuración, la opción **4** actualiza el único `BT-Sync-Una-Vez.bin`, con la versión anterior respaldada en PC y sus datos conservados. En la consola solo abres ese payload; no hay varios scripts que ejecutar en orden. [Qué verifica la reparación](docs/COMPATIBILIDAD.md#reparar-una-configuración-cambiada).
+[Sonido](docs/SONIDO.md) · [Imágenes](docs/ARRANQUE.md) · [Bluetooth](docs/BLUETOOTH.md) · [Reversión](docs/REVERSION.md) · [Licencias](LICENSES.md)
 
 ![Diseño original de BootSound](components/bootsplash/images/BootSound_splash.png)
