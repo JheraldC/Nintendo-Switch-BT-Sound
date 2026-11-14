@@ -2,10 +2,10 @@
 from pathlib import Path
 import hashlib,json,os,stat,subprocess,sys,tempfile,urllib.request,zipfile
 
-COMMIT='v1.1.0'
-ARCHIVE_SHA256='dd33221ba63af96c8f9b46a79abd8eec0e0e959efd54683afd037d929fee4c4d'
-ARCHIVE_BYTES=8798256
-URL='https://github.com/JheraldC/Nintendo-Switch-BT-Sound/releases/download/v1.1.0/installer-source-v1.1.0.zip'
+COMMIT='v1.2.0'
+ARCHIVE_SHA256='cf6bd5017d58cd422cd7da7b92f1e739ec669e7cc59f0707896efdfad409bdbc'
+ARCHIVE_BYTES=8908560
+URL='https://github.com/JheraldC/Nintendo-Switch-BT-Sound/releases/download/v1.2.0/installer-source-v1.2.0.zip'
 
 def cache_root():return Path(os.environ.get('BT_SOUND_CACHE') or Path.home()/'.bt-sound').expanduser().resolve()
 
@@ -23,7 +23,7 @@ def verified_project(cache):
         return directory
     if directory.exists():raise ValueError('Hay una descarga incompleta; revisa '+str(directory))
     directory.parent.mkdir(parents=True,exist_ok=True)
-    print('Descargando Nintendo-Switch-BT-Sound 1.1.0, revisión '+COMMIT[:7]+'...')
+    print('Descargando Nintendo-Switch-BT-Sound 1.2.0, revisión '+COMMIT[:7]+'...')
     with tempfile.TemporaryDirectory(prefix='project-',dir=directory.parent) as temp:
         temp=Path(temp).resolve();archive=temp/'project.zip';digest=hashlib.sha256();size=0
         with urllib.request.urlopen(URL,timeout=60) as response,archive.open('xb') as target:
