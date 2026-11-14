@@ -34,8 +34,8 @@ if [ ! -x "$python" ]; then
   tar -xzf "$tmp/python.tar.gz" -C "$tmp/runtime"
   mv "$tmp/runtime" "$python_root"
 fi
-curl -fsSL 'https://github.com/JheraldC/Nintendo-Switch-BT-Sound/releases/download/v1.1.0/bootstrap-v1.1.0.py' -o "$tmp/bootstrap.py"
-verify "$tmp/bootstrap.py" '52d0f69dd3756ef3123b248b530070f4f663e210f35d502176e91bf4c5b5db37'
+curl -fsSL 'https://github.com/JheraldC/Nintendo-Switch-BT-Sound/releases/download/v1.2.0/bootstrap-v1.2.0.py' -o "$tmp/bootstrap.py"
+verify "$tmp/bootstrap.py" 'baa57ec2c9a9f282f1e05e8019aa8c5cf9441ade1bc1b173248e23d927912df5'
 if [ "${1:-}" = '--smoke-test' ] || [ -t 0 ]; then "$python" "$tmp/bootstrap.py" "$@"
 elif ( : </dev/tty ) 2>/dev/null; then "$python" "$tmp/bootstrap.py" "$@" </dev/tty
 else echo 'Open an interactive terminal to run the installer' >&2; exit 1; fi
